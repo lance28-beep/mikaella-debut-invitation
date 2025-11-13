@@ -6,26 +6,27 @@ import { motion } from "motion/react"
 import { Instagram, Facebook, Twitter, Share2, Copy, Check, Download } from "lucide-react"
 import { Section } from "@/components/section"
 import { QRCodeCanvas } from "qrcode.react"
+import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+
+const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
 
 export function SnapShare() {
   const [copiedHashtag, setCopiedHashtag] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const hashtags = ["#GoingBAEyond", "#BrendanAirezToEternity"]
-  const shareText = `Join us in celebrating our special day! Check out our wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`
+  const hashtags = ["#TrishaMaeAt18", "#MidnightWithTrisha", "#CelestialCelebration"]
+  const shareText = `Celebrate Trisha Mae's grand debut! Explore the details and share your midnight memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
     const checkMobile = () => setIsMobile(window.innerWidth < 640)
 
     checkMobile()
-    window.addEventListener("scroll", handleScroll)
     window.addEventListener("resize", checkMobile)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("resize", checkMobile)
     }
   }, [])
@@ -61,7 +62,7 @@ export function SnapShare() {
     const canvas = document.getElementById("snapshare-qr") as HTMLCanvasElement | null
     if (!canvas) return
     const link = document.createElement("a")
-    link.download = "wedding-qr.png"
+    link.download = "trisha-mae-debut-qr.png"
     link.href = canvas.toDataURL("image/png")
     link.click()
   }
@@ -81,152 +82,189 @@ export function SnapShare() {
   }
 
   return (
-    <Section id="snap-share" className="relative py-16 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <motion.div
-          className="absolute top-10 right-5 w-48 h-48 bg-[#751A2C] rounded-full mix-blend-soft-light blur-3xl"
-          style={{ y: scrollY * 0.2 }}
-          animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.12, 0.08] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-10 left-5 w-48 h-48 bg-[#C3A161] rounded-full mix-blend-soft-light blur-3xl"
-          style={{ y: -scrollY * 0.1 }}
-          animate={{ scale: [1.1, 1, 1.1], opacity: [0.12, 0.08, 0.12] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
+    <Section
+      id="snap-share"
+      className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-transparent"
+    >
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-10 sm:mb-12"
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-5xl sm:text-5xl md:text-6xl font-serif font-bold text-[#FFFFFF] mb-3 sm:mb-4 text-balance">
-            Snap & Share
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#a7b7ff]/85">
+            Midnight Memories
+          </div>
+          <h2
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,18,46,0.6)] mt-4`}
+          >
+            Snap & Share the Starlight
           </h2>
-          <p className="font-lora text-[#FFFFFF]/90 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-4">
-            Help us document our special day by sharing moments using our official hashtags.
+          <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/75 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
+            Capture the shimmer of Trisha Mae’s eighteenth night. Share your favourite moments so her constellation of memories
+            glows long after the celebration.
           </p>
-          <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-[#751A2C]/60 to-transparent" />
+          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#8aa1ff]/60 to-transparent" />
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6" variants={staggerChildren} initial="initial" animate="animate">
+        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10" variants={staggerChildren} initial="initial" animate="animate">
           <motion.div
-            className="p-[1.5px] rounded-2xl bg-gradient-to-br from-[#751A2C]/50 via-[#C3A161]/35 to-[#751A2C]/50"
+            className="p-[1.5px] rounded-2xl bg-gradient-to-br from-[#4e6dff]/50 via-[#92a5ff]/30 to-[#4e6dff]/50 h-full"
             variants={fadeInUp}
             whileHover={{ y: -2 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-[#751A2C]/25">
-            <div className="text-center">
-              <div className="space-y-3 mb-4">
-                {hashtags.map((hashtag) => (
-                    <div key={hashtag} className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#751A2C]/10 to-[#C3A161]/15 px-4 py-3 rounded-xl shadow-md border border-[#751A2C]/25 w-full sm:w-auto mx-auto">
-                      <span className="font-lora text-base sm:text-lg md:text-xl font-bold text-[#0A3428] break-all sm:break-normal tracking-wide">{hashtag}</span>
-                    <button
-                      onClick={() => copyToClipboard(hashtag)}
-                        className="p-1.5 rounded-full bg-white/90 hover:bg-white transition-colors duration-200 shadow-sm flex-shrink-0 ring-1 ring-[#C3A161]/40"
-                      title="Copy hashtag"
+            <div className="bg-white/92 backdrop-blur-sm rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border border-white/15 h-full flex flex-col">
+              <div className="text-center mb-6">
+                <h3 className={`${playfair.className} text-lg sm:text-xl md:text-2xl font-semibold text-[#0b1434] mb-4`}>
+                  Capture the Midnight Magic
+                </h3>
+                <p className={`${inter.className} text-[#0b1434]/75 text-xs sm:text-sm mb-5 leading-relaxed`}>
+                  Every photo you share becomes a star in Trisha Mae's constellation of memories. Use these hashtags to light up her eighteenth night.
+                </p>
+                <div className="space-y-3 mb-5">
+                  {hashtags.map((hashtag) => (
+                    <div
+                      key={hashtag}
+                      className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#4e6dff]/10 to-[#9db1ff]/15 px-5 py-3.5 rounded-xl shadow-md border border-white/20 w-full sm:w-auto mx-auto hover:shadow-lg transition-shadow"
                     >
-                        {copiedHashtag ? <Check className="w-4 h-4 text-[#751A2C]" /> : <Copy className="w-4 h-4 text-[#0A3428]/60" />}
-                    </button>
-                  </div>
-                ))}
+                      <span className={`${inter.className} text-sm sm:text-base md:text-lg font-semibold text-[#0b1434] tracking-[0.12em] uppercase break-all sm:break-normal`}>
+                        {hashtag}
+                      </span>
+                      <button
+                        onClick={() => copyToClipboard(hashtag)}
+                        className="p-1.5 rounded-full bg-white/95 hover:bg-white transition-colors duration-200 shadow-sm flex-shrink-0 ring-1 ring-[#9db1ff]/40 hover:ring-[#4e6dff]/60"
+                        title="Copy hashtag"
+                      >
+                        {copiedHashtag ? <Check className="w-4 h-4 text-[#4e6dff]" /> : <Copy className="w-4 h-4 text-[#0b1434]/60" />}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <p className={`${inter.className} text-[#0b1434]/70 text-[11px] sm:text-xs italic`}>
+                  Click to copy and paste into your posts, stories, and reels.
+                </p>
               </div>
-                <p className="font-lora text-[#0A3428] text-sm mb-3">Use these hashtags on your posts to be featured in our gallery.</p>
-            </div>
 
-            <div className="mt-6">
-                <h4 className="font-playfair text-base sm:text-lg font-bold text-[#0A3428] mb-4 text-center">Our Favorite Moments</h4>
-                {/* Two squares on top, one landscape below */}
-                <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  <motion.div className="relative aspect-square rounded-xl overflow-hidden shadow-md ring-1 ring-[#C3A161]/40" whileHover={{ scale: 1.03 }} transition={{ duration: 0.25 }}>
-                    <Image src="/mobile-background/couple (19).jpg" alt="Favorite moment 1" fill className="object-cover" />
+              <div className="mt-auto">
+                <h4 className={`${playfair.className} text-base sm:text-lg md:text-xl font-semibold text-[#0b1434] mb-4 text-center`}>
+                  A Glimpse of Her Evening
+                </h4>
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:gap-4">
+                  <motion.div
+                    className="relative aspect-square rounded-xl overflow-hidden shadow-md ring-1 ring-white/25 hover:ring-[#4e6dff]/40 transition-all"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <Image src="/LoveStory/story (2).png" alt="Debut moment 1" fill className="object-cover" />
                   </motion.div>
-                  <motion.div className="relative aspect-square rounded-xl overflow-hidden shadow-md ring-1 ring-[#C3A161]/40" whileHover={{ scale: 1.03 }} transition={{ duration: 0.25 }}>
-                    <Image src="/mobile-background/couple (15).jpg" alt="Favorite moment 2" fill className="object-cover" />
+                  <motion.div
+                    className="relative aspect-square rounded-xl overflow-hidden shadow-md ring-1 ring-white/25 hover:ring-[#4e6dff]/40 transition-all"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <Image src="/LoveStory/story (3).png" alt="Debut moment 2" fill className="object-cover" />
                   </motion.div>
-                  <motion.div className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md ring-1 ring-[#C3A161]/40" whileHover={{ scale: 1.02 }} transition={{ duration: 0.25 }}>
-                    <Image src="/desktop-background/couple (4).jpg" alt="Favorite moment 3" fill className="object-cover" />
+                  <motion.div
+                    className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md ring-1 ring-white/25 hover:ring-[#4e6dff]/40 transition-all"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <Image src="/LoveStory/story (4).png" alt="Debut moment 3" fill className="object-cover" />
                   </motion.div>
                 </div>
-                <p className="font-lora text-[#0A3428] text-xs text-center mt-3 px-2">Share your photos using our hashtag to be featured here!</p>
-            </div>
+                <p className={`${inter.className} text-[#0b1434]/70 text-[11px] sm:text-xs text-center mt-4 px-2`}>
+                  Tag your snapshots with our hashtags to be featured in Trisha Mae's keepsake gallery.
+                </p>
+              </div>
             </div>
           </motion.div>
 
-          <motion.div className="space-y-4" variants={fadeInUp}>
-            <div className="p-[1.5px] rounded-2xl bg-gradient-to-br from-[#751A2C]/50 via-[#C3A161]/35 to-[#751A2C]/50">
-              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-[#751A2C]/25 text-center">
-              <h4 className="font-playfair text-base sm:text-lg font-bold text-[#0A3428] mb-4">Share Our Website</h4>
-              <div className="mx-auto inline-flex flex-col items-center bg-white p-4 sm:p-5 rounded-2xl shadow-md border border-ink/10 mb-4">
-                <div className="mb-3 p-2 rounded-xl bg-gradient-to-br from-[#C3A161]/40 via-[#FFFFFF]/40 to-white ring-1 ring-[#C3A161]/40">
-                  <div className="bg-white p-2 rounded-lg shadow-sm">
-                    <QRCodeCanvas id="snapshare-qr" value={websiteUrl} size={isMobile ? 128 : 160} includeMargin className="bg-white" />
+          <motion.div className="space-y-4 lg:space-y-6 h-full flex flex-col" variants={fadeInUp}>
+            <div className="p-[1.5px] rounded-2xl bg-gradient-to-br from-[#4e6dff]/50 via-[#92a5ff]/30 to-[#4e6dff]/50 flex-1">
+              <div className="bg-white/92 backdrop-blur-sm rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border border-white/15 text-center h-full flex flex-col">
+                <h4 className={`${playfair.className} text-lg sm:text-xl md:text-2xl font-semibold text-[#0b1434] mb-3`}>
+                  Share Her Debut Website
+                </h4>
+                <p className={`${inter.className} text-[#0b1434]/75 text-xs sm:text-sm mb-6 leading-relaxed`}>
+                  Spread the word about Trisha Mae's eighteenth celebration. Share this QR code with friends and family so they can join the midnight magic.
+                </p>
+                <div className="mx-auto inline-flex flex-col items-center bg-white p-5 sm:p-6 md:p-8 rounded-2xl shadow-md border border-[#dbe3ff]/60 mb-5 flex-1 justify-center">
+                  <div className="mb-4 p-3 sm:p-4 rounded-xl bg-gradient-to-br from-[#9db1ff]/30 via-white/35 to-white ring-1 ring-[#bac7ff]/40">
+                    <div className="bg-white p-3 sm:p-4 rounded-lg shadow-sm">
+                      <QRCodeCanvas 
+                        id="snapshare-qr" 
+                        value={websiteUrl} 
+                        size={isMobile ? 160 : 220} 
+                        includeMargin 
+                        className="bg-white" 
+                      />
+                    </div>
                   </div>
+                  <button
+                    onClick={downloadQRCode}
+                    className="flex items-center gap-2 mx-auto px-5 py-3 rounded-lg bg-gradient-to-r from-[#4e6dff] via-[#9db1ff] to-[#4e6dff] text-white transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm sm:text-base"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span className={`${inter.className} tracking-[0.2em] uppercase font-medium`}>Download QR Code</span>
+                  </button>
                 </div>
-                <button
-                  onClick={downloadQRCode}
-                  className="flex items-center gap-2 mx-auto px-3.5 py-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md text-xs sm:text-sm"
-                  style={{ backgroundColor: '#0A3428', color: 'white' }}
-                >
-                  <Download className="w-3.5 h-3.5" style={{ color: 'white' }} />
-                  <span className="font-lora">Download QR</span>
-                </button>
-              </div>
-              <p className="font-lora text-[#0A3428] text-xs">Scan with any camera app</p>
+                <p className={`${inter.className} text-[#0b1434]/70 text-[11px] sm:text-xs mt-auto`}>
+                  Scan with any camera app to access the full invitation and event details.
+                </p>
               </div>
             </div>
 
-
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-[#751A2C]/25">
-              <h5 className="font-playfair text-lg font-bold text-[#0A3428] mb-4 text-center">Share on Social Media</h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+            <div className="bg-white/92 backdrop-blur-sm rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border border-white/15">
+              <h5 className={`${playfair.className} text-lg sm:text-xl font-semibold text-[#0b1434] mb-4 text-center`}>
+                Share on Social Media
+              </h5>
+              <p className={`${inter.className} text-[#0b1434]/70 text-[11px] sm:text-xs text-center mb-5`}>
+                Help Trisha Mae's story reach everyone who matters. Share the celebration across your favorite platforms.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <button
                   onClick={() => shareOnSocial("instagram")}
-                  className="group flex items-center justify-center gap-2 bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 text-white px-3 py-2.5 sm:py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/20"
+                  className="group flex items-center justify-center gap-2.5 bg-gradient-to-br from-[#d26bff] via-[#8f6bff] to-[#4e6dff] text-white px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/20"
                 >
-                  <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="font-lora font-medium text-xs sm:text-sm">Instagram</span>
+                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>Instagram</span>
                 </button>
                 <button
                   onClick={() => shareOnSocial("facebook")}
-                  className="group flex items-center justify-center gap-2 bg-gradient-to-br from-blue-500 to-blue-700 text-white px-3 py-2.5 sm:py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/20"
+                  className="group flex items-center justify-center gap-2.5 bg-gradient-to-br from-[#4b6dff] to-[#3a5bff] text-white px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/20"
                 >
-                  <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="font-lora font-medium text-xs sm:text-sm">Facebook</span>
+                  <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>Facebook</span>
                 </button>
                 <button
                   onClick={() => shareOnSocial("tiktok")}
-                  className="group flex items-center justify-center gap-2 bg-gradient-to-br from-black via-gray-800 to-black text-white px-3 py-2.5 sm:py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/10"
+                  className="group flex items-center justify-center gap-2.5 bg-gradient-to-br from-[#060b1b] via-[#111d32] to-[#040818] text-white px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/10"
                 >
-                  <Share2 className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="font-lora font-medium text-xs sm:text-sm">TikTok</span>
+                  <Share2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>TikTok</span>
                 </button>
                 <button
                   onClick={() => shareOnSocial("twitter")}
-                  className="group flex items-center justify-center gap-2 bg-gradient-to-br from-sky-400 to-blue-500 text-white px-3 py-2.5 sm:py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/20"
+                  className="group flex items-center justify-center gap-2.5 bg-gradient-to-br from-[#60b3ff] to-[#4e6dff] text-white px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg ring-1 ring-white/20"
                 >
-                  <Twitter className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="font-lora font-medium text-xs sm:text-sm">Twitter</span>
+                  <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>Twitter</span>
                 </button>
               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        <motion.div className="text-center mt-8" variants={fadeInUp}>
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-[#751A2C]/25 max-w-3xl mx-auto">
-            <p className="font-lora text-[#0A3428] text-base sm:text-lg leading-relaxed mb-4">
-              We are so excited to celebrate our love with you! See you on our special day!
+        <motion.div className="text-center mt-10 sm:mt-12" variants={fadeInUp}>
+          <div className="bg-white/92 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-white/15 max-w-3xl mx-auto">
+            <p className={`${inter.className} text-[#0b1434] text-sm sm:text-base md:text-lg leading-relaxed mb-4`}>
+              Thank you for helping Trisha Mae’s story sparkle. Your photos and messages bring her midnight constellation to
+              life—keep sharing the magic all night long.
             </p>
-            <div className="flex items-center justify-center gap-2">
-              <div className="text-center">
-                <span className="block font-playfair text-[#0A3428] font-bold text-lg sm:text-xl">– Airez & Brendan –</span>
-              </div>
+            <div className={`${inter.className} flex items-center justify-center gap-2 text-[#4e6dff] text-[11px] sm:text-xs tracking-[0.35em] uppercase`}>
+              <span>See You Under The Stars</span>
             </div>
           </div>
         </motion.div>

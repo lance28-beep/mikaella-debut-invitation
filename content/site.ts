@@ -1,50 +1,50 @@
 export const siteConfig = {
   couple: {
-    bride: "Airez Joy Caspillo Anggalan",
-    brideNickname: "Airez",
-    groom: "Brendan Joe Grima",
-    groomNickname: "Brendan",
+    bride: "Trisha Mae",
+    brideNickname: "Trish",
+    groom: "",
+    groomNickname: "",
   },
   wedding: {
-    date: "December 28, 2025",
-    time: "11:00 AM",
-    venue: "Alta Guia, Taguig, Metro Manila",
-    tagline: "are getting married!",
-    theme: "Christmas Wedding 🎄",
-    motif: "Burgundy Red & Emerald Green",
+    date: "June 13, 2026",
+    time: "4:10 PM",
+    venue: "Villa Caceres Hotel, Naga City",
+    tagline: "is turning eighteen!",
+    theme: "Midnight Constellations ✨",
+    motif: "Midnight Blue, Starlight Silver & Soft Pearl",
   },
   details: {
     rsvp: {
-      deadline: "December 15, 2025",
+      deadline: "May 20, 2026",
     },
   },
   ceremony: {
-    location: "Alta Guia, Taguig, Metro Manila",
-    venue: "Alta Guia",
-    date: "December 28, 2025",
+    location: "Villa Caceres Hotel, Naga City",
+    venue: "Grand Ballroom",
+    date: "June 13, 2026",
     day: "Sunday",
-    time: "11:00 AM",
-    entourageTime: "10:00 AM",
-    guestsTime: "10:30 AM",
+    time: "4:10 PM",
+    entourageTime: "3:00 PM",
+    guestsTime: "3:30 PM",
   },
   reception: {
-    location: "Alta Guia, Taguig, Metro Manila",
-    venue: "Alta Guia",
-    date: "December 28, 2025",
-    time: "12:00 NN",
+    location: "Villa Caceres Hotel, Naga City",
+    venue: "Grand Ballroom",
+    date: "June 13, 2026",
+    time: "6:00 PM",
   },
   dressCode: {
-    theme: "Christmas Wedding 🎄",
-    colors: ["#0A3428", "#106552", "#751A2C", "#C3A161"],
+    theme: "Midnight Constellations ✨",
+    colors: ["#4e6dff", "#8199ff", "#d5deff", "#f5f7ff"],
     sponsors: {
-      ladies: "White gown / long dress ",
-      gentlemen: "Black suit and tie"
+      ladies: "Gowns in moonlit hues or classic Filipiniana",
+      gentlemen: "Barong or midnight-toned suits",
     },
     guests: {
-      ladies: "Long or cocktail dress",
-      gentlemen: "Long sleeve, polo, pants or suit"
+      ladies: "Cocktail or floor-length dresses in blues, silvers, or soft neutrals",
+      gentlemen: "Suit or smart separates in navy, charcoal, or black",
     },
-    note: "Please avoid jeans and casual attire."
+    note: "Kindly avoid casual attire and denim to keep the evening elegant.",
   },
   narrative: `In 2020, during the quiet days of the pandemic, fate found a way to bring two hearts together — one from Australia, and one from the Philippines. Through an online word game called Codenames, Brendan and Airez met. What started as playful teasing soon turned into long conversations, laughter, and a friendship that grew stronger with every passing day. \n
 
@@ -60,8 +60,8 @@ From a simple online game to a love that grew through distance, patience, and fa
 
 And now, hand in hand, heart to heart, Brendan and Airez are ready to begin their forever — a lifetime of love, laughter, and endless “us.” ❤️`,
   colors: {
-    primary: "#0A3428",
-    secondary: "#106552",
+    primary: "#4e6dff",
+    secondary: "#9bb4ff",
   },
 }
 

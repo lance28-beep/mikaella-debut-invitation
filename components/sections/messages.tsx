@@ -1,7 +1,8 @@
 "use client"
 
 import { useRef, useState, useCallback, useEffect } from "react"
-import { MessageCircle, Heart, Sparkles, Send } from "lucide-react"
+import { Sparkles, PenLine, Send, Heart } from "lucide-react"
+import Image from "next/image"
 import { Section } from "@/components/section"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,6 +10,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
 import MessageWallDisplay from "./message-wall-display"
+import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+
+const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
 
 interface Message {
   timestamp: string
@@ -82,52 +88,33 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
   }
 
   return (
-    <div className="relative w-full max-w-lg mx-auto px-4 sm:px-0">
-      {/* Enhanced decorative background elements */}
-      <div className="absolute -top-4 -left-4 w-8 h-8 bg-secondary/20 rounded-full blur-sm animate-pulse sm:w-12 sm:h-12 sm:-top-6 sm:-left-6"></div>
-      <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-secondary/10 rounded-full blur-md animate-pulse sm:w-16 sm:h-16 sm:-bottom-6 sm:-right-6"></div>
-      <div className="absolute top-1/2 -left-2 w-6 h-6 bg-secondary/15 rounded-full blur-sm animate-pulse sm:w-8 sm:h-8 sm:-left-3"></div>
-      
-      <Card className={`relative w-full border-2 border-[#751A2C]/35 shadow-[0_8px_32px_rgba(102,105,86,0.18)] bg-white/50 backdrop-blur-md transition-all duration-500 group overflow-hidden rounded-2xl ${
-        isFocused ? 'scale-[1.02] border-[#751A2C]/55 bg-white/55' : 'hover:bg-white/55'
-      } ${isSubmitted ? 'animate-bounce' : ''}`}>
-        {/* Glass effect gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#751A2C]/12 via-white/10 to-[#C3A161]/8"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
-        
-        {/* Frosted glass effect */}
-        <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-br from-white/15 to-white/5"></div>
-        
-        {/* Animated shine effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#C3A161]/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-        
-        {/* Success animation overlay */}
+    <div className="relative w-full max-w-xl mx-auto">
+      <Card
+        className={`relative w-full border border-white/18 bg-white/12 backdrop-blur-2xl transition-all duration-500 group overflow-hidden rounded-[32px] shadow-[0_32px_75px_rgba(9,17,38,0.45)] ${
+          isFocused ? "border-white/35" : "hover:border-white/25"
+        } ${isSubmitted ? "animate-[pulse_1.2s_ease-in-out]" : ""}`}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(146,168,255,0.22),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_85%,rgba(146,168,255,0.22),transparent_70%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/16 via-white/6 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out" />
+
         {isSubmitted && (
-          <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-300/10 flex items-center justify-center z-20 pointer-events-none">
-            <div className="flex flex-col items-center gap-2 animate-pulse">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                <Sparkles className="h-8 w-8 text-white" />
-              </div>
-              <p className="text-green-600 font-semibold text-lg">Sent!</p>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(144,223,126,0.25),transparent_60%)] flex items-center justify-center z-30 pointer-events-none">
+            <div className="flex flex-col items-center gap-2 text-white">
+              <Sparkles className="h-10 w-10" />
+              <p className={`${inter.className} text-sm sm:text-base tracking-[0.4em] uppercase`}>Sent</p>
             </div>
           </div>
         )}
-        
+
         <CardContent className="relative p-6 sm:p-8 lg:p-10">
-          {/* Header with icon */}
           <div className="text-center mb-6 sm:mb-8">
-            <div className="relative inline-block mb-3 sm:mb-4">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#751A2C]/30 to-[#C3A161]/20 rounded-full blur-lg scale-150"></div>
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#751A2C] to-[#C3A161] rounded-full flex items-center justify-center mx-auto shadow-lg">
-                <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-              </div>
-            </div>
-            <h3 className="text-lg sm:text-xl font-playfair font-bold text-foreground mb-2">
-              Share Your Love
+            <p className="text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#9bb4ff]/85 mb-3">Message For The Debutante</p>
+            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-white drop-shadow-[0_18px_40px_rgba(8,18,46,0.6)] mb-2`}>
+              Leave a Starlit Wish
             </h3>
-            <p className="text-xs sm:text-sm text-foreground/70 font-lora">
-              Your message will be treasured forever
-            </p>
+            <p className={`${inter.className} text-xs sm:text-sm text-white/70 tracking-[0.22em] uppercase`}>Every note becomes part of her story</p>
           </div>
 
           <form 
@@ -137,15 +124,12 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           >
-            {/* Name Field */}
             <div className="space-y-2 sm:space-y-3">
-              <label className="block text-sm sm:text-base font-medium text-foreground font-lora flex items-center gap-2">
-                <div className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-[#751A2C]/20 to-[#C3A161]/10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  focusedField === 'name' ? 'scale-110 bg-secondary/30' : ''
-                }`}>
-                  <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-[#751A2C]" />
-                </div>
-                Your Name
+              <label className={`${inter.className} block text-[11px] sm:text-sm tracking-[0.4em] uppercase text-white/80 flex items-center gap-2`}>
+                <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-white/30 transition-transform ${focusedField === "name" ? "scale-110 bg-white/15" : ""}`}>
+                  <PenLine className="h-3 w-3 text-white/80" />
+                </span>
+                From
               </label>
               <div className="relative">
                 <Input
@@ -155,11 +139,11 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   onChange={(e) => setNameValue(e.target.value)}
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Enter your name"
-                  className={`w-full border-2 rounded-xl py-3 sm:py-4 px-4 sm:px-5 text-sm sm:text-base font-lora placeholder:text-foreground/50 transition-all duration-300 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg ${
-                    focusedField === 'name' 
-                      ? 'border-[#0A3428] focus:border-[#0A3428] focus:ring-4 focus:ring-[#0A3428]/15 shadow-lg' 
-                      : 'border-[#0A3428]/25 hover:border-[#0A3428]/45'
+                  placeholder="Your name or nickname"
+                  className={`w-full border border-white/22 rounded-2xl py-3 sm:py-4 px-4 sm:px-6 text-sm sm:text-base ${inter.className} placeholder:text-white/45 transition-all duration-300 bg-white/25 backdrop-blur-lg shadow-[0_14px_32px_rgba(9,17,38,0.28)] hover:shadow-[0_18px_36px_rgba(12,22,45,0.34)] focus:shadow-[0_22px_40px_rgba(14,24,50,0.38)] ${
+                    focusedField === "name"
+                      ? "border-white/55 focus:border-white/65 focus:ring-4 focus:ring-[#9bb4ff]/30"
+                      : "border-white/22 hover:border-white/32"
                   }`}
                 />
                 {nameValue && (
@@ -170,21 +154,20 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
               </div>
             </div>
 
-            {/* Message Field */}
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center justify-between">
-                <label className="block text-sm sm:text-base font-medium text-foreground font-lora flex items-center gap-2">
-                  <div className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-[#751A2C]/20 to-[#C3A161]/10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    focusedField === 'message' ? 'scale-110 bg-secondary/30' : ''
-                  }`}>
-                    <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 text-[#751A2C]" />
-                  </div>
-                  Your Message
+                <label className={`${inter.className} block text-[11px] sm:text-sm tracking-[0.4em] uppercase text-white/80 flex items-center gap-2`}>
+                  <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-white/30 transition-transform ${focusedField === "message" ? "scale-110 bg-white/15" : ""}`}>
+                    <Heart className="h-3 w-3 text-white/75" />
+                  </span>
+                  Message For Trisha Mae
                 </label>
                 {messageValue && (
-                  <span className={`text-xs font-lora transition-colors ${
-                    messageValue.length > 500 ? 'text-red-500' : 'text-foreground/50'
-                  }`}>
+                  <span
+                    className={`${inter.className} text-[10px] sm:text-xs tracking-[0.3em] uppercase transition-colors ${
+                      messageValue.length > 500 ? "text-rose-300" : "text-white/50"
+                    }`}
+                  >
                     {messageValue.length}/500
                   </span>
                 )}
@@ -199,18 +182,18 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                       setMessageValue(e.target.value)
                     }
                   }}
-                  onFocus={() => setFocusedField('message')}
+                  onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Share your love, memories, or well wishes..."
-                  className={`w-full border-2 rounded-xl min-h-[100px] sm:min-h-[120px] text-sm sm:text-base font-lora placeholder:text-foreground/50 transition-all duration-300 resize-none bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg py-3 sm:py-4 px-4 sm:px-5 ${
-                    focusedField === 'message' 
-                      ? 'border-[#0A3428] focus:border-[#0A3428] focus:ring-4 focus:ring-[#0A3428]/15 shadow-lg' 
-                      : 'border-[#0A3428]/25 hover:border-[#0A3428]/45'
+                  placeholder="Tell Trisha Mae what you wish for her eighteenth chapter..."
+                  className={`w-full border border-white/22 rounded-3xl min-h-[120px] sm:min-h-[150px] text-sm sm:text-base ${inter.className} placeholder:text-white/45 transition-all duration-300 resize-none bg-white/22 backdrop-blur-xl shadow-[0_16px_36px_rgba(10,18,40,0.3)] hover:shadow-[0_20px_42px_rgba(13,24,52,0.34)] focus:shadow-[0_26px_55px_rgba(16,28,58,0.42)] py-3.5 sm:py-4.5 px-4 sm:px-6 ${
+                    focusedField === "message"
+                      ? "border-white/55 focus:border-white/65 focus:ring-4 focus:ring-[#9bb4ff]/28"
+                      : "border-white/22 hover:border-white/32"
                   }`}
                 />
                 {messageValue && (
                   <div className="absolute right-3 top-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="h-2 w-2 rounded-full bg-emerald-400 animate-[pulse_1.2s_infinite]" />
                   </div>
                 )}
               </div>
@@ -220,10 +203,10 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             <Button
               type="submit"
               disabled={isSubmitting || !nameValue.trim() || !messageValue.trim()}
-              className="w-full bg-gradient-to-r from-[#0A3428] via-[#106552] to-[#751A2C] hover:from-[#0A3428] hover:via-[#106552] hover:to-[#751A2C] text-[#FFFFFF] py-3 sm:py-4 px-6 sm:px-8 rounded-xl text-sm sm:text-base font-lora font-semibold shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group border border-[#751A2C]/40"
+              className="w-full bg-gradient-to-r from-[#4e6dff] via-[#7f95ff] to-[#4f6dff] hover:from-[#4e6dff] hover:via-[#9bb4ff] hover:to-[#4f6dff] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-2xl text-sm sm:text-base font-lora font-semibold shadow-[0_18px_40px_rgba(46,79,210,0.35)] backdrop-blur-md transition-all duration-300 hover:shadow-[0_24px_48px_rgba(64,102,225,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group border border-white/25"
             >
               {/* Button background animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-900" />
               
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2 relative z-10">
@@ -284,79 +267,62 @@ export function Messages() {
   }, [fetchMessages])
 
   return (
-    <Section id="messages" bgColor="sand">
+    <Section id="messages" className="relative overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Decorative background elements to mirror RSVP/gallery palette */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-          {/* Floating soft glows */}
-          <div className="hidden sm:block absolute -top-6 -left-6 w-24 h-24 bg-[#BB8A3D]/10 rounded-full blur-2xl animate-pulse" />
-          <div className="hidden sm:block absolute top-10 right-0 w-20 h-20 bg-[#CDAC77]/15 rounded-full blur-xl animate-pulse delay-1000" />
-          <div className="hidden sm:block absolute bottom-10 left-10 w-28 h-28 bg-[#BB8A3D]/8 rounded-full blur-2xl animate-pulse delay-2000" />
-          <div className="sm:hidden absolute top-4 left-0 w-14 h-14 bg-[#BB8A3D]/10 rounded-full blur-lg" />
-          <div className="sm:hidden absolute bottom-6 right-2 w-10 h-10 bg-[#CDAC77]/10 rounded-full blur-md" />
-
-          {/* Gradient lines */}
-          <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#BB8A3D]/25 to-transparent" />
-          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#CDAC77]/20 to-transparent" />
-        </div>
         {/* Header Section */}
-         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 text-balance drop-shadow-lg">
-             Love Messages
-           </h2>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="relative inline-block mb-4 sm:mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-secondary/10 rounded-full blur-xl scale-150 animate-pulse"></div>
-              {/* <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center mx-auto shadow-lg">
-                <MessageCircle className="h-8 w-8 sm:h-10 sm:w-10 text-secondary" />
-              </div> */}
-            </div>
-            
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-white mb-3 sm:mb-4">
-              Share Your Heartfelt Wishes
-            </h3>
-            <p className="text-sm sm:text-base lg:text-lg text-white/80 font-lora leading-relaxed max-w-2xl mx-auto px-4">
-              Your messages of love and joy will be treasured forever. 
-              Share your memories, well wishes, and congratulations for the happy couple.
-            </p>
-          </div>
+        <div className="text-center mb-10 sm:mb-14 lg:mb-18 px-2">
+          <p className={`${inter.className} text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#4e6dff]/80 mb-3`}>Words She’ll Keep Forever</p>
+          <h2
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,18,46,0.6)] mb-4`}
+          >
+            Letters for Trisha Mae
+          </h2>
+          <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-white/90 mb-3`}>Write a wish for her eighteenth chapter</h3>
+          <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-white/70 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
+            Pen a note of love, wisdom, or sparkle that Trisha will read long after the candles fade. Every message becomes part of her debut keepsake.
+          </p>
         </div>
 
         {/* Form Section */}
-        <div className="flex justify-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="relative max-w-2xl w-full">
-            {/* RSVP-like card halo */}
-            <div className="absolute -inset-3 bg-gradient-to-br from-[#BB8A3D]/20 via-[#CDAC77]/15 to-transparent rounded-3xl blur-2xl opacity-70" />
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#BB8A3D]/10 via-transparent to-transparent rounded-3xl blur-md opacity-80" />
-            <MessageForm onMessageSent={fetchMessages} />
-            {/* Corner sparkles */}
-            {/* <div className="pointer-events-none">
-              <div className="absolute -top-1 -left-1 w-3 h-3 bg-[#BB8A3D] rounded-full blur-[2px] opacity-80" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#CDAC77] rounded-full blur-[2px] opacity-80" />
-              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 bg-[#CDAC77] rounded-full blur-[2px] opacity-70" />
-              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-[#BB8A3D] rounded-full blur-[2px] opacity-70" />
-            </div> */}
+        <div className="mb-12 sm:mb-16 lg:mb-20 px-1 sm:px-0">
+          <div className="relative mx-auto w-full max-w-5xl">
+            <div className="relative overflow-hidden rounded-[36px] border border-white/12 bg-white/8 backdrop-blur-2xl shadow-[0_28px_65px_rgba(8,16,34,0.45)]">
+              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-stretch">
+                <div className="relative hidden lg:block">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#1b2648]/70 via-[#1d2a52]/55 to-transparent" />
+                  <Image
+                    src="/Couple_img/couple (2).jpg"
+                    alt="Portrait of Trisha Mae"
+                    fill
+                    className="object-cover"
+                    priority={false}
+                  />
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-white/85">
+                    <p className={`${greatVibes.className} text-3xl tracking-wide`}>Trisha Mae</p>
+                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase`}>Celebrating 18 years</p>
+                  </div>
+                </div>
+                <div className="relative py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8">
+                  <MessageForm onMessageSent={fetchMessages} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Messages Display Section */}
         <div className="relative max-w-5xl mx-auto">
-          {/* Top corner accents */}
-          <div className="absolute -top-3 -left-3 w-4 h-4 bg-gradient-to-br from-[#BB8A3D] via-[#CDAC77] to-[#FFF6E7] rounded-full blur-sm opacity-70" />
-          <div className="absolute -top-3 -right-3 w-4 h-4 bg-gradient-to-bl from-[#BB8A3D] via-[#CDAC77] to-[#FFF6E7] rounded-full blur-sm opacity-70" />
           <div className="text-center mb-8 sm:mb-12">
             <div className="relative inline-block mb-4 sm:mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#BB8A3D]/20 to-[#CDAC77]/10 rounded-full blur-xl scale-150"></div>
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#BB8A3D] to-[#CDAC77] rounded-full flex items-center justify-center mx-auto shadow-lg">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#4e6dff] to-[#8ea3ff] rounded-full flex items-center justify-center mx-auto shadow-[0_18px_35px_rgba(22,36,84,0.45)]">
                 <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
             </div>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-white mb-2 sm:mb-3">
-              Messages from Loved Ones
+              Keepsakes From Her Constellation
             </h3>
-            <p className="text-sm sm:text-base lg:text-lg text-white/70 font-lora max-w-2xl mx-auto px-4">
-              Read the beautiful messages shared by family and friends
+            <p className="text-sm sm:text-base lg:text-lg text-white/72 font-lora max-w-2xl mx-auto leading-relaxed">
+              Scroll through the sparkling words that loved ones have tucked into Trisha Mae’s debut album of memories.
             </p>
           </div>
           
