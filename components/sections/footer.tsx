@@ -217,7 +217,7 @@ export function Footer() {
                 <div className="w-12 h-12 bg-[#FCE1B6]/20 rounded-full flex items-center justify-center border-2 border-[#FCE1B6]/30">
                   <Sparkles className="w-6 h-6 text-[#FCE1B6]" />
                 </div>
-                <h3 className={`${greatVibes.className} text-3xl md:text-4xl text-[#FCE1B6]`}>Kath</h3>
+                <h3 className={`${greatVibes.className} text-3xl md:text-4xl text-[#FCE1B6]`}>Kaith</h3>
               </div>
               <div className="space-y-4">
                 <div className={`flex items-center gap-3 ${inter.className} text-[#FCE1B6]/95`}>
@@ -348,7 +348,7 @@ export function Footer() {
         <motion.div className="border-t border-[#FCE1B6]/20 pt-8" variants={fadeInUp}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className={`text-[#FCE1B6]/85 ${inter.className} text-sm`}>© {year} Kath's Debut. All rights reserved.</p>
+              <p className={`text-[#FCE1B6]/85 ${inter.className} text-sm`}>© {year} Kaith's Debut. All rights reserved.</p>
               <p className={`text-[#FCE1B6]/90 ${inter.className} text-sm mt-1`}>
                 Made with love for her special celebration
               </p>

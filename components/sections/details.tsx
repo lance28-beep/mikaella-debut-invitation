@@ -106,7 +106,7 @@ export function Details() {
           <p
             className={`${inter.className} text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
           >
-            Join us as we celebrate Kath's journey into womanhood. Here's everything you need to know for this special evening—from call times and venue details to the elegant dress code that honors this milestone moment.
+            Join us as we celebrate Kaith's journey into womanhood. Here's everything you need to know for this special evening—from call times and venue details to the elegant dress code that honors this milestone moment.
           </p>
         </div>
 
@@ -252,7 +252,7 @@ export function Details() {
                 </div>
               </div>
               <ul className="space-y-2.5 text-xs sm:text-sm text-white/75 leading-relaxed">
-                <li>Complimentary parking is available at the hotel—just mention Kath's debut at the gate.</li>
+                <li>Complimentary parking is available at the hotel—just mention Kaith's debut at the gate.</li>
                 <li>Need a ride? The venue is Grab-accessible; kindly set drop-off to "De Guzman's Events Place".</li>
                 <li>If you’re staying overnight, the concierge can assist with room bookings; ask for the debut rate.</li>
               </ul>

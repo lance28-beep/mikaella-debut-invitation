@@ -145,7 +145,7 @@ export function BookOfGuests() {
             Celebrating Together
           </h2>
           <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto leading-relaxed`}>
-            Each name here represents someone special in Kath's life. Thank you for being part of this elegant
+            Each name here represents someone special in Kaith's life. Thank you for being part of this elegant
             debut celebration and for honoring this milestone with your presence.
           </p>
         </div>
@@ -220,7 +220,7 @@ export function BookOfGuests() {
                   No RSVPs confirmed yet.
                 </h3>
                 <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/75 max-w-md`}>
-                  Be the first to confirm your attendance at Kath's debut. Your name will appear here as soon as
+                  Be the first to confirm your attendance at Kaith's debut. Your name will appear here as soon as
                   you submit your RSVP.
                 </p>
               </div>

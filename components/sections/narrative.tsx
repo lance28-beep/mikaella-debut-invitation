@@ -37,7 +37,7 @@ const TAB_CONTENT: Record<
     headline: "Wine-red letters to the heart",
     blurb: "The girl beyond the gown, wrapped in warmth and gratitude.",
     paragraphs: [
-      "Kath is a soft-spoken spark who remembers every promise and keeps every kindness tucked away like handwritten notes. She is the eldest sister, the steady confidante, and the creative dreamer who sketches gown details while listening to soul playlists.",
+      "Kaith is a soft-spoken spark who remembers every promise and keeps every kindness tucked away like handwritten notes. She is the eldest sister, the steady confidante, and the creative dreamer who sketches gown details while listening to soul playlists.",
       "Her debut is a love letter to family and friends—the people who whispered prayers, lifted her through late-night talks, and taught her what elegance truly means. Tonight’s palette of wine red, gold, and black mirrors the warmth, loyalty, and boldness she learned from them.",
     ],
     highlights: ["Eldest of three siblings", "Curates soulful playlists", "Collects gilded keepsakes"],
@@ -46,7 +46,7 @@ const TAB_CONTENT: Record<
     headline: "Dreaming in gilded tones",
     blurb: "Plans penned between sketches and candlelit journal pages.",
     paragraphs: [
-      "Kath envisions a creative studio that brings luxe soirées to life—where color palettes feel like poetry and every guest receives a story to keep. Her sketchbook brims with corset lines, velvet swatches, and deckled invitations inspired by crimson sunsets.",
+      "Kaith envisions a creative studio that brings luxe soirées to life—where color palettes feel like poetry and every guest receives a story to keep. Her sketchbook brims with corset lines, velvet swatches, and deckled invitations inspired by crimson sunsets.",
       "More than accolades, she longs for slow weekend drives with cousins, mornings steeped in prayer, and a home that hums with music and shared meals. Her dreams glow softly, grounded in faith, family, and a desire to honor the people who shaped her courage.",
     ],
     highlights: ["Study events & design", "Launch a keepsake studio", "Travel with the whole family"],
@@ -55,7 +55,7 @@ const TAB_CONTENT: Record<
     headline: "Moments stitched in velvet",
     blurb: "Snapshots that led to this crimson-lit celebration.",
     paragraphs: [
-      "Raised in Naga City, Kath grew up arranging living-room performances with cousins and turning every school project into a mini production. Home felt like warm kitchens, loud laughter, and the echo of karaoke microphones.",
+      "Raised in Naga City, Kaith grew up arranging living-room performances with cousins and turning every school project into a mini production. Home felt like warm kitchens, loud laughter, and the echo of karaoke microphones.",
       "At sixteen, she planned a small outreach with friends and realized how generosity can linger like perfume. That moment convinced her that elegance and empathy can coexist—and should.",
       "Tonight she stands at the cusp of adulthood, draped in deep hues yet anchored in humility. This debut is her graceful bow to the people who refined her glow.",
     ],

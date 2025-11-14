@@ -228,7 +228,7 @@ export function Entourage() {
         <p
           className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
         >
-          Every name holds a special place in Kath's debut celebration—friends, family, and mentors who help make this milestone moment unforgettable.
+          Every name holds a special place in Kaith's debut celebration—friends, family, and mentors who help make this milestone moment unforgettable.
         </p>
       </div>
 

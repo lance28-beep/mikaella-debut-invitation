@@ -137,7 +137,7 @@ export function PrincipalSponsors() {
           Guardians of Grace
         </h2>
         <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}>
-          Honoring the distinguished mentors and godparents who have guided Kath's journey. Their wisdom, love, and blessings illuminate her path as she steps into womanhood on this momentous eighteenth year.
+          Honoring the distinguished mentors and godparents who have guided Kaith's journey. Their wisdom, love, and blessings illuminate her path as she steps into womanhood on this momentous eighteenth year.
         </p>
       </div>
 

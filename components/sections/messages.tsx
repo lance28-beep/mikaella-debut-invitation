@@ -169,7 +169,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#2E041A]/30 transition-transform ${focusedField === "message" ? "scale-110 bg-[#2E041A]/10" : ""}`}>
                     <Heart className="h-3 w-3 text-[#2E041A]/65" />
                   </span>
-                  Message For Kath
+                  Message For Kaith
                 </label>
                 {messageValue && (
                   <span
@@ -193,7 +193,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   }}
                   onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Tell Kath what you wish for her eighteenth chapter..."
+                  placeholder="Tell Kaith what you wish for her eighteenth chapter..."
                   className={`w-full border border-[#E1B489]/60 rounded-3xl min-h-[120px] sm:min-h-[150px] text-sm sm:text-base ${inter.className} text-[#2E041A] placeholder:text-[#5F2B3A]/55 transition-all duration-300 resize-none bg-white/90 backdrop-blur-sm shadow-[0_12px_30px_rgba(46,4,26,0.12)] hover:shadow-[0_18px_38px_rgba(46,4,26,0.2)] focus:shadow-[0_22px_46px_rgba(46,4,26,0.26)] py-3.5 sm:py-4.5 px-4 sm:px-6 ${
                     focusedField === "message"
                       ? "border-[#2E041A]/60 focus:border-[#2E041A]/70 focus:ring-4 focus:ring-[#2E041A]/15"
@@ -307,13 +307,13 @@ export function Messages() {
           <h2
             className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] mb-4`}
           >
-            Letters for Kath
+            Letters for Kaith
           </h2>
           <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-[#FCE1B6]/90 mb-3`}>
             Write a wish for her eighteenth chapter
           </h3>
           <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-[#FCE1B6]/75 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
-            Send a note woven in wine red and gold—a keepsake Kath will treasure long after the candles fade.
+            Send a note woven in wine red and gold—a keepsake Kaith will treasure long after the candles fade.
           </p>
         </div>
 
@@ -328,14 +328,14 @@ export function Messages() {
                     <Image
                       key={portraitImages[portraitIndex]}
                       src={portraitImages[portraitIndex]}
-                      alt="Portrait of Kath"
+                      alt="Portrait of Kaith"
                       fill
                       className="object-cover transition-opacity duration-700"
                       priority={false}
                     />
                   </div>
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-[#FCE1B6]/90">
-                    <p className={`${greatVibes.className} text-3xl tracking-wide`}>Kath</p>
+                    <p className={`${greatVibes.className} text-3xl tracking-wide`}>Kaith</p>
                     <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase`}>Eighteen in Crimson & Gold</p>
                   </div>
                 </div>
@@ -359,7 +359,7 @@ export function Messages() {
               Keepsakes From Her Constellation
             </h3>
             <p className="text-sm sm:text-base lg:text-lg text-[#FCE1B6]/80 font-lora max-w-2xl mx-auto leading-relaxed">
-              Scroll through the sparkling words that loved ones have tucked into Kath's debut album of memories.
+              Scroll through the sparkling words that loved ones have tucked into Kaith's debut album of memories.
             </p>
           </div>
           

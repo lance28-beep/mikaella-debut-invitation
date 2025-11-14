@@ -202,7 +202,7 @@ export function Countdown() {
           Countdown to the Gilded Soirée
         </h2>
         <p className="text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 font-light max-w-2xl mx-auto leading-relaxed">
-          Each heartbeat draws us nearer to a night draped in wine red, gold, and black—Kath's luminous coming of age.
+          Each heartbeat draws us nearer to a night draped in wine red, gold, and black—Kaith's luminous coming of age.
         </p>
       </div>
 

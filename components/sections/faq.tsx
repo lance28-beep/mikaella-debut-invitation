@@ -17,14 +17,14 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "What is the dress code for Kath's debut?",
+    question: "What is the dress code for Kaith's debut?",
     answer:
       "Ladies: Pure black long gown.\n\nGentlemen: Tuxedo.\n\nKindly avoid bright, neon, or overly casual attire to keep the evening elegant and sophisticated.",
   },
   {
     question: "When and where is the debut celebration?",
     answer:
-      `Kath's eighteenth debut is on ${siteConfig.ceremony.day}, ${siteConfig.wedding.date} at ${siteConfig.wedding.time} at ${siteConfig.wedding.venue}. The celebration will take place at ${siteConfig.ceremony.venue}.`,
+      `Kaith's eighteenth debut is on ${siteConfig.ceremony.day}, ${siteConfig.wedding.date} at ${siteConfig.wedding.time} at ${siteConfig.wedding.venue}. The celebration will take place at ${siteConfig.ceremony.venue}.`,
   },
   {
     question: "What time should I arrive?",
@@ -34,22 +34,22 @@ const faqItems: FAQItem[] = [
   {
     question: "When is the RSVP deadline?",
     answer:
-      "Kindly RSVP by June 1, 2026. Your response helps us prepare for Kath's special night. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
+      "Kindly RSVP by June 1, 2026. Your response helps us prepare for Kaith's special night. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
   },
   {
     question: "Do you have a gift registry?",
     answer:
-      "Your presence is the most precious gift for Kath's debut celebration. If you wish to share a token of love, we welcome monetary gifts that will help her pursue her dreams and aspirations. You can use the GCash QR code available in the Gift Registry section.",
+      "Your presence is the most precious gift for Kaith's debut celebration. If you wish to share a token of love, we welcome monetary gifts that will help her pursue her dreams and aspirations. You can use the GCash QR code available in the Gift Registry section.",
   },
   {
     question: "Is there parking available at the venue?",
     answer:
-      "Yes! Complimentary parking is available at De Guzman's Events Place. Just mention Kath's debut at the gate. We recommend arriving early to secure a spot.",
+      "Yes! Complimentary parking is available at De Guzman's Events Place. Just mention Kaith's debut at the gate. We recommend arriving early to secure a spot.",
   },
   {
     question: "Can I bring additional guests?",
     answer:
-      "We kindly ask that any additional guests be included in your RSVP so we can make proper arrangements. Please update your guest count when you submit your RSVP. Thank you for helping us create a perfect celebration for Kath!",
+      "We kindly ask that any additional guests be included in your RSVP so we can make proper arrangements. Please update your guest count when you submit your RSVP. Thank you for helping us create a perfect celebration for Kaith!",
   },
   {
     question: "What if I have dietary restrictions or allergies?",
@@ -59,7 +59,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can I take photos during the debut?",
     answer:
-      "Yes! We have a professional photographer, but you're welcome to capture moments throughout the evening. We'll have a dedicated time for group photos with Kath after the formal program.",
+      "Yes! We have a professional photographer, but you're welcome to capture moments throughout the evening. We'll have a dedicated time for group photos with Kaith after the formal program.",
   },
   {
     question: "What should I do if I need to cancel or update my RSVP?",
@@ -69,7 +69,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What happens during the 18 Candles and 18 Treasures ceremony?",
     answer:
-      "After the formal program, Kath will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood.",
+      "After the formal program, Kaith will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood.",
   },
   {
     question: "What time does the celebration end?",
@@ -170,7 +170,7 @@ export function FAQ() {
           Frequently Asked Questions
         </h2>
         <p className={`${inter.className} text-[11px] sm:text-xs md:text-sm lg:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
-          Everything you need to know about Kath's elegant debut celebration
+          Everything you need to know about Kaith's elegant debut celebration
         </p>
       </div>
 

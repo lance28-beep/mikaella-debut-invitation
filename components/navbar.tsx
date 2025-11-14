@@ -109,7 +109,7 @@ export function Navbar() {
               <div className="relative">
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold group-hover:text-[#FCE1B6] group-active:text-[#FCE1B6] transition-all duration-500 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] text-[#FFFFFF] group-hover:drop-shadow-[0_2px_15px_rgba(252,225,182,0.6)]">
                   <span className="relative inline-block">
-                    Kath is turning 18
+                    Kaith is turning 18
                     {/* Sparkle effects around the text - debut theme */}
                     <Sparkles 
                       size={8} 

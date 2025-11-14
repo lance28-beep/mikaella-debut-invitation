@@ -31,7 +31,7 @@ export function Registry() {
         <p
           className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
         >
-          Your presence is the most precious gift for Kath's debut celebration. If you wish to share a token of love,
+          Your presence is the most precious gift for Kaith's debut celebration. If you wish to share a token of love,
           we welcome your thoughtful contributions to help her pursue her dreams.
         </p>
       </div>
@@ -50,7 +50,7 @@ export function Registry() {
 
               <div className="max-w-2xl text-center space-y-3">
                 <p className={`${playfair.className} text-lg sm:text-xl md:text-2xl text-[#2E041A] leading-relaxed`}>
-                  "As Kath celebrates her debut, your presence is the greatest gift she treasures."
+                  "As Kaith celebrates her debut, your presence is the greatest gift she treasures."
                 </p>
                 <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/80 leading-relaxed`}>
                   Should you wish to share a token of love, we welcome monetary gifts that will help her pursue her
@@ -96,7 +96,7 @@ export function Registry() {
                 <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-3xl border-2 border-[#2E041A]/30 bg-white p-5 shadow-[0_16px_40px_rgba(46,4,26,0.3)]">
                   <Image
                     src="/QR/GCASH.png"
-                    alt="GCash QR code for Kath's debut gift fund"
+                    alt="GCash QR code for Kaith's debut gift fund"
                     fill
                     className="rounded-2xl object-contain"
                     sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
@@ -119,7 +119,7 @@ export function Registry() {
             </div>
 
             <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/80 text-center`}>
-              With heartfelt gratitude, Kath and family
+              With heartfelt gratitude, Kaith and family
             </p>
           </div>
         </div>

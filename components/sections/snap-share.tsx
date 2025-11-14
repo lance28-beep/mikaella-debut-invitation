@@ -17,8 +17,8 @@ export function SnapShare() {
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const hashtags = ["#KathAt18", "#KathDebut2026", "#ElegantCelebration", "#DebutanteKath"]
-  const shareText = `Celebrate Kath's elegant debut! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
+  const hashtags = ["#KaithAt18", "#KaithDebut2026", "#ElegantCelebration", "#DebutanteKaith"]
+  const shareText = `Celebrate Kaith's elegant debut! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 640)
@@ -62,7 +62,7 @@ export function SnapShare() {
     const canvas = document.getElementById("snapshare-qr") as HTMLCanvasElement | null
     if (!canvas) return
     const link = document.createElement("a")
-    link.download = "kath-debut-qr.png"
+    link.download = "kaith-debut-qr.png"
     link.href = canvas.toDataURL("image/png")
     link.click()
   }
@@ -102,7 +102,7 @@ export function SnapShare() {
             Capture & Share the Celebration
           </h2>
           <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
-            Capture the elegance of Kath's debut celebration. Share your favorite moments and help create beautiful memories
+            Capture the elegance of Kaith's debut celebration. Share your favorite moments and help create beautiful memories
             that will last a lifetime.
           </p>
           <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#FCE1B6]/60 to-transparent" />
@@ -121,7 +121,7 @@ export function SnapShare() {
                   Share Your Moments
                 </h3>
                 <p className={`${inter.className} text-[#2E041A]/80 text-xs sm:text-sm mb-5 leading-relaxed`}>
-                  Every photo you share helps create beautiful memories of Kath's debut celebration. Use these hashtags to join the conversation.
+                  Every photo you share helps create beautiful memories of Kaith's debut celebration. Use these hashtags to join the conversation.
                 </p>
                 <div className="space-y-3 mb-5">
                   {hashtags.map((hashtag) => (
@@ -175,7 +175,7 @@ export function SnapShare() {
                   </motion.div>
                 </div>
                 <p className={`${inter.className} text-[#2E041A]/70 text-[11px] sm:text-xs text-center mt-4 px-2`}>
-                  Tag your snapshots with our hashtags to be featured in Kath's keepsake gallery.
+                  Tag your snapshots with our hashtags to be featured in Kaith's keepsake gallery.
                 </p>
               </div>
             </div>
@@ -188,7 +188,7 @@ export function SnapShare() {
                   Share Her Debut Website
                 </h4>
                 <p className={`${inter.className} text-[#2E041A]/80 text-xs sm:text-sm mb-6 leading-relaxed`}>
-                  Spread the word about Kath's elegant debut celebration. Share this QR code with friends and family so they can join the celebration.
+                  Spread the word about Kaith's elegant debut celebration. Share this QR code with friends and family so they can join the celebration.
                 </p>
                 <div className="mx-auto inline-flex flex-col items-center bg-white p-5 sm:p-6 md:p-8 rounded-2xl shadow-md border-2 border-[#2E041A]/20 mb-5 flex-1 justify-center">
                   <div className="mb-4 p-3 sm:p-4 rounded-xl bg-[#2E041A]/5 border-2 border-[#2E041A]/10">
@@ -221,7 +221,7 @@ export function SnapShare() {
                 Share on Social Media
               </h5>
               <p className={`${inter.className} text-[#2E041A]/80 text-[11px] sm:text-xs text-center mb-5`}>
-                Help spread the word about Kath's debut celebration. Share the event across your favorite platforms.
+                Help spread the word about Kaith's debut celebration. Share the event across your favorite platforms.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <button
@@ -260,7 +260,7 @@ export function SnapShare() {
         <motion.div className="text-center mt-10 sm:mt-12" variants={fadeInUp}>
           <div className="bg-[#FCE1B6] rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-[#2E041A]/20 max-w-3xl mx-auto">
             <p className={`${inter.className} text-[#2E041A] text-sm sm:text-base md:text-lg leading-relaxed mb-4`}>
-              Thank you for helping make Kath's debut celebration memorable. Your photos and messages create beautiful memories
+              Thank you for helping make Kaith's debut celebration memorable. Your photos and messages create beautiful memories
               that will last a lifetime—keep sharing the joy throughout the evening.
             </p>
             <div className={`${inter.className} flex items-center justify-center gap-2 text-[#2E041A] text-[11px] sm:text-xs tracking-[0.35em] uppercase`}>

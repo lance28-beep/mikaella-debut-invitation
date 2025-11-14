@@ -1,7 +1,7 @@
 export const siteConfig = {
   couple: {
-    bride: "Kath Lorraine D. Andres",
-    brideNickname: "Kath",
+    bride: "Kaith Lorraine D. Andres",
+    brideNickname: "Kaith",
     groom: "",
     groomNickname: "",
   },

@@ -67,16 +67,16 @@ export default async function GalleryPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8">
               <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #KathAt18
+                #KaithAt18
               </span>
               <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #KathDebut2026
+                #KaithDebut2026
               </span>
               <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
                 #ElegantCelebration
               </span>
               <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #DebutanteKath
+                #DebutanteKaith
               </span>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">

@@ -132,7 +132,7 @@ export function Gallery() {
             Gallery of Gilded Evenings
           </h2>
           <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 mt-4 leading-relaxed`}>
-            Moments draped in wine red, gold, and black—Kath's debut glow, framed for you to relive.
+            Moments draped in wine red, gold, and black—Kaith's debut glow, framed for you to relive.
           </p>
         </div>
       </div>

@@ -15,19 +15,19 @@ export const metadata: Metadata = {
   keywords:
     "Kaith Lorraine D. Andres debut celebration, Filipino debut celebration, RSVP, debut celebration gallery, debut celebration message wall, debut celebration invitation, 2026 debut celebrations, debut celebration venues De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija, #KaithLorraineDAndresDebutCelebration",
   authors: [
-    { name: "Kath Lorraine D. Andres" },
-    { name: "Kath Lorraine D. Andres" },
+    { name: "Kaith Lorraine D. Andres" },
+    { name: "Kaith Lorraine D. Andres" },
   ],
-  creator: "Kath Lorraine D. Andres",
-  publisher: "Kath Lorraine D. Andres",
+  creator: "Kaith Lorraine D. Andres",
+  publisher: "Kaith Lorraine D. Andres",
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://kath-debut-celebration-invitation.vercel.app/"),
+  metadataBase: new URL("https://kaith-debut-celebration-invitation.vercel.app/"),
   alternates: {
-    canonical: "https://kath-debut-celebration-invitation.vercel.app/",
+    canonical: "https://kaith-debut-celebration-invitation.vercel.app/",
   },
   icons: {
     icon: [
@@ -52,25 +52,25 @@ export const metadata: Metadata = {
     title: "Kaith Lorraine D. Andres Debut Celebration | February 14, 2026",
     description:
       "Celebrate the union of Kaith Lorraine D. Andres on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://kath-debut-celebration-invitation.vercel.app/",
-    siteName: "Kath Lorraine D. Andres Debut Celebration ",
+    url: "https://kaith-debut-celebration-invitation.vercel.app/",
+    siteName: "Kaith Lorraine D. Andres Debut Celebration ",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://kath-debut-celebration-invitation.vercel.app/Details/image.png",
+        url: "https://kaith-debut-celebration-invitation.vercel.app/Details/image.png",
         width: 1200,
         height: 630,
-        alt: "Kath Lorraine D. Andres Debut Celebration - February 14, 2026",
+        alt: "Kaith Lorraine D. Andres Debut Celebration - February 14, 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kath Lorraine D. Andres Debut Celebration",
+    title: "Kaith Lorraine D. Andres Debut Celebration",
     description:
-      "You're invited to the debut celebration of Kath Lorraine D. Andres! February 14, 2026. RSVP, view our gallery, and leave your wishes! #KathLorraineDAndresDebutCelebration",
-    images: ["https://kath-debut-celebration-invitation.vercel.app/Details/image.png"],
+      "You're invited to the debut celebration of Kaith Lorraine D. Andres! February 14, 2026. RSVP, view our gallery, and leave your wishes! #KaithLorraineDAndresDebutCelebration",
+    images: ["https://kaith-debut-celebration-invitation.vercel.app/Details/image.png"],
     creator: "@airezandbrendan",
   },
   robots: {
@@ -107,21 +107,21 @@ export const metadata: Metadata = {
           },
         },
       ],
-      image: ["https://kath-debut-celebration-invitation.vercel.app/Details/image.png"],
+      image: ["https://kaith-debut-celebration-invitation.vercel.app/Details/image.png"],
       description:
-        "You're invited to the debut celebration of Kath Lorraine D. Andres! Join us on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. RSVP, view our gallery, and leave your wishes!",
+        "You're invited to the debut celebration of Kaith Lorraine D. Andres! Join us on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. RSVP, view our gallery, and leave your wishes!",
       organizer: {
         "@type": "Person",
-        name: "Kath Lorraine D. Andres",
+        name: "Kaith Lorraine D. Andres",
       },
       offers: {
         "@type": "Offer",
-        url: "https://kath-debut-celebration-invitation.vercel.app/",
+        url: "https://kaith-debut-celebration-invitation.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
       },
-      eventHashtag: "#KathLorraineDAndresDebutCelebration",
+      eventHashtag: "#KaithLorraineDAndresDebutCelebration",
     }),
   },
 }

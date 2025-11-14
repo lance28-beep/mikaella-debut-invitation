@@ -68,7 +68,7 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           No Gilded Wishes Yet
         </h3>
         <p className="text-sm sm:text-base lg:text-lg text-[#FCE1B6]/85 font-lora max-w-md mx-auto leading-relaxed">
-          Be the first to pen a wish for Kath's eighteenth celebration—your message will shine here in wine red and gold.
+          Be the first to pen a wish for Kaith's eighteenth celebration—your message will shine here in wine red and gold.
         </p>
         <div className="mt-6 sm:mt-8 flex justify-center">
           <div className="flex items-center gap-2 text-[#FCE1B6]/80">
@@ -150,7 +150,7 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           <div className="absolute inset-0 bg-gradient-to-br from-[#FCE1B6]/15 via-white/60 to-[#FCE1B6]/10 opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#2E041A]/5 via-transparent to-transparent" />
           <p className="relative text-xs sm:text-sm font-lora text-[#2E041A] leading-relaxed max-w-md font-medium">
-            Have a memory, blessing, or gilded wish for Kath? Add your letter above and let her feel your love on this crimson evening.
+            Have a memory, blessing, or gilded wish for Kaith? Add your letter above and let her feel your love on this crimson evening.
           </p>
           <div className="relative inline-flex items-center gap-2 text-[#2E041A] text-[10px] sm:text-xs tracking-[0.38em] uppercase font-semibold">
             <Sparkles className="h-4 w-4 animate-pulse text-[#2E041A]" />
