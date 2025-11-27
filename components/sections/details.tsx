@@ -8,7 +8,7 @@ import { Great_Vibes, Inter } from "next/font/google"
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
 
-const eventPalette = ["#372847", "#6A239E", "#DC96FD", "#FBF7F8"]
+const eventPalette = ["#C0C0C0", "#808080", "#FFB6C1"]
 
 export function Details() {
   const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set())
@@ -222,7 +222,7 @@ export function Details() {
                 <Palette className="h-6 w-6 text-[#DC96FD]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Attire & Palette</p>
-                  <h3 className="text-white text-base sm:text-lg font-semibold">Dress in Lavender Sky Dreams</h3>
+                  <h3 className="text-white text-base sm:text-lg font-semibold">Dress in Silver & Powder Pink</h3>
                 </div>
               </div>
               <ul className="space-y-2 text-xs sm:text-sm text-white/75 leading-relaxed">

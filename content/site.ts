@@ -35,16 +35,16 @@ export const siteConfig = {
   },
   dressCode: {
     theme: "Blooming in shades of lavender skies",
-    colors: ["#372847", "#6A239E", "#DC96FD", "#FBF7F8"],
+    colors: ["#C0C0C0", "#808080", "#FFB6C1"],
     sponsors: {
-      ladies: "Lavender or soft pink long gown",
-      gentlemen: "Lavender or silver suit",
+      ladies: "Powder pink or silver long gown",
+      gentlemen: "Silver or gray suit",
     },
     guests: {
-      ladies: "Lavender, soft pink, or neutral tones",
-      gentlemen: "Lavender, silver, or neutral suits",
+      ladies: "Powder pink, silver, or gray tones",
+      gentlemen: "Silver, gray, or neutral suits",
     },
-    note: "Kindly wear shades of lavender, soft pink, or neutral tones to match the dreamy lavender-sky theme.",
+    note: "Kindly wear shades of powder pink, silver, or gray tones to match the elegant color palette.",
   },
   narrative: `Blooming in shades of lavender skies
 
