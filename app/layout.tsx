@@ -1,33 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Great_Vibes, Inter } from "next/font/google"
+import { Great_Vibes, Inter, Imperial_Script } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Navbar } from "@/components/navbar"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
+const imperialScript = Imperial_Script({ subsets: ["latin"], weight: "400", variable: "--font-imperial-script" })
 
 export const metadata: Metadata = {
-  title: "Kaith Lorraine D. Andres - Debut Celebration",
+  title: "Mehai Jeffverly Servanda Debut Celebration | April 19, 2026 | Villa Anaya, Mangatarem",
   description:
-    "You're invited to the debut celebration of Kaith Lorraine D. Andres! Join us on December 28, 2025 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. RSVP, view the gallery, and leave your wishes!",
+    "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
   keywords:
-    "Kaith Lorraine D. Andres debut celebration, Filipino debut celebration, RSVP, debut celebration gallery, debut celebration message wall, debut celebration invitation, 2026 debut celebrations, debut celebration venues De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija, #KaithLorraineDAndresDebutCelebration",
+    "Mehai Jeffverly Servanda debut celebration, Filipino debut celebration, RSVP, debut celebration gallery, debut celebration message wall, debut celebration invitation, 2026 debut celebrations, debut celebration venues Villa Anaya, Mangatarem, Pangasinan, #MehaiJeffverlyServandaDebutCelebration",
   authors: [
-    { name: "Kaith Lorraine D. Andres" },
-    { name: "Kaith Lorraine D. Andres" },
+    { name: "Mehai Jeffverly Servanda" },
+    { name: "Mehai Jeffverly Servanda" },
   ],
-  creator: "Kaith Lorraine D. Andres",
-  publisher: "Kaith Lorraine D. Andres",
+  creator: "Mehai Jeffverly Servanda",
+  publisher: "Mehai Jeffverly Servanda",
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://kaith-debut-celebration-invitation.vercel.app/"),
+  metadataBase: new URL("https://mehai-debut-celebration-invitation.vercel.app/"),
   alternates: {
-    canonical: "https://kaith-debut-celebration-invitation.vercel.app/",
+    canonical: "https://mehai-debut-celebration-invitation.vercel.app/",
   },
   icons: {
     icon: [
@@ -49,29 +50,29 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Kaith Lorraine D. Andres Debut Celebration | February 14, 2026",
+    title: "Mehai Jeffverly Servanda Debut Celebration | April 19, 2026",
     description:
-      "Celebrate the union of Kaith Lorraine D. Andres on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://kaith-debut-celebration-invitation.vercel.app/",
-    siteName: "Kaith Lorraine D. Andres Debut Celebration ",
+      "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
+    url: "https://mehai-debut-celebration-invitation.vercel.app/",
+    siteName: "Mehai Jeffverly Servanda Debut Celebration",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://kaith-debut-celebration-invitation.vercel.app/Details/image.png",
+        url: "https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1",
         width: 1200,
         height: 630,
-        alt: "Kaith Lorraine D. Andres Debut Celebration - February 14, 2026",
+        alt: "Mehai Jeffverly Servanda Debut Celebration Invitation - April 19, 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaith Lorraine D. Andres Debut Celebration",
+    title: "Mehai Jeffverly Servanda Debut Celebration | April 19, 2026",
     description:
-      "You're invited to the debut celebration of Kaith Lorraine D. Andres! February 14, 2026. RSVP, view our gallery, and leave your wishes! #KaithLorraineDAndresDebutCelebration",
-    images: ["https://kaith-debut-celebration-invitation.vercel.app/Details/image.png"],
-    creator: "@airezandbrendan",
+      "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
+    images: ["https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1"],
+    creator: "@mehaijeffverly",
   },
   robots: {
     index: true,
@@ -91,38 +92,40 @@ export const metadata: Metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Event",
-      name: "Talitha & Karol Wedding",
-      startDate: "2026-02-14T14:00:00+08:00",
-      endDate: "2026-02-14T22:00:00+08:00",
+      name: "Mehai Jeffverly Servanda Debut Celebration",
+      startDate: "2026-04-19T17:30:00+08:00",
+      endDate: "2026-04-19T22:00:00+08:00",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: [
         {
           "@type": "Place",
-          name: "De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija",
+          name: "Villa Anaya",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Guimba, Nueva Ecija",
+            streetAddress: "Daan Kalikasan Road, Brgy. Parian",
+            addressLocality: "Mangatarem, Pangasinan",
             addressCountry: "PH",
           },
         },
       ],
-      image: ["https://kaith-debut-celebration-invitation.vercel.app/Details/image.png"],
+      image: ["https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1"],
       description:
-        "You're invited to the debut celebration of Kaith Lorraine D. Andres! Join us on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. RSVP, view our gallery, and leave your wishes!",
+        "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
       organizer: {
         "@type": "Person",
-        name: "Kaith Lorraine D. Andres",
+        name: "Mehai Jeffverly Servanda",
       },
       offers: {
         "@type": "Offer",
-        url: "https://kaith-debut-celebration-invitation.vercel.app/",
+        url: "https://mehai-debut-celebration-invitation.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
       },
-      eventHashtag: "#KaithLorraineDAndresDebutCelebration",
+      eventHashtag: "#MehaiJeffverlyServandaDebutCelebration",
     }),
+    "image": "https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1",
   },
 }
 
@@ -134,13 +137,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#0A3428" />
+        <meta name="theme-color" content="#6A239E" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet" />
         <link rel="preload" as="image" href="/mobile-background/DSCF2614-min.jpg" media="(max-width: 767px)" />
         <link rel="preload" as="image" href="/desktop-background/DSCF2444-min.jpg" media="(min-width: 768px)" />
       </head>
-      <body className={`${inter.variable} ${greatVibes.variable} font-inter antialiased text-foreground`}>
+      <body className={`${inter.variable} ${greatVibes.variable} ${imperialScript.variable} font-inter antialiased text-foreground`}>
         <Navbar />
         {children}
         <Analytics />

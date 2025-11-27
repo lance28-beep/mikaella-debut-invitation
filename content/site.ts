@@ -1,67 +1,61 @@
 export const siteConfig = {
   couple: {
-    bride: "Kaith Lorraine D. Andres",
-    brideNickname: "Kaith",
+    bride: "Mehai Jeffverly Servanda",
+    brideNickname: "Mehai",
     groom: "",
     groomNickname: "",
   },
   wedding: {
-    date: "February 14, 2026",
-    time: "3:00 PM",
-    venue: "De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija",
+    date: "April 19, 2026",
+    time: "5:30 PM",
+    venue: "Villa Anaya, Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan, Philippines",
     tagline: "is turning eighteen!",
-    theme: "Wine Red, Gold and Black",
-    motif: "Wine Red, Gold and Black",
+    theme: "Blooming in shades of lavender skies",
+    motif: "Plans gathered between purple daydreams and gloss-kissed mirrors.",
   },
   details: {
     rsvp: {
-      deadline: "May 20, 2026",
+      deadline: "April 12, 2026",
     },
   },
   ceremony: {
-    location: "De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija",
-    venue: "De Guzman's Events Place",
-    date: "February 14, 2026",
-    day: "Saturday",
-    time: "3:00 PM",
-    entourageTime: "3:00 PM",
-    guestsTime: "3:30 PM",
+    location: "Villa Anaya, Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan, Philippines",
+    venue: "Villa Anaya",
+    date: "April 19, 2026",
+    day: "Sunday",
+    time: "5:30 PM",
+    entourageTime: "5:00 PM",
+    guestsTime: "5:30 PM",
   },
   reception: {
-    location: "De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija",
-    venue: "De Guzman's Events Place",
-    date: "February 14, 2026",
-    time: "6:00 PM",
+    location: "Villa Anaya, Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan, Philippines",
+    venue: "Villa Anaya",
+    date: "April 19, 2026",
+    time: "7:00 PM",
   },
   dressCode: {
-    theme: "Wine Red, Gold and Black",
-    colors: ["#2E041A", "#8B4A6A", "#FCE1B6", "#000000"],
+    theme: "Blooming in shades of lavender skies",
+    colors: ["#372847", "#6A239E", "#DC96FD", "#FBF7F8"],
     sponsors: {
-      ladies: "Pure black long gown",
-      gentlemen: "Tuxedo",
+      ladies: "Lavender or soft pink long gown",
+      gentlemen: "Lavender or silver suit",
     },
     guests: {
-      ladies: "Pure black long gown",
-      gentlemen: "Tuxedo",
+      ladies: "Lavender, soft pink, or neutral tones",
+      gentlemen: "Lavender, silver, or neutral suits",
     },
-    note: "Kindly avoid casual attire and denim to keep the evening elegant.",
+    note: "Kindly wear shades of lavender, soft pink, or neutral tones to match the dreamy lavender-sky theme.",
   },
-  narrative: `In 2020, during the quiet days of the pandemic, fate found a way to bring two hearts together — one from Australia, and one from the Philippines. Through an online word game called Codenames, Brendan and Airez met. What started as playful teasing soon turned into long conversations, laughter, and a friendship that grew stronger with every passing day. \n
+  narrative: `Blooming in shades of lavender skies
 
-For years, they were just friends — two souls connected across miles and time zones. But even through screens, something beautiful began to bloom. Their bond deepened, their connection strengthened, and before they knew it, friendship had turned into love. \n
+Mehai envisions a future carried by silver wings—where the world unfurls beneath her like a map of endless possibilities. Since her very first breath, her heart has pulsed with wanderlust, whispering one steadfast dream: to become a flight attendant and greet every horizon with grace.
 
-Then came July 23, 2022 — the day they made it official in private. It was a quiet promise between two hearts who had found something rare and real — because for both Brendan and Airez, this was their first love. ❤️ \n
+Her universe glows in rich purples and soft shimmers, expressed not through journal pages but through the art of makeup—each brushstroke a quiet celebration of confidence and becoming.
 
-A few months later, on October 23, 2022, Brendan flew from Australia to the Philippines to finally meet Airez in person — and her family for the first time. That day was filled with emotions, laughter, and happy tears. It was also the day they made their relationship public, proudly sharing their love with the world after keeping it private for so long. \n
-
-In July 2025, their story reached a beautiful turning point. Brendan, together with his parents, returned to the Philippines to meet Airez’s family once again and proposed in front of them — a heartfelt moment that brought both families together in love and joy. \n
-
-From a simple online game to a love that grew through distance, patience, and faith — their journey is a beautiful reminder that true love knows no distance and always finds its way. \n
-
-And now, hand in hand, heart to heart, Brendan and Airez are ready to begin their forever — a lifetime of love, laughter, and endless “us.” ❤️`,
+Beyond her ambitions, she delights in discovering new things and savoring every vibrant moment of her teenage years with friends, family, and those who hold her closest. Her dreams shine warmly, rooted in love and the promise to rise high enough to make her parents proud.`,
   colors: {
-    primary: "#4e6dff",
-    secondary: "#9bb4ff",
+    primary: "#6A239E",
+    secondary: "#DC96FD",
   },
 }
 

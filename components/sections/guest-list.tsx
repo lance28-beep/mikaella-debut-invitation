@@ -138,7 +138,7 @@ export function GuestList() {
     if (!selectedGuest) return
 
     if (!formData.RSVP) {
-      setError("Please let us know if you can join Kaith's debut.")
+      setError("Please let us know if you can join Mehai's debut.")
       setTimeout(() => setError(null), 5000)
       return
     }
@@ -258,38 +258,38 @@ export function GuestList() {
       className="relative z-[60] overflow-visible py-16 sm:py-20 md:py-24 lg:py-28 bg-transparent"
     >
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
-          <div
-            className={`inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/20 bg-[#2E041A]/40 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6] ${inter.className}`}
-          >
+      <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-2 sm:space-y-4">
+        <div
+            className={`inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white ${inter.className}`}
+        >
             RSVP & Guestbook
           </div>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_40px_rgba(46,4,26,0.68)]`}
+            className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(46,4,26,0.68)]`}
           >
             Join Us in This Elegant Celebration
           </h2>
-          <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto leading-relaxed`}>
-            Search your name to confirm your presence at Kaith's debut. Your RSVP helps us create an evening of grace,
+          <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/85 max-w-xl sm:max-w-2xl mx-auto leading-relaxed`}>
+            Search your name to confirm your presence at Mehai's debut. Your RSVP helps us create an evening of grace,
             warmth, and cherished memories as we honor this milestone together.
           </p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16 px-2 sm:px-4 md:px-6">
-          <div className="absolute inset-0 -z-10 blur-3xl bg-[#2E041A]/20 opacity-60" />
-          <div className="relative overflow-visible rounded-[30px] border-2 border-[#2E041A]/20 bg-[#FCE1B6] shadow-[0_28px_75px_rgba(46,4,26,0.4)]">
-            <div className="relative p-5 sm:p-7 md:p-9 lg:p-10 space-y-6 sm:space-y-8" ref={searchRef}>
+        <div className="relative max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16 px-1.5 sm:px-4 md:px-6">
+          <div className="absolute inset-0 -z-10 blur-[72px] bg-[#140823]/60 opacity-70" />
+          <div className="relative overflow-visible rounded-[22px] sm:rounded-[30px] border border-white/20 bg-gradient-to-b from-[#1c0f2d] via-[#281238] to-[#3a1651] shadow-[0_25px_70px_rgba(6,0,20,0.55)]">
+            <div className="relative p-4 sm:p-7 md:p-8 lg:p-10 space-y-5 sm:space-y-8" ref={searchRef}>
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-[#2E041A] shadow-[0_12px_30px_rgba(46,4,26,0.35)]">
-                  <Search className="h-5 w-5 text-[#FCE1B6]" />
+                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl border border-white/25 bg-white/10 shadow-[0_12px_24px_rgba(6,0,20,0.55)]">
+                  <Search className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
                 <div>
-                  <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.38em] text-[#2E041A]/70`}>
+                  <p className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.3em] text-white/70`}>
                     Step 1
                   </p>
-                  <h3 className={`${playfair.className} text-lg sm:text-xl text-[#2E041A]`}>Find Your Name</h3>
-                  <p className={`${inter.className} text-xs sm:text-sm text-[#2E041A]/75`}>
+                  <h3 className={`${playfair.className} text-base sm:text-xl text-white`}>Find Your Name</h3>
+                  <p className={`${inter.className} text-[11px] sm:text-sm text-white/80`}>
                     Begin typing to see your RSVP details appear.
                   </p>
                 </div>
@@ -297,51 +297,51 @@ export function GuestList() {
 
               <div className="relative">
                 <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#2E041A]/40 pointer-events-none" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-white/50 pointer-events-none" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Type your name to find your invitation..."
-                    className={`${inter.className} w-full rounded-2xl border-2 border-[#2E041A]/30 bg-white px-12 py-4 text-sm sm:text-base text-[#2E041A] placeholder:text-[#2E041A]/50 shadow-[0_8px_20px_rgba(46,4,26,0.15)] focus:border-[#2E041A] focus:outline-none focus:ring-4 focus:ring-[#2E041A]/20 transition-all duration-300`}
+                    className={`${inter.className} w-full rounded-2xl border border-white/30 bg-white/5 px-11 py-3 text-sm sm:text-base text-white placeholder:text-white/50 shadow-[0_8px_20px_rgba(6,0,20,0.4)] focus:border-white focus:outline-none focus:ring-4 focus:ring-white/20 transition-all duration-300`}
                   />
                 </div>
 
                 {isSearching && filteredGuests.length > 0 && (
-                  <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border-2 border-[#2E041A]/30 bg-[#FCE1B6] shadow-[0_24px_60px_rgba(46,4,26,0.4)]">
+                  <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_24px_60px_rgba(6,0,20,0.55)]">
                     {filteredGuests.map((guest, index) => (
                       <button
                         key={`${guest.Name}-${index}`}
                         onClick={() => handleSearchSelect(guest)}
-                        className="group flex w-full items-center gap-3 px-4 py-4 text-left transition-all duration-300 hover:bg-[#2E041A]/10 border-b border-[#2E041A]/10 last:border-b-0"
+                        className="group flex w-full items-center gap-3 px-4 py-4 text-left transition-all duration-300 hover:bg-white/5 border-b border-white/10 last:border-b-0"
                       >
-                        <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#2E041A] shadow-[0_8px_20px_rgba(46,4,26,0.3)]">
-                          <User className="h-4 w-4 text-[#FCE1B6]" />
+                        <div className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 shadow-[0_8px_20px_rgba(6,0,20,0.5)]">
+                          <User className="h-4 w-4 text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className={`${playfair.className} text-sm sm:text-base text-[#2E041A] truncate group-hover:text-[#2E041A]/80`}>
+                          <p className={`${playfair.className} text-sm sm:text-base text-white truncate group-hover:text-white/80`}>
                             {guest.Name}
                           </p>
                           {guest.Email && guest.Email !== "Pending" && (
-                            <p className={`${inter.className} text-[11px] text-[#2E041A]/60 truncate`}>{guest.Email}</p>
+                            <p className={`${inter.className} text-[11px] text-white/70 truncate`}>{guest.Email}</p>
                           )}
                         </div>
-                        <Sparkles className="h-4 w-4 text-[#2E041A]/50 group-hover:text-[#2E041A] transition-colors" />
+                        <Sparkles className="h-4 w-4 text-white/60 group-hover:text-white transition-colors" />
                       </button>
                     ))}
                   </div>
                 )}
 
                 {searchQuery && filteredGuests.length === 0 && (
-                  <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border-2 border-[#2E041A]/30 bg-[#FCE1B6] shadow-[0_24px_60px_rgba(46,4,26,0.4)]">
+                  <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_24px_60px_rgba(6,0,20,0.55)]">
                     <div className="space-y-4 px-5 py-6">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2E041A] shadow-[0_12px_30px_rgba(46,4,26,0.35)]">
-                        <UserPlus className="h-5 w-5 text-[#FCE1B6]" />
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/25 bg-white/10 shadow-[0_12px_30px_rgba(6,0,20,0.55)]">
+                        <UserPlus className="h-5 w-5 text-white" />
                       </div>
                       <div className="space-y-2">
-                        <h4 className={`${playfair.className} text-lg text-[#2E041A]`}>Not seeing your name?</h4>
-                        <p className={`${inter.className} text-sm text-[#2E041A]/75 leading-relaxed`}>
-                          We'd be honored to have you join us. Send a request and we'll make sure you're part of Kaith's elegant debut celebration.
+                        <h4 className={`${playfair.className} text-lg text-white`}>Not seeing your name?</h4>
+                        <p className={`${inter.className} text-sm text-white/80 leading-relaxed`}>
+                          We'd be honored to have you join us. Send a request and we'll make sure you're part of Mehai's elegant debut celebration.
                         </p>
                       </div>
                       <Button
@@ -349,7 +349,7 @@ export function GuestList() {
                           setRequestFormData({ ...requestFormData, Name: searchQuery })
                           setShowRequestModal(true)
                         }}
-                        className="w-full rounded-2xl bg-[#2E041A] px-5 py-3 text-sm font-semibold text-[#FCE1B6] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(46,4,26,0.4)]"
+                        className="w-full rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-[0_12px_30px_rgba(6,0,20,0.6)]"
                       >
                         Request to Join the Celebration
                       </Button>
@@ -362,25 +362,25 @@ export function GuestList() {
         </div>
 
         {showModal && (
-          <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#2E041A]/80 backdrop-blur-sm p-1 sm:p-4">
-            <div className="relative w-full max-w-[92vw] sm:max-w-3xl overflow-hidden rounded-xl sm:rounded-[32px] border border-[#FCE1B6]/20 bg-[#FCE1B6] shadow-[0_35px_120px_rgba(46,4,26,0.75)]">
+          <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#05020d]/85 backdrop-blur-sm p-1 sm:p-4">
+            <div className="relative w-full max-w-[92vw] sm:max-w-3xl overflow-hidden rounded-xl sm:rounded-[32px] border border-white/15 bg-gradient-to-b from-[#140622] via-[#210f36] to-[#3a1651] shadow-[0_45px_140px_rgba(4,0,18,0.85)] text-white">
               <div className="relative flex flex-col">
-                <div className="relative overflow-hidden bg-[#2E041A] px-3 py-3 sm:px-8 sm:py-8">
+                <div className="relative overflow-hidden bg-white/5 backdrop-blur-xl px-3 py-3 sm:px-8 sm:py-8">
                   <div className="relative flex items-start justify-between gap-2 sm:gap-4">
                     <div className="flex-1 min-w-0 space-y-1.5 sm:space-y-3 pr-2">
-                      <div className="inline-flex items-center gap-1.5 rounded-full border border-[#FCE1B6]/30 bg-[#FCE1B6]/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-[11px] uppercase tracking-[0.42em] text-[#FCE1B6]">
+                      <div className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-[11px] uppercase tracking-[0.42em] text-white">
                         RSVP Update
                       </div>
-                      <h3 className={`${greatVibes.className} text-xl sm:text-3xl md:text-4xl text-[#FCE1B6] leading-tight`}>
+                      <h3 className={`${greatVibes.className} text-xl sm:text-3xl md:text-4xl text-white leading-tight`}>
                         Welcome, {selectedGuest?.Name?.split(" ")[0]}
                       </h3>
-                      <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-[#FCE1B6]/90 leading-relaxed`}>
-                        We're delighted to have you join us for Kaith's elegant debut celebration. Please confirm your attendance for this special evening.
+                      <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-white/85 leading-relaxed`}>
+                        We're delighted to have you join us for Mehai's elegant debut celebration. Please confirm your attendance for this special evening.
                       </p>
                     </div>
                     <button
                       onClick={handleCloseModal}
-                      className="rounded-full border border-[#FCE1B6]/30 bg-[#FCE1B6]/10 p-1.5 sm:p-2 text-[#FCE1B6] transition-colors hover:bg-[#FCE1B6]/20 flex-shrink-0 z-10"
+                      className="rounded-full border border-white/25 bg-white/10 p-1.5 sm:p-2 text-white transition-colors hover:bg-white/20 flex-shrink-0 z-10"
                       aria-label="Close modal"
                     >
                       <X className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -388,42 +388,42 @@ export function GuestList() {
                   </div>
                 </div>
 
-                <div className="relative max-h-[calc(100vh-120px)] sm:max-h-[70vh] overflow-y-auto px-3 py-3 sm:px-8 sm:py-8 bg-[#FCE1B6]">
+                <div className="relative max-h-[calc(100vh-120px)] sm:max-h-[70vh] overflow-y-auto px-3 py-3 sm:px-8 sm:py-8 text-white">
                   {hasResponded ? (
                     <div className="space-y-3 sm:space-y-6 text-center">
-                      <div className="mx-auto inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
-                        <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-[#2E041A]" />
+                      <div className="mx-auto inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border border-white/30 bg-white/10">
+                        <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
                       <div className="space-y-1.5 sm:space-y-2">
-                        <h4 className={`${playfair.className} text-lg sm:text-2xl text-[#2E041A]`}>Your RSVP is Confirmed</h4>
-                        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#2E041A]/80`}>
+                        <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>Your RSVP is Confirmed</h4>
+                        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-white/80`}>
                           Thank you for confirming your attendance. We're looking forward to celebrating this elegant evening with you.
                         </p>
                       </div>
                       {selectedGuest?.RSVP === "Yes" && (
-                        <div className="mx-auto max-w-sm rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-[#2E041A]/10 px-4 py-3 sm:px-6 sm:py-4">
-                          <p className={`${inter.className} text-[9px] sm:text-[11px] uppercase tracking-[0.38em] text-[#2E041A]/70`}>
+                        <div className="mx-auto max-w-sm rounded-lg sm:rounded-2xl border border-white/25 bg-white/5 px-4 py-3 sm:px-6 sm:py-4">
+                          <p className={`${inter.className} text-[9px] sm:text-[11px] uppercase tracking-[0.38em] text-white/70`}>
                             Party Count
                           </p>
-                          <p className={`${playfair.className} text-xl sm:text-3xl text-[#2E041A]`}>
+                          <p className={`${playfair.className} text-xl sm:text-3xl text-white`}>
                             {selectedGuest.Guest || "1"}{" "}
                             {(parseInt(String(selectedGuest.Guest || "1")) || 1) === 1 ? "Guest" : "Guests"}
                           </p>
                         </div>
                       )}
                       {selectedGuest?.Message && selectedGuest.Message.trim() !== "" && (
-                        <div className="mx-auto max-w-lg rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-[#2E041A]/10 px-4 py-3 sm:px-6 sm:py-4 text-left">
-                          <p className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]/70`}>
-                            Your Note for Kaith
+                        <div className="mx-auto max-w-lg rounded-lg sm:rounded-2xl border border-white/25 bg-white/5 px-4 py-3 sm:px-6 sm:py-4 text-left">
+                          <p className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/70`}>
+                            Your Note for Mehai
                           </p>
-                          <p className={`${inter.className} mt-1.5 sm:mt-2 text-xs sm:text-sm text-[#2E041A] italic`}>
+                          <p className={`${inter.className} mt-1.5 sm:mt-2 text-xs sm:text-sm text-white italic`}>
                             "{selectedGuest.Message}"
                           </p>
                         </div>
                       )}
                       <Button
                         onClick={handleCloseModal}
-                        className="rounded-lg sm:rounded-2xl bg-[#2E041A] px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-[#FCE1B6] transition-transform duration-300 hover:-translate-y-1"
+                        className="rounded-lg sm:rounded-2xl bg-white/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-1 hover:bg-white/20"
                       >
                         Close
                       </Button>
@@ -438,25 +438,25 @@ export function GuestList() {
                     >
                       <div className="space-y-1.5 sm:space-y-2">
                         <label
-                          className={`${inter.className} flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}
+                          className={`${inter.className} flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}
                         >
-                          <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-[#2E041A]" />
+                          <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                           Will you be joining us?
                         </label>
                         <div className="grid grid-cols-2 gap-2 sm:gap-3">
                           <button
                             type="button"
                             onClick={() => setFormData((prev) => ({ ...prev, RSVP: "Yes" }))}
-                            className={`rounded-lg sm:rounded-2xl border-2 px-2.5 py-3 sm:px-4 sm:py-5 transition-all ${
+                            className={`rounded-lg sm:rounded-2xl border px-2.5 py-3 sm:px-4 sm:py-5 transition-all ${
                               formData.RSVP === "Yes"
-                                ? "border-[#2E041A] bg-[#2E041A] text-[#FCE1B6]"
-                                : "border-[#2E041A] bg-transparent text-[#2E041A] hover:bg-[#2E041A]/10"
+                                ? "border-white bg-white/10 text-white"
+                                : "border-white/30 bg-transparent text-white hover:bg-white/5"
                             }`}
                           >
                             <div className="flex items-center justify-center gap-1 sm:gap-2">
                               <CheckCircle
                                 className={`h-4 w-4 sm:h-5 sm:w-5 ${
-                                  formData.RSVP === "Yes" ? "text-[#FCE1B6]" : "text-[#2E041A]"
+                                  formData.RSVP === "Yes" ? "text-white" : "text-white/70"
                                 }`}
                               />
                               <span className={`${playfair.className} text-xs sm:text-lg`}>Yes, I'll attend</span>
@@ -465,16 +465,16 @@ export function GuestList() {
                           <button
                             type="button"
                             onClick={() => setFormData((prev) => ({ ...prev, RSVP: "No" }))}
-                            className={`rounded-lg sm:rounded-2xl border-2 px-2.5 py-3 sm:px-4 sm:py-5 transition-all ${
+                            className={`rounded-lg sm:rounded-2xl border px-2.5 py-3 sm:px-4 sm:py-5 transition-all ${
                               formData.RSVP === "No"
-                                ? "border-[#2E041A] bg-[#2E041A] text-[#FCE1B6]"
-                                : "border-[#2E041A] bg-transparent text-[#2E041A] hover:bg-[#2E041A]/10"
+                                ? "border-white bg-white/10 text-white"
+                                : "border-white/30 bg-transparent text-white hover:bg-white/5"
                             }`}
                           >
                             <div className="flex items-center justify-center gap-1 sm:gap-2">
                               <XCircle
                                 className={`h-4 w-4 sm:h-5 sm:w-5 ${
-                                  formData.RSVP === "No" ? "text-[#FCE1B6]" : "text-[#2E041A]"
+                                  formData.RSVP === "No" ? "text-white" : "text-white/70"
                                 }`}
                               />
                               <span className={`${playfair.className} text-xs sm:text-lg`}>Send my regards</span>
@@ -486,7 +486,7 @@ export function GuestList() {
                       {formData.RSVP === "Yes" && (
                         <div className="space-y-1.5 sm:space-y-2">
                           <label
-                            className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}
+                            className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}
                           >
                             How many are joining you?
                           </label>
@@ -497,36 +497,36 @@ export function GuestList() {
                             onChange={handleFormChange}
                             min="1"
                             required
-                            className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20`}
+                            className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20`}
                             placeholder="Enter your guest count"
                           />
                         </div>
                       )}
 
                       <div className="space-y-1.5 sm:space-y-2">
-                        <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
-                          Message for Kaith <span className="text-[#2E041A]/60">(optional)</span>
+                        <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
+                          Message for Mehai <span className="text-white/60">(optional)</span>
                         </label>
                         <textarea
                           name="Message"
                           value={formData.Message}
                           onChange={handleFormChange}
                           rows={3}
-                          className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20 resize-none`}
-                          placeholder="Share a heartfelt message or wish for Kaith on her special day..."
+                          className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 resize-none`}
+                          placeholder="Share a heartfelt message or wish for Mehai on her special day..."
                         />
                       </div>
 
                       <div className="space-y-1.5 sm:space-y-2">
-                        <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
-                          Email Address <span className="text-[#2E041A]/60">(optional)</span>
+                        <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
+                          Email Address <span className="text-white/60">(optional)</span>
                         </label>
                         <input
                           type="email"
                           name="Email"
                           value={formData.Email}
                           onChange={handleFormChange}
-                          className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20`}
+                          className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20`}
                           placeholder="For important updates about the celebration"
                         />
                       </div>
@@ -535,7 +535,7 @@ export function GuestList() {
                         <Button
                           type="submit"
                           disabled={isLoading}
-                          className="w-full rounded-lg sm:rounded-2xl bg-[#2E041A] px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-[#FCE1B6] transition-transform duration-300 hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-70"
+                          className="w-full rounded-lg sm:rounded-2xl bg-white/10 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-1 hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-70"
                         >
                           {isLoading ? (
                             <div className="flex items-center justify-center gap-1.5 sm:gap-2">
@@ -555,14 +555,14 @@ export function GuestList() {
                 </div>
 
                 {success && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-[#FCE1B6]/95 backdrop-blur-xl">
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#1a0d2f]/90 backdrop-blur-xl">
                     <div className="space-y-3 sm:space-y-4 text-center px-3">
-                      <div className="mx-auto inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
-                        <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-[#2E041A]" />
+                      <div className="mx-auto inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-white/30 bg-white/10">
+                        <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                       </div>
-                      <h4 className={`${playfair.className} text-lg sm:text-2xl text-[#2E041A]`}>RSVP Successfully Submitted</h4>
-                      <p className={`${inter.className} text-xs sm:text-sm text-[#2E041A]/80`}>
-                        Thank you for being part of Kaith's elegant debut celebration. This window will close automatically.
+                      <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>RSVP Successfully Submitted</h4>
+                      <p className={`${inter.className} text-xs sm:text-sm text-white/80`}>
+                        Thank you for being part of Mehai's elegant debut celebration. This window will close automatically.
                       </p>
                     </div>
                   </div>
@@ -570,9 +570,9 @@ export function GuestList() {
 
                 {error && !success && (
                   <div className="px-3 pb-3 sm:px-5 sm:pb-6">
-                    <div className="rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-[#2E041A]/10 px-3 py-2 sm:px-4 sm:py-3">
-                      <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#2E041A]">
-                        <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#2E041A] flex-shrink-0" />
+                    <div className="rounded-lg sm:rounded-2xl border border-white/25 bg-white/5 px-3 py-2 sm:px-4 sm:py-3">
+                      <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-white">
+                        <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white flex-shrink-0" />
                         <span>{error}</span>
                       </div>
                     </div>
@@ -584,25 +584,25 @@ export function GuestList() {
         )}
 
         {showRequestModal && (
-          <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#2E041A]/80 backdrop-blur-sm p-1 sm:p-4">
-            <div className="relative w-full max-w-[92vw] sm:max-w-3xl overflow-hidden rounded-xl sm:rounded-[32px] border border-[#FCE1B6]/20 bg-[#FCE1B6] shadow-[0_35px_120px_rgba(46,4,26,0.75)]">
+          <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#05020d]/85 backdrop-blur-sm p-1 sm:p-4">
+            <div className="relative w-full max-w-[92vw] sm:max-w-3xl overflow-hidden rounded-xl sm:rounded-[32px] border border-white/15 bg-gradient-to-b from-[#140622] via-[#210f36] to-[#3a1651] shadow-[0_45px_140px_rgba(4,0,18,0.85)] text-white">
               <div className="relative flex flex-col">
-                <div className="relative overflow-hidden bg-[#2E041A] px-3 py-3 sm:px-8 sm:py-8">
+                <div className="relative overflow-hidden bg-white/5 backdrop-blur-xl px-3 py-3 sm:px-8 sm:py-8">
                   <div className="relative flex items-start justify-between gap-2 sm:gap-4">
                     <div className="flex-1 min-w-0 space-y-1.5 sm:space-y-3 pr-2">
-                      <div className="inline-flex items-center gap-1.5 rounded-full border border-[#FCE1B6]/30 bg-[#FCE1B6]/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-[11px] uppercase tracking-[0.42em] text-[#FCE1B6]">
+                      <div className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-[11px] uppercase tracking-[0.42em] text-white">
                         Join the Celebration
                       </div>
-                      <h3 className={`${greatVibes.className} text-xl sm:text-3xl md:text-4xl text-[#FCE1B6] leading-tight`}>
+                      <h3 className={`${greatVibes.className} text-xl sm:text-3xl md:text-4xl text-white leading-tight`}>
                         Join Our Celebration
                       </h3>
-                      <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-[#FCE1B6]/90 leading-relaxed`}>
-                        We'd be honored to have you join us for Kaith's debut. Share your details and we'll reach out to confirm your place at this elegant celebration.
+                      <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-white/85 leading-relaxed`}>
+                        We'd be honored to have you join us for Mehai's debut. Share your details and we'll reach out to confirm your place at this elegant celebration.
                       </p>
                     </div>
                     <button
                       onClick={handleCloseRequestModal}
-                      className="rounded-full border border-[#FCE1B6]/30 bg-[#FCE1B6]/10 p-1.5 sm:p-2 text-[#FCE1B6] transition-colors hover:bg-[#FCE1B6]/20 flex-shrink-0 z-10"
+                      className="rounded-full border border-white/25 bg-white/10 p-1.5 sm:p-2 text-white transition-colors hover:bg-white/20 flex-shrink-0 z-10"
                       aria-label="Close modal"
                     >
                       <X className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -610,7 +610,7 @@ export function GuestList() {
                   </div>
                 </div>
 
-                <div className="relative max-h-[calc(100vh-120px)] sm:max-h-[70vh] overflow-y-auto px-3 py-3 sm:px-8 sm:py-8 bg-[#FCE1B6]">
+                <div className="relative max-h-[calc(100vh-120px)] sm:max-h-[70vh] overflow-y-auto px-3 py-3 sm:px-8 sm:py-8 text-white">
                   <form
                     onSubmit={(e) => {
                       e.preventDefault()
@@ -619,7 +619,7 @@ export function GuestList() {
                     className="space-y-3 sm:space-y-5"
                   >
                     <div className="space-y-1.5 sm:space-y-2">
-                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
+                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
                         Full Name *
                       </label>
                       <input
@@ -628,41 +628,41 @@ export function GuestList() {
                         value={requestFormData.Name}
                         onChange={(e) => setRequestFormData({ ...requestFormData, Name: e.target.value })}
                         required
-                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20`}
+                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20`}
                         placeholder="Tell us who's hoping to join"
                       />
                     </div>
 
                     <div className="space-y-1.5 sm:space-y-2">
-                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
-                        Email Address <span className="text-[#2E041A]/60">(optional)</span>
+                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
+                        Email Address <span className="text-white/60">(optional)</span>
                       </label>
                       <input
                         type="email"
                         name="Email"
                         value={requestFormData.Email}
                         onChange={(e) => setRequestFormData({ ...requestFormData, Email: e.target.value })}
-                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20`}
+                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20`}
                         placeholder="Where can we reach you?"
                       />
                     </div>
 
                     <div className="space-y-1.5 sm:space-y-2">
-                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
-                        Phone Number <span className="text-[#2E041A]/60">(optional)</span>
+                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
+                        Phone Number <span className="text-white/60">(optional)</span>
                       </label>
                       <input
                         type="tel"
                         name="Phone"
                         value={requestFormData.Phone}
                         onChange={(e) => setRequestFormData({ ...requestFormData, Phone: e.target.value })}
-                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20`}
+                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20`}
                         placeholder="Add a number if that's easier"
                       />
                     </div>
 
                     <div className="space-y-1.5 sm:space-y-2">
-                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
+                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
                         Number of Guests *
                       </label>
                       <input
@@ -672,22 +672,22 @@ export function GuestList() {
                         onChange={(e) => setRequestFormData({ ...requestFormData, Guest: e.target.value })}
                         min="1"
                         required
-                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20`}
+                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20`}
                         placeholder="How many will celebrate with you?"
                       />
                     </div>
 
                     <div className="space-y-1.5 sm:space-y-2">
-                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-[#2E041A]`}>
-                        Tell us a little more <span className="text-[#2E041A]/60">(optional)</span>
+                      <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
+                        Tell us a little more <span className="text-white/60">(optional)</span>
                       </label>
                       <textarea
                         name="Message"
                         value={requestFormData.Message}
                         onChange={(e) => setRequestFormData({ ...requestFormData, Message: e.target.value })}
                         rows={3}
-                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-[#2E041A] placeholder:text-[#2E041A]/50 focus:border-[#2E041A] focus:outline-none focus:ring-2 focus:ring-[#2E041A]/20 resize-none`}
-                        placeholder="Share how you know Kaith or what you're most looking forward to at her debut..."
+                        className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 resize-none`}
+                        placeholder="Share how you know Mehai or what you're most looking forward to at her debut..."
                       />
                     </div>
 
@@ -695,7 +695,7 @@ export function GuestList() {
                       <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full rounded-lg sm:rounded-2xl bg-[#2E041A] px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-[#FCE1B6] transition-transform duration-300 hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-70"
+                        className="w-full rounded-lg sm:rounded-2xl bg-white/10 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-1 hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-70"
                       >
                         {isLoading ? (
                           <div className="flex items-center justify-center gap-1.5 sm:gap-2">
@@ -713,13 +713,13 @@ export function GuestList() {
                   </form>
 
                   {requestSuccess && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-[#FCE1B6]/95 backdrop-blur-xl">
+                    <div className="absolute inset-0 flex items-center justify-center bg-[#1a0d2f]/90 backdrop-blur-xl">
                       <div className="space-y-3 sm:space-y-4 text-center px-3">
-                        <div className="mx-auto inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
-                          <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-[#2E041A]" />
+                        <div className="mx-auto inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-white/30 bg-white/10">
+                          <CheckCircle className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                         </div>
-                        <h4 className={`${playfair.className} text-lg sm:text-2xl text-[#2E041A]`}>Request Received</h4>
-                        <p className={`${inter.className} text-xs sm:text-sm text-[#2E041A]/80`}>
+                        <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>Request Received</h4>
+                        <p className={`${inter.className} text-xs sm:text-sm text-white/80`}>
                           Thank you for your interest in joining us. We'll review your request and reach out to confirm your place at this elegant celebration.
                         </p>
                       </div>
@@ -728,9 +728,9 @@ export function GuestList() {
 
                   {error && !requestSuccess && (
                     <div className="px-3 pb-3 sm:px-5 sm:pb-6">
-                      <div className="rounded-lg sm:rounded-2xl border-2 border-[#2E041A] bg-[#2E041A]/10 px-3 py-2 sm:px-4 sm:py-3">
-                        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#2E041A]">
-                          <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#2E041A] flex-shrink-0" />
+                      <div className="rounded-lg sm:rounded-2xl border border-white/25 bg-white/5 px-3 py-2 sm:px-4 sm:py-3">
+                        <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-white">
+                          <AlertCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white flex-shrink-0" />
                           <span>{error}</span>
                         </div>
                       </div>

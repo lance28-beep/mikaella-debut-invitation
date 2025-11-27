@@ -119,7 +119,7 @@ export function Entourage() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-                  className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#2E041A] font-semibold mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
+                  className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#372847] font-semibold mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
       >
         {children}
       </h3>
@@ -142,11 +142,11 @@ export function Entourage() {
     return (
       <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 leading-relaxed`}
       >
-        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#2E041A] ${textAlign}`}>
+        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#372847] ${textAlign}`}>
           {member.Name}
         </p>
         {showRole && member.RoleTitle && (
-          <p className={`${inter.className} text-[10px] sm:text-[11px] md:text-xs font-normal text-[#2E041A]/70 mt-0.5 leading-snug ${textAlign}`}>
+          <p className={`${inter.className} text-[10px] sm:text-[11px] md:text-xs font-normal text-[#372847]/70 mt-0.5 leading-snug ${textAlign}`}>
             {member.RoleTitle}
           </p>
         )}
@@ -206,7 +206,7 @@ export function Entourage() {
   const renderDivider = (categoryIndex: number) =>
     categoryIndex > 0 && (
       <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-        <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#2E041A]/20 to-transparent" />
+        <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#372847]/20 to-transparent" />
       </div>
     )
 
@@ -217,30 +217,30 @@ export function Entourage() {
     >
 
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/20 bg-[#2E041A]/40 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6]">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
           The Entourage
         </div>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_48px_rgba(46,4,26,0.68)] mt-4`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(10,0,25,0.75)] mt-4`}
         >
           Honored Guests & Special Roles
         </h2>
         <p
-          className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
+          className={`${inter.className} text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
         >
-          Every name holds a special place in Kaith's debut celebration—friends, family, and mentors who help make this milestone moment unforgettable.
+          Every name is a lavender thread in Mehai’s story—family, friends, and mentors who steady her steps, celebrate her glow, and make this milestone unforgettable.
         </p>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="relative bg-[#FCE1B6] border-2 border-[#2E041A]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(46,4,26,0.45)] overflow-hidden">
-          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-[#2E041A]/20 rounded-lg sm:rounded-xl pointer-events-none" />
+        <div className="relative bg-white border-2 border-[#372847]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(46,4,26,0.45)] overflow-hidden">
+          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-[#372847]/20 rounded-lg sm:rounded-xl pointer-events-none" />
           <div className="relative p-5 sm:p-7 md:p-9 lg:p-12">
             {isLoading ? (
               <div className="flex items-center justify-center py-24">
                 <div className="flex flex-col items-center gap-4">
-                  <Loader2 className="h-12 w-12 animate-spin text-[#2E041A]" />
-                  <span className={`${inter.className} text-[#2E041A]/80 text-lg`}>
+                  <Loader2 className="h-12 w-12 animate-spin text-[#372847]" />
+                  <span className={`${inter.className} text-[#372847]/80 text-lg`}>
                     Loading the entourage…
                   </span>
                 </div>
@@ -251,7 +251,7 @@ export function Entourage() {
                   <p className={`${inter.className} text-red-600 text-lg mb-2`}>{error}</p>
                   <button
                     onClick={fetchEntourage}
-                    className={`${playfair.className} text-[#2E041A] hover:text-[#2E041A]/70 transition-colors underline`}
+                    className={`${playfair.className} text-[#372847] hover:text-[#372847]/70 transition-colors underline`}
                   >
                     Try again
                   </button>
@@ -259,8 +259,8 @@ export function Entourage() {
               </div>
             ) : entourage.length === 0 ? (
               <div className="text-center py-24">
-                <Users className="h-16 w-16 text-[#2E041A]/30 mx-auto mb-4" />
-                <p className={`${inter.className} text-[#2E041A]/70 text-lg`}>
+                <Users className="h-16 w-16 text-[#372847]/30 mx-auto mb-4" />
+                <p className={`${inter.className} text-[#372847]/70 text-lg`}>
                   The entourage list will be available soon.
                 </p>
               </div>
@@ -453,7 +453,7 @@ export function Entourage() {
                     return (
                       <div key={category}>
                         <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                          <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#2E041A]/20 to-transparent" />
+                          <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#372847]/20 to-transparent" />
                         </div>
                         <TwoColumnLayout singleTitle={category} centerContent>
                           {(() => {
@@ -499,3 +499,4 @@ export function Entourage() {
     </section>
   )
 }
+

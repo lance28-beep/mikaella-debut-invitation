@@ -21,14 +21,10 @@ const inter = Inter({
 })
 
 const galleryItems = [
-  { image: "/desktop-background/image (1).jpg", text: "Wine-red Reverie" },
-  { image: "/desktop-background/image (2).jpg", text: "Golden Light" },
-  { image: "/desktop-background/image (3).jpg", text: "Velvet Steps" },
-  { image: "/desktop-background/image (4).jpg", text: "Gilded Whispers" },
-  { image: "/desktop-background/image (5).jpg", text: "Crimson Glow" },
-  { image: "/desktop-background/image (6).jpg", text: "Evening Poise" },
-  { image: "/desktop-background/image (7).jpg", text: "Radiant Silhouette" },
-  { image: "/desktop-background/image (3).jpg", text: "Crimson Glow" },
+  { image: "/Debutant/debutant.png", text: "Lavender Dreams" },
+  { image: "/Debutant/debutant2.png", text: "Purple Radiance" },
+  { image: "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg", text: "Soft Elegance" },
+  { image: "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg", text: "Soft Elegance" },
 ]
 
 const tileLayouts = [
@@ -54,6 +50,7 @@ export function Gallery() {
   const [pinchStartScale, setPinchStartScale] = useState(1)
   const [lastTap, setLastTap] = useState(0)
   const [panStart, setPanStart] = useState<{ x: number; y: number; panX: number; panY: number } | null>(null)
+  const [showComingSoon, setShowComingSoon] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 600)
@@ -115,24 +112,24 @@ export function Gallery() {
   return (
     <Section
       id="gallery"
-      className="relative bg-gradient-to-b from-[#1A0310] via-[#2E041A] to-[#1A0310] py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#241135] via-[#372847] to-[#241135] py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(252,225,182,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_25%,rgba(46,4,26,0.5),transparent_45%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_85%,rgba(46,4,26,0.35),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(220,150,253,0.18),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_25%,rgba(106,35,158,0.38),transparent_45%)] mix-blend-screen" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_85%,rgba(55,40,71,0.45),transparent_50%)]" />
       </div>
 
       <div className="relative z-10 text-center px-4">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#FCE1B6]/75 mb-3">Crimson keepsakes</p>
+          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#DC96FD]/75 mb-3">Lavender keepsakes</p>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-[#FCE1B6]`}
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-[#DC96FD]`}
           >
-            Gallery of Gilded Evenings
+            Gallery of Midnight Petals
           </h2>
-          <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 mt-4 leading-relaxed`}>
-            Moments draped in wine red, gold, and black—Kaith's debut glow, framed for you to relive.
+          <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FBF7F8]/90 mt-4 leading-relaxed`}>
+            Moments brushed in lilac light, champagne shimmer, and violet dusk—Mehai’s debut dreams, carefully framed for you to relive.
           </p>
         </div>
       </div>
@@ -141,7 +138,7 @@ export function Gallery() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
           {isLoading ? (
             <div className="flex items-center justify-center h-64 sm:h-80 md:h-96">
-              <div className="w-14 h-14 border-[3px] border-[#2E041A]/30 border-t-[#FCE1B6] rounded-full animate-spin" />
+              <div className="w-14 h-14 border-[3px] border-[#372847]/30 border-t-[#DC96FD] rounded-full animate-spin" />
             </div>
           ) : (
             <div className="mx-auto max-w-5xl w-full px-1">
@@ -150,7 +147,7 @@ export function Gallery() {
                   <button
                     key={item.image + index}
                     type="button"
-                    className={`group relative min-h-[190px] sm:min-h-0 overflow-hidden rounded-2xl sm:rounded-3xl border border-[#FCE1B6]/20 bg-[#2E041A]/60 backdrop-blur-sm shadow-[0_18px_35px_rgba(46,4,26,0.45)] transition-all duration-500 hover:shadow-[0_26px_50px_rgba(46,4,26,0.65)] hover:border-[#FCE1B6]/40 ${tileLayouts[index] ?? ""}`}
+                    className={`group relative min-h-[190px] sm:min-h-0 overflow-hidden rounded-2xl sm:rounded-3xl border border-[#DC96FD]/20 bg-[#2B1A3F]/70 backdrop-blur-sm shadow-[0_18px_35px_rgba(19,7,26,0.45)] transition-all duration-500 hover:shadow-[0_26px_50px_rgba(19,7,26,0.65)] hover:border-[#DC96FD]/40 ${tileLayouts[index] ?? ""}`}
                     onClick={() => {
                       setSelectedImage(item)
                       setCurrentIndex(index)
@@ -158,7 +155,7 @@ export function Gallery() {
                     aria-label={`Open image ${index + 1}`}
                   >
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="absolute -inset-5 sm:-inset-6 bg-gradient-to-br from-[#FCE1B6]/25 via-transparent to-[#2E041A]/30 blur-2xl sm:blur-3xl" />
+                      <div className="absolute -inset-5 sm:-inset-6 bg-gradient-to-br from-[#DC96FD]/25 via-transparent to-[#372847]/30 blur-2xl sm:blur-3xl" />
                     </div>
 
                     <div className="relative h-full w-full overflow-hidden">
@@ -169,12 +166,12 @@ export function Gallery() {
                         decoding="async"
                         className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2E041A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#241135]/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
-                    <div className="absolute bottom-2 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between text-[#FCE1B6]/95">
+                    <div className="absolute bottom-2 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between text-[#FBF7F8]">
                       <span className={`${playfair.className} text-[9px] sm:text-xs tracking-[0.25em] uppercase`}>{item.text}</span>
-                      <span className="text-[8px] sm:text-[10px] tracking-[0.38em] uppercase text-[#FCE1B6]/70">{index + 1}/{galleryItems.length}</span>
+                      <span className="text-[8px] sm:text-[10px] tracking-[0.38em] uppercase text-[#FBF7F8]/70">{index + 1}/{galleryItems.length}</span>
                     </div>
                   </button>
                 ))}
@@ -186,7 +183,7 @@ export function Gallery() {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[9999] bg-[#1A0310]/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4"
+          className="fixed inset-0 z-[9999] bg-[#11091d]/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4"
           onClick={() => {
             setSelectedImage(null)
             resetZoom()
@@ -246,8 +243,8 @@ export function Gallery() {
             }}
           >
             <div className="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-3 sm:px-6 pt-3 sm:pt-6">
-              <div className="bg-[#2E041A]/80 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-[#FCE1B6]/30 shadow-[0_12px_24px_rgba(5,1,4,0.45)]">
-                <span className="text-xs sm:text-sm font-medium text-[#FCE1B6] tracking-[0.18em]">
+              <div className="bg-[#372847]/80 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-[#DC96FD]/30 shadow-[0_12px_24px_rgba(5,1,4,0.45)]">
+                <span className="text-xs sm:text-sm font-medium text-[#DC96FD] tracking-[0.18em]">
                   {currentIndex + 1} / {galleryItems.length}
                 </span>
               </div>
@@ -261,10 +258,10 @@ export function Gallery() {
                     navigateImage("prev")
                     resetZoom()
                   }}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-[#2E041A]/70 hover:bg-[#2E041A]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#FCE1B6]/30 hover:border-[#FCE1B6]/60"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-[#372847]/70 hover:bg-[#372847]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#DC96FD]/30 hover:border-[#DC96FD]/60"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft size={24} className="sm:w-7 sm:h-7 text-[#FCE1B6]" />
+                  <ChevronLeft size={24} className="sm:w-7 sm:h-7 text-[#DC96FD]" />
                 </button>
 
                 <button
@@ -273,10 +270,10 @@ export function Gallery() {
                     navigateImage("next")
                     resetZoom()
                   }}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-[#2E041A]/70 hover:bg-[#2E041A]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#FCE1B6]/30 hover:border-[#FCE1B6]/60"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-[#372847]/70 hover:bg-[#372847]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#DC96FD]/30 hover:border-[#DC96FD]/60"
                   aria-label="Next image"
                 >
-                  <ChevronRight size={24} className="sm:w-7 sm:h-7 text-[#FCE1B6]" />
+                  <ChevronRight size={24} className="sm:w-7 sm:h-7 text-[#DC96FD]" />
                 </button>
               </>
             )}
@@ -292,11 +289,11 @@ export function Gallery() {
                     setSelectedImage(null)
                     resetZoom()
                   }}
-                  className="absolute top-3 right-3 z-40 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#FCE1B6]/35 bg-[#2E041A]/80 backdrop-blur-md shadow-[0_14px_28px_rgba(23,2,14,0.6)] transition-all duration-200 hover:scale-105"
+                  className="absolute top-3 right-3 z-40 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#DC96FD]/35 bg-[#372847]/80 backdrop-blur-md shadow-[0_14px_28px_rgba(23,2,14,0.6)] transition-all duration-200 hover:scale-105"
                   aria-label="Close lightbox"
                 >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-[#FCE1B6]/35 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <X size={18} className="sm:w-6 sm:h-6 text-[#FCE1B6] drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-[#DC96FD]/35 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                  <X size={18} className="sm:w-6 sm:h-6 text-[#DC96FD] drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
                 </button>
                 <img
                   src={selectedImage.image || "/placeholder.svg"}
@@ -314,7 +311,7 @@ export function Gallery() {
                       e.stopPropagation()
                       resetZoom()
                     }}
-                    className="absolute bottom-2 right-2 bg-[#2E041A]/70 hover:bg-[#2E041A]/90 backdrop-blur-md text-[#FCE1B6] rounded-full px-3 py-1.5 text-xs font-medium border border-[#FCE1B6]/25 transition-all duration-200"
+                    className="absolute bottom-2 right-2 bg-[#372847]/70 hover:bg-[#372847]/90 backdrop-blur-md text-[#DC96FD] rounded-full px-3 py-1.5 text-xs font-medium border border-[#DC96FD]/25 transition-all duration-200"
                   >
                     Reset Zoom
                   </button>
@@ -324,7 +321,7 @@ export function Gallery() {
 
             {galleryItems.length > 1 && (
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 sm:hidden z-20">
-                <p className="text-xs text-[#FCE1B6]/80 bg-[#2E041A]/70 backdrop-blur-sm rounded-full px-3 py-1.5 border border-[#FCE1B6]/20">
+                <p className="text-xs text-[#DC96FD]/80 bg-[#372847]/70 backdrop-blur-sm rounded-full px-3 py-1.5 border border-[#DC96FD]/20">
                   Swipe to navigate
                 </p>
               </div>
@@ -333,20 +330,49 @@ export function Gallery() {
         </div>
       )}
 
-      <div className="relative z-10 mt-12 sm:mt-14 md:mt-16 flex justify-center px-4">
-        <a
-          href="/gallery"
-          className="group relative inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] items-center justify-center overflow-hidden rounded-full border border-[#FCE1B6]/40 bg-[#2E041A] px-10 sm:px-12 md:px-14 text-[9px] sm:text-[10px] md:text-xs tracking-[0.48em] uppercase text-[#FCE1B6] shadow-[0_26px_58px_rgba(46,4,26,0.55)] transition-all duration-600 ease-out hover:-translate-y-2 hover:shadow-[0_36px_70px_rgba(46,4,26,0.75)]"
+      <div className="relative z-10 mt-12 sm:mt-14 md:mt-16 flex flex-col items-center gap-3 px-4 text-center">
+        <p className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-[#FBF7F8]/70">
+          Continue the story
+        </p>
+        <button
+          type="button"
+          onClick={() => setShowComingSoon(true)}
+          className="group relative inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] items-center justify-center overflow-hidden rounded-full border border-[#DC96FD]/40 bg-[#372847] px-10 sm:px-12 md:px-14 text-[9px] sm:text-[10px] md:text-xs tracking-[0.48em] uppercase text-[#DC96FD] shadow-[0_26px_58px_rgba(22,11,34,0.55)] transition-all duration-600 ease-out hover:-translate-y-2 hover:shadow-[0_36px_70px_rgba(22,11,34,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC96FD]/50"
         >
-          <span className="absolute inset-0 bg-gradient-to-r from-[#FCE1B6]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
-          <span className="absolute inset-[2px] rounded-full bg-[#1A0310]/90 backdrop-blur-2xl border border-[#FCE1B6]/25" />
-          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-[#FCE1B6]/35 to-transparent" />
-          <span className="absolute inset-0 translate-x-full group-hover:-translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-l from-transparent via-[#FCE1B6]/20 to-transparent" />
+          <span className="absolute inset-0 bg-gradient-to-r from-[#DC96FD]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
+          <span className="absolute inset-[2px] rounded-full bg-[#1d0f2e]/90 backdrop-blur-2xl border border-[#DC96FD]/25" />
+          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-[#DC96FD]/35 to-transparent" />
+          <span className="absolute inset-0 translate-x-full group-hover:-translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-l from-transparent via-[#DC96FD]/20 to-transparent" />
           <span className="relative z-10 inline-flex items-center justify-center">
             View Full Gallery
           </span>
-        </a>
+        </button>
+        <p className={`${inter.className} text-xs text-[#FBF7F8]/75 max-w-md`}>
+          Step inside the complete photo journal to feel every laugh, twirl, and lavender shimmer from Mehai’s celebration.
+        </p>
       </div>
+
+      {showComingSoon && (
+        <div className="fixed inset-0 z-[9999] bg-[#11091d]/90 backdrop-blur-sm flex items-center justify-center px-4 py-6" role="dialog" aria-modal="true">
+          <div className="relative max-w-md w-full rounded-3xl border border-[#DC96FD]/30 bg-gradient-to-br from-[#241135]/95 via-[#372847]/95 to-[#241135]/95 shadow-[0_35px_70px_rgba(10,3,18,0.75)] p-6 sm:p-8 text-center">
+            <p className="text-[11px] sm:text-xs tracking-[0.5em] uppercase text-[#DC96FD]/80 mb-3">Coming soon</p>
+            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-[#DC96FD] mb-3`}>Pictorial Upload in Progress</h3>
+            <p className={`${inter.className} text-sm sm:text-base text-[#FBF7F8]/90 leading-relaxed`}>
+              We’re lovingly arranging the full lavender pictorial set for you. Please check back soon—something dreamy is being prepared just for you.
+            </p>
+            <p className={`${playfair.className} text-xs sm:text-sm tracking-[0.35em] uppercase text-[#FBF7F8]/70 mt-4`}>
+              Mehai’s keepsakes take flight shortly
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowComingSoon(false)}
+              className="mt-6 inline-flex items-center justify-center rounded-full border border-[#DC96FD]/40 bg-[#372847] px-8 py-3 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-[#DC96FD] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_35px_rgba(22,11,34,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC96FD]/50"
+            >
+              I’ll wait
+            </button>
+          </div>
+        </div>
+      )}
     </Section>
   )
 }

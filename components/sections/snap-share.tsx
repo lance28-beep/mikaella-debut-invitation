@@ -7,6 +7,7 @@ import { Instagram, Facebook, Twitter, Share2, Copy, Check, Download } from "luc
 import { Section } from "@/components/section"
 import { QRCodeCanvas } from "qrcode.react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -17,8 +18,19 @@ export function SnapShare() {
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const hashtags = ["#KaithAt18", "#KaithDebut2026", "#ElegantCelebration", "#DebutanteKaith"]
-  const shareText = `Celebrate Kaith's elegant debut! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
+  const driveLink = "https://drive.google.com/drive/folders/16wsIFVQJWeUlMVO63xBAm7Pcmzdqsql2?usp=sharing"
+  const debutanteFullName = siteConfig.couple.bride || "Mehai Jeffverly Servanda"
+  const debutanteNickname =
+    siteConfig.couple.brideNickname || debutanteFullName.split(" ")[0] || "Mehai"
+  const sanitizedTagName = debutanteNickname.replace(/\s+/g, "")
+
+  const hashtags = [
+    `#${sanitizedTagName}At18`,
+    `#${sanitizedTagName}Debut2026`,
+    "#ElegantCelebration",
+    `#Debutante${sanitizedTagName}`,
+  ]
+  const shareText = `Celebrate ${debutanteNickname}'s elegant debut! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 640)
@@ -62,7 +74,7 @@ export function SnapShare() {
     const canvas = document.getElementById("snapshare-qr") as HTMLCanvasElement | null
     if (!canvas) return
     const link = document.createElement("a")
-    link.download = "kaith-debut-qr.png"
+    link.download = `${sanitizedTagName.toLowerCase()}-debut-qr.png`
     link.href = canvas.toDataURL("image/png")
     link.click()
   }
@@ -84,115 +96,115 @@ export function SnapShare() {
   return (
     <Section
       id="snap-share"
-      className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-transparent"
+      className="relative overflow-hidden py-14 sm:py-20 md:py-24 lg:py-28 bg-transparent"
     >
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/20 bg-[#2E041A]/40 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
             Share Your Memories
           </div>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_40px_rgba(46,4,26,0.68)] mt-4`}
+            className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,25,0.8)] mt-4`}
           >
             Capture & Share the Celebration
           </h2>
-          <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
-            Capture the elegance of Kaith's debut celebration. Share your favorite moments and help create beautiful memories
-            that will last a lifetime.
+          <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-3`}>
+            Capture the lavender shimmer of {debutanteNickname}'s debut. Share your favorite moments so her keepsake gallery glows with every
+            smile, twirl, and toast from the evening.
           </p>
-          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#FCE1B6]/60 to-transparent" />
+          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10" variants={staggerChildren} initial="initial" animate="animate">
+        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-7 lg:gap-10" variants={staggerChildren} initial="initial" animate="animate">
           <motion.div
-            className="p-[1.5px] rounded-2xl bg-gradient-to-br from-[#2E041A]/30 via-[#FCE1B6]/20 to-[#2E041A]/30 h-full"
+            className="p-[1.5px] rounded-[22px] bg-gradient-to-br from-[#6A239E]/50 via-[#DC96FD]/30 to-[#6A239E]/50 h-full"
             variants={fadeInUp}
             whileHover={{ y: -2 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="bg-[#FCE1B6] rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border-2 border-[#2E041A]/20 h-full flex flex-col">
-              <div className="text-center mb-6">
-                <h3 className={`${playfair.className} text-lg sm:text-xl md:text-2xl font-semibold text-[#2E041A] mb-4`}>
+            <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-8 shadow-xl border border-white/60 h-full flex flex-col">
+              <div className="text-center mb-5 sm:mb-6">
+                <h3 className={`${playfair.className} text-base sm:text-xl md:text-2xl font-semibold text-[#372847] mb-3`}>
                   Share Your Moments
                 </h3>
-                <p className={`${inter.className} text-[#2E041A]/80 text-xs sm:text-sm mb-5 leading-relaxed`}>
-                  Every photo you share helps create beautiful memories of Kaith's debut celebration. Use these hashtags to join the conversation.
+                <p className={`${inter.className} text-[#372847]/80 text-[12px] sm:text-sm mb-5 leading-relaxed px-1`}>
+                  Every snapshot keeps {debutanteNickname}'s story glowing. Use these hashtags to weave your memories into her lavender keepsake.
                 </p>
-                <div className="space-y-3 mb-5">
+                <div className="space-y-2.5 mb-4">
                   {hashtags.map((hashtag) => (
                     <div
                       key={hashtag}
-                      className="inline-flex items-center justify-center gap-3 bg-white px-5 py-3.5 rounded-xl shadow-md border-2 border-[#2E041A]/20 w-full sm:w-auto mx-auto hover:shadow-lg hover:border-[#2E041A]/40 transition-all"
+                      className="inline-flex items-center justify-center gap-3 bg-[#F8F5FF] px-4 py-2.5 rounded-xl shadow-md border border-[#6A239E]/25 w-full sm:w-auto mx-auto hover:shadow-lg hover:border-[#6A239E]/40 transition-all"
                     >
-                      <span className={`${inter.className} text-sm sm:text-base md:text-lg font-semibold text-[#2E041A] tracking-[0.12em] uppercase break-all sm:break-normal`}>
+                      <span className={`${inter.className} text-[12px] sm:text-sm md:text-base font-semibold text-[#372847] tracking-[0.14em] uppercase break-all sm:break-normal`}>
                         {hashtag}
                       </span>
                       <button
                         onClick={() => copyToClipboard(hashtag)}
-                        className="p-1.5 rounded-full bg-[#2E041A]/10 hover:bg-[#2E041A]/20 transition-colors duration-200 shadow-sm flex-shrink-0 border-2 border-[#2E041A]/20 hover:border-[#2E041A]/40"
+                        className="p-1 rounded-full bg-white hover:bg-[#6A239E]/10 transition-colors duration-200 shadow-sm flex-shrink-0 border border-[#6A239E]/30 hover:border-[#6A239E]/60"
                         title="Copy hashtag"
                       >
-                        {copiedHashtag ? <Check className="w-4 h-4 text-[#2E041A]" /> : <Copy className="w-4 h-4 text-[#2E041A]/70" />}
+                        {copiedHashtag ? <Check className="w-4 h-4 text-[#372847]" /> : <Copy className="w-4 h-4 text-[#372847]/70" />}
                       </button>
                     </div>
                   ))}
                 </div>
-                <p className={`${inter.className} text-[#2E041A]/70 text-[11px] sm:text-xs italic`}>
+                <p className={`${inter.className} text-[#372847]/70 text-[11px] sm:text-xs italic`}>
                   Click to copy and paste into your posts, stories, and reels.
                 </p>
               </div>
 
               <div className="mt-auto">
-                <h4 className={`${playfair.className} text-base sm:text-lg md:text-xl font-semibold text-[#2E041A] mb-4 text-center`}>
+                <h4 className={`${playfair.className} text-sm sm:text-lg md:text-xl font-semibold text-[#372847] mb-3 text-center`}>
                   A Glimpse of Her Celebration
                 </h4>
-                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <motion.div
-                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#2E041A]/20 hover:border-[#2E041A]/40 transition-all"
+                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#372847]/20 hover:border-[#372847]/40 transition-all"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/desktop-background/image (1).jpg" alt="Debut moment 1" fill className="object-cover" />
+                    <Image src="/Debutant/debutant.png" alt="Debut moment 1" fill className="object-cover" />
                   </motion.div>
                   <motion.div
-                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#2E041A]/20 hover:border-[#2E041A]/40 transition-all"
+                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#372847]/20 hover:border-[#372847]/40 transition-all"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/desktop-background/image (2).jpg" alt="Debut moment 2" fill className="object-cover" />
+                    <Image src="/Debutant/debutant2.png" alt="Debut moment 2" fill className="object-cover" />
                   </motion.div>
                   <motion.div
-                    className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md border-2 border-[#2E041A]/20 hover:border-[#2E041A]/40 transition-all"
+                    className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md border-2 border-[#372847]/20 hover:border-[#372847]/40 transition-all"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/desktop-background/image (3).jpg" alt="Debut moment 3" fill className="object-cover" />
+                    <Image src="/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg" alt="Debut moment 3" fill className="object-cover" />
                   </motion.div>
                 </div>
-                <p className={`${inter.className} text-[#2E041A]/70 text-[11px] sm:text-xs text-center mt-4 px-2`}>
-                  Tag your snapshots with our hashtags to be featured in Kaith's keepsake gallery.
+                <p className={`${inter.className} text-[#372847]/70 text-[11px] sm:text-xs text-center mt-4 px-2`}>
+                  Tag your snapshots with our hashtags to be featured in {debutanteNickname}'s keepsake gallery.
                 </p>
               </div>
             </div>
           </motion.div>
 
           <motion.div className="space-y-4 lg:space-y-6 h-full flex flex-col" variants={fadeInUp}>
-            <div className="p-[1.5px] rounded-2xl bg-gradient-to-br from-[#2E041A]/30 via-[#FCE1B6]/20 to-[#2E041A]/30 flex-1">
-              <div className="bg-[#FCE1B6] rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border-2 border-[#2E041A]/20 text-center h-full flex flex-col">
-                <h4 className={`${playfair.className} text-lg sm:text-xl md:text-2xl font-semibold text-[#2E041A] mb-3`}>
+            <div className="p-[1.5px] rounded-[22px] bg-gradient-to-br from-[#6A239E]/50 via-[#DC96FD]/30 to-[#6A239E]/50 flex-1">
+              <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-8 shadow-xl border border-white/60 text-center h-full flex flex-col">
+                <h4 className={`${playfair.className} text-base sm:text-xl md:text-2xl font-semibold text-[#372847] mb-3`}>
                   Share Her Debut Website
                 </h4>
-                <p className={`${inter.className} text-[#2E041A]/80 text-xs sm:text-sm mb-6 leading-relaxed`}>
-                  Spread the word about Kaith's elegant debut celebration. Share this QR code with friends and family so they can join the celebration.
+                <p className={`${inter.className} text-[#372847]/80 text-[12px] sm:text-sm mb-5 leading-relaxed`}>
+                  Spread the word about {debutanteNickname}'s elegant debut celebration. Share this QR code with friends and family so they can join the celebration.
                 </p>
-                <div className="mx-auto inline-flex flex-col items-center bg-white p-5 sm:p-6 md:p-8 rounded-2xl shadow-md border-2 border-[#2E041A]/20 mb-5 flex-1 justify-center">
-                  <div className="mb-4 p-3 sm:p-4 rounded-xl bg-[#2E041A]/5 border-2 border-[#2E041A]/10">
-                    <div className="bg-white p-3 sm:p-4 rounded-lg shadow-sm border-2 border-[#2E041A]/10">
+                <div className="mx-auto inline-flex flex-col items-center bg-[#F8F5FF] p-4 sm:p-6 md:p-7 rounded-2xl shadow-md border border-[#6A239E]/20 mb-4 flex-1 justify-center">
+                  <div className="mb-3 p-2.5 sm:p-4 rounded-xl bg-white border border-[#6A239E]/15">
+                    <div className="bg-white p-2.5 sm:p-4 rounded-lg shadow-sm border border-[#6A239E]/15">
                       <QRCodeCanvas 
                         id="snapshare-qr" 
                         value={websiteUrl} 
@@ -204,67 +216,105 @@ export function SnapShare() {
                   </div>
                   <button
                     onClick={downloadQRCode}
-                    className="flex items-center gap-2 mx-auto px-5 py-3 rounded-lg bg-[#2E041A] text-[#FCE1B6] transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm sm:text-base border-2 border-[#2E041A]"
+                    className="flex items-center gap-2 mx-auto px-4 py-2.5 rounded-lg bg-gradient-to-r from-[#6A239E] to-[#B47FE8] text-white transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-xs sm:text-sm border border-[#6A239E]/40"
                   >
                     <Download className="w-4 h-4" />
-                    <span className={`${inter.className} tracking-[0.2em] uppercase font-medium`}>Download QR Code</span>
+                    <span className={`${inter.className} tracking-[0.18em] uppercase font-medium`}>Download QR</span>
                   </button>
                 </div>
-                <p className={`${inter.className} text-[#2E041A]/70 text-[11px] sm:text-xs mt-auto`}>
-                  Scan with any camera app to access the full invitation and event details.
+                <p className={`${inter.className} text-[#372847]/70 text-[11px] sm:text-xs mt-auto`}>
+                  Scan with any camera app to open the full invitation and schedule.
                 </p>
               </div>
             </div>
 
-            <div className="bg-[#FCE1B6] rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg border-2 border-[#2E041A]/20">
-              <h5 className={`${playfair.className} text-lg sm:text-xl font-semibold text-[#2E041A] mb-4 text-center`}>
+            <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-7 shadow-xl border border-white/60">
+              <h5 className={`${playfair.className} text-base sm:text-xl font-semibold text-[#372847] mb-3 text-center`}>
                 Share on Social Media
               </h5>
-              <p className={`${inter.className} text-[#2E041A]/80 text-[11px] sm:text-xs text-center mb-5`}>
-                Help spread the word about Kaith's debut celebration. Share the event across your favorite platforms.
+              <p className={`${inter.className} text-[#372847]/75 text-[11px] sm:text-xs text-center mb-4`}>
+                Help spread the word about {debutanteNickname}'s debut celebration. Share the event across your favorite platforms.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
                 <button
                   onClick={() => shareOnSocial("instagram")}
-                  className="group flex items-center justify-center gap-2.5 bg-[#2E041A] text-[#FCE1B6] px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border-2 border-[#2E041A] hover:bg-[#2E041A]/90"
+                  className="group flex items-center justify-center gap-2 bg-[#6A239E] text-white px-4 py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border border-[#6A239E]/70"
                 >
                   <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>Instagram</span>
                 </button>
                 <button
                   onClick={() => shareOnSocial("facebook")}
-                  className="group flex items-center justify-center gap-2.5 bg-[#2E041A] text-[#FCE1B6] px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border-2 border-[#2E041A] hover:bg-[#2E041A]/90"
+                  className="group flex items-center justify-center gap-2 bg-[#6A239E] text-white px-4 py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border border-[#6A239E]/70"
                 >
                   <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>Facebook</span>
                 </button>
                 <button
                   onClick={() => shareOnSocial("tiktok")}
-                  className="group flex items-center justify-center gap-2.5 bg-[#2E041A] text-[#FCE1B6] px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border-2 border-[#2E041A] hover:bg-[#2E041A]/90"
+                  className="group flex items-center justify-center gap-2 bg-[#6A239E] text-white px-4 py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border border-[#6A239E]/70"
                 >
                   <Share2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>TikTok</span>
                 </button>
                 <button
                   onClick={() => shareOnSocial("twitter")}
-                  className="group flex items-center justify-center gap-2.5 bg-[#2E041A] text-[#FCE1B6] px-4 py-3.5 sm:py-4 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border-2 border-[#2E041A] hover:bg-[#2E041A]/90"
+                  className="group flex items-center justify-center gap-2 bg-[#6A239E] text-white px-4 py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border border-[#6A239E]/70"
                 >
                   <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className={`${inter.className} font-medium text-xs sm:text-sm uppercase tracking-[0.2em]`}>Twitter</span>
                 </button>
               </div>
             </div>
+
+            <div className="p-[1.5px] rounded-[22px] bg-gradient-to-br from-[#6A239E]/50 via-[#DC96FD]/30 to-[#6A239E]/50">
+              <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-7 shadow-xl border border-white/60 text-center">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#6A239E]/25 bg-[#F8F5FF] px-3 py-1 text-[10px] uppercase tracking-[0.32em] text-[#6A239E] mb-3">
+                  Upload Your Photos & Videos
+                </div>
+                <p className={`${inter.className} text-[#372847]/80 text-[12px] sm:text-sm leading-relaxed mb-5`}>
+                  Help us capture our special day! Scan the QR or use the actions below to drop your clips into our shared Drive.
+                </p>
+                <div className="mx-auto inline-flex flex-col items-center bg-[#F8F5FF] p-4 sm:p-6 rounded-2xl shadow-md border border-[#6A239E]/20 mb-4">
+                  <div className="mb-3 p-2.5 sm:p-4 rounded-xl bg-white border border-[#6A239E]/15">
+                    <div className="bg-white p-2.5 sm:p-4 rounded-lg shadow-sm border border-[#6A239E]/15">
+                      <QRCodeCanvas id="drive-qr" value={driveLink} size={isMobile ? 150 : 200} includeMargin className="bg-white" />
+                    </div>
+                  </div>
+                  <p className={`${inter.className} text-[#372847]/80 text-[11px] sm:text-xs`}>📱 Scan with your camera app</p>
+                </div>
+                <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                  <button
+                    onClick={() => copyToClipboard(driveLink)}
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white text-[#6A239E] border border-[#6A239E]/40 shadow-sm hover:shadow-md text-xs sm:text-sm transition-all"
+                  >
+                    <Copy className="w-4 h-4" />
+                    <span className={`${inter.className} tracking-[0.18em] uppercase font-medium`}>Copy Link</span>
+                  </button>
+                  <a
+                    href={driveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-[#6A239E] to-[#B47FE8] text-white border border-[#6A239E]/50 shadow-sm hover:shadow-md text-xs sm:text-sm transition-all"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span className={`${inter.className} tracking-[0.18em] uppercase font-medium`}>Open Google Drive</span>
+                  </a>
+                </div>
+                <p className={`${inter.className} text-[#372847]/70 text-[10px] sm:text-xs mt-3`}>or tap “Open Google Drive Folder.”</p>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 
-        <motion.div className="text-center mt-10 sm:mt-12" variants={fadeInUp}>
-          <div className="bg-[#FCE1B6] rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-[#2E041A]/20 max-w-3xl mx-auto">
-            <p className={`${inter.className} text-[#2E041A] text-sm sm:text-base md:text-lg leading-relaxed mb-4`}>
-              Thank you for helping make Kaith's debut celebration memorable. Your photos and messages create beautiful memories
+        <motion.div className="text-center mt-8 sm:mt-12" variants={fadeInUp}>
+          <div className="bg-white/10 rounded-[22px] p-5 sm:p-7 shadow-[0_25px_80px_rgba(0,0,0,0.35)] border border-white/20 max-w-3xl mx-auto backdrop-blur-xl">
+            <p className={`${inter.className} text-white text-sm sm:text-base md:text-lg leading-relaxed mb-4 px-2`}>
+              Thank you for helping make {debutanteNickname}'s debut celebration memorable. Your photos and messages create beautiful memories
               that will last a lifetime—keep sharing the joy throughout the evening.
             </p>
-            <div className={`${inter.className} flex items-center justify-center gap-2 text-[#2E041A] text-[11px] sm:text-xs tracking-[0.35em] uppercase`}>
-              <span>See You at the Celebration</span>
+            <div className={`${inter.className} flex items-center justify-center gap-2 text-white text-[10px] sm:text-xs tracking-[0.32em] uppercase`}>
+              <span>See you in the lavender glow</span>
             </div>
           </div>
         </motion.div>

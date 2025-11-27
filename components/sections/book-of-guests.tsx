@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Loader2, Mail, MessageSquare, Heart, Sparkles, User } from "lucide-react"
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -22,6 +23,8 @@ export function BookOfGuests() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [totalGuests, setTotalGuests] = useState(0)
+  const debutanteName = siteConfig.couple.brideNickname || siteConfig.couple.bride
+  const debutanteFirstName = debutanteName?.split(" ")[0] || "Mehai"
 
   const getInitials = (name: string) => {
     if (!name) return "?"
@@ -87,7 +90,7 @@ export function BookOfGuests() {
   return (
     <Section
       id="guests"
-      className="relative z-[40] overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#2E041A]"
+      className="relative z-[40] overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#372847]"
     >
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
@@ -110,7 +113,7 @@ export function BookOfGuests() {
           <defs>
             <pattern id="scrollPatternGuests" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
               {/* Scroll motifs at intersections */}
-              <g fill="none" stroke="#FCE1B6" strokeWidth="0.5">
+              <g fill="none" stroke="#DC96FD" strokeWidth="0.5">
                 {/* Top scroll */}
                 <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
                 {/* Bottom scroll */}
@@ -131,136 +134,131 @@ export function BookOfGuests() {
         </svg>
 
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2E041A]/80 via-transparent to-[#2E041A]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#372847]/80 via-transparent to-[#372847]/80" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/20 bg-[#2E041A]/40 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6]">
-            Our Honored Guests
+      <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-6 lg:px-10">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-14 space-y-2.5 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
+            Guestbook for {debutanteFirstName}
           </div>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_40px_rgba(46,4,26,0.68)]`}
+            className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,35,0.8)]`}
           >
-            Celebrating Together
+            Lavender Signatures of Love
           </h2>
-          <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto leading-relaxed`}>
-            Each name here represents someone special in Kaith's life. Thank you for being part of this elegant
-            debut celebration and for honoring this milestone with your presence.
+          <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed`}>
+            Every RSVP is a shimmer on {debutanteName || "Mehai"}’s runway to eighteen—thank you for adding your light to
+            this dreamy, lavender-sky celebration.
           </p>
         </div>
 
-        <div className="relative mb-10 sm:mb-12 lg:mb-16">
-          <div className="absolute inset-0 -z-10 blur-3xl bg-[#FCE1B6]/10 opacity-60" />
-          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border-2 border-[#FCE1B6]/20 bg-[#FCE1B6] shadow-[0_25px_75px_rgba(46,4,26,0.4)] px-6 sm:px-10 md:px-12 py-8 sm:py-10 md:py-12">
-            <div className="relative z-10 flex flex-col gap-6 sm:gap-8 md:gap-10">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8">
-                <div className="inline-flex items-center gap-3 sm:gap-4 rounded-2xl border-2 border-[#2E041A]/20 bg-[#2E041A]/10 px-5 py-3 shadow-[0_12px_30px_rgba(46,4,26,0.25)]">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#2E041A] shadow-[0_8px_20px_rgba(46,4,26,0.3)]">
-                    <Heart className="h-6 w-6 text-[#FCE1B6]" />
+        <div className="relative mb-7 sm:mb-12 lg:mb-14">
+          <div className="absolute inset-0 -z-10 blur-[70px] bg-white/20 opacity-70" />
+          <div className="relative overflow-hidden rounded-[20px] sm:rounded-[30px] border border-white/25 bg-white px-3 sm:px-8 md:px-10 py-5 sm:py-9 shadow-[0_25px_75px_rgba(5,0,20,0.45)] text-[#372847]">
+            <div className="relative z-10 flex flex-col gap-4 sm:gap-7">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
+                <div className="inline-flex items-center gap-2.5 rounded-2xl border border-[#372847]/15 bg-[#372847]/5 px-3.5 py-3 sm:px-5 sm:py-4">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#6A239E] to-[#DC96FD] text-white shadow-[0_10px_25px_rgba(106,35,158,0.35)]">
+                    <Heart className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.48em] text-[#2E041A]/70`}>
-                      confirmed guests
+                    <p className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-[0.38em] text-[#372847]/70`}>
+                      Confirmed Guests
                     </p>
-                    <h3
-                      className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-[#2E041A] leading-tight`}
-                    >
-                      {totalGuests} {totalGuests === 1 ? "Guest" : "Guests"} Confirmed
+                    <h3 className={`${playfair.className} text-xl sm:text-3xl md:text-4xl leading-tight`}>
+                      {totalGuests} {totalGuests === 1 ? "Radiant Guest" : "Radiant Guests"}
                     </h3>
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:gap-5 text-left sm:text-right">
+                <div className="grid gap-2.5 text-left sm:text-right">
                   <div>
-                    <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.42em] text-[#2E041A]/70`}>
-                      RSVP ENTRIES
+                    <p className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-[0.32em] text-[#372847]/70`}>
+                      RSVP Signatures
                     </p>
-                    <p className={`${playfair.className} text-xl sm:text-2xl text-[#2E041A]`}>
+                    <p className={`${playfair.className} text-lg sm:text-2xl`}>
                       {guests.length} {guests.length === 1 ? "Loved One" : "Loved Ones"}
                     </p>
                   </div>
-                  <div className="inline-flex items-center justify-center sm:justify-end gap-2 text-[11px] sm:text-xs tracking-[0.4em] uppercase text-[#2E041A]/80">
-                    <Sparkles className="h-4 w-4 text-[#2E041A]" />
-                    <span>Thank you for joining us</span>
+                  <div className="inline-flex items-center justify-start sm:justify-end gap-1.5 text-[9px] sm:text-xs tracking-[0.32em] uppercase text-[#372847]/75">
+                    <Sparkles className="h-4 w-4 text-[#6A239E]" />
+                    <span>Lavender lights await you</span>
                   </div>
                 </div>
               </div>
-              <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/80 leading-relaxed max-w-3xl`}>
-                Your RSVP ensures we can prepare for your presence at this elegant celebration. If your plans change,
-                please update your response so we can welcome every guest with care and attention.
+              <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#372847]/85 leading-relaxed max-w-3xl`}>
+                Kindly keep your RSVP up to date so we can seat you with grace and welcome you into {siteConfig.wedding.theme?.toLowerCase() || "this lavender-sky soirée"} the moment you arrive.
               </p>
             </div>
           </div>
         </div>
 
         <div className="relative">
-          <div className="absolute inset-0 -z-10 bg-[#FCE1B6]/5 blur-3xl opacity-60" />
-          <div className="relative overflow-hidden rounded-[30px] border-2 border-[#FCE1B6]/20 bg-[#FCE1B6] shadow-[0_30px_85px_rgba(46,4,26,0.4)] px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10">
+          <div className="absolute inset-0 -z-10 bg-white/10 blur-3xl opacity-60" />
+          <div className="relative overflow-hidden rounded-[20px] sm:rounded-[30px] border border-white/25 bg-white shadow-[0_30px_85px_rgba(5,0,20,0.4)] px-3 sm:px-6 md:px-8 lg:px-10 py-5 sm:py-8 md:py-10 text-[#372847]">
             {isLoading ? (
-              <div className="relative z-10 flex flex-col items-center justify-center gap-5 py-24 sm:py-28">
-                <Loader2 className="h-12 w-12 animate-spin text-[#2E041A]" />
-                <span className={`${inter.className} text-base sm:text-lg text-[#2E041A]/80`}>
+              <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-16 sm:py-24">
+                <Loader2 className="h-10 w-10 animate-spin text-[#6A239E]" />
+                <span className={`${inter.className} text-sm sm:text-base text-[#372847]/80`}>
                   Loading the guest list…
                 </span>
               </div>
             ) : error ? (
-              <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-24 sm:py-28 text-center">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
-                  <MessageSquare className="h-6 w-6 text-[#2E041A]" />
+              <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-16 sm:py-24 text-center">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#372847]/20 bg-[#FBF7F8]">
+                  <MessageSquare className="h-6 w-6 text-[#6A239E]" />
                 </div>
-                <p className={`${inter.className} text-base sm:text-lg text-[#2E041A]/80 max-w-md`}>{error}</p>
+                <p className={`${inter.className} text-sm sm:text-base text-[#372847]/80 max-w-md`}>{error}</p>
               </div>
             ) : guests.length === 0 ? (
-              <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-24 sm:py-28 text-center">
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
-                  <Heart className="h-8 w-8 text-[#2E041A]" />
+              <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-16 sm:py-24 text-center">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#372847]/20 bg-[#FBF7F8]">
+                  <Heart className="h-7 w-7 text-[#6A239E]" />
                 </div>
-                <h3 className={`${playfair.className} text-2xl sm:text-3xl text-[#2E041A]`}>
+                <h3 className={`${playfair.className} text-xl sm:text-3xl`}>
                   No RSVPs confirmed yet.
                 </h3>
-                <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/75 max-w-md`}>
-                  Be the first to confirm your attendance at Kaith's debut. Your name will appear here as soon as
+                <p className={`${inter.className} text-sm text-[#372847]/75 max-w-md`}>
+                  Be the first to confirm your attendance at {debutanteFirstName}'s debut. Your name will appear here as soon as
                   you submit your RSVP.
                 </p>
               </div>
             ) : (
-              <div className="relative z-10 space-y-3 sm:space-y-4">
+              <div className="relative z-10 space-y-2 sm:space-y-3.5">
                 {guests.map((guest, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-2xl border-2 border-[#2E041A]/20 bg-white px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 transition-all duration-300 hover:border-[#2E041A]/40 hover:shadow-[0_12px_30px_rgba(46,4,26,0.25)]"
+                    className="group relative overflow-hidden rounded-2xl border border-[#372847]/15 bg-[#FBF7F8] px-3 sm:px-4 md:px-5 py-3 sm:py-4.5 md:py-5 transition-all duration-300 hover:border-[#372847]/40 hover:shadow-[0_12px_26px_rgba(6,0,20,0.18)]"
                   >
-                    <div className="relative z-10 flex flex-col sm:flex-row gap-3.5 sm:gap-4.5">
-                      <div className="relative h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-[#2E041A] shadow-[0_8px_20px_rgba(46,4,26,0.25)]" />
-                        <div className="relative h-full w-full rounded-full border-2 border-[#2E041A]/20 bg-[#FCE1B6] flex items-center justify-center text-[#2E041A] font-semibold text-sm sm:text-base">
+                    <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4.5">
+                      <div className="relative h-10 w-10 sm:h-14 sm:w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full bg-[#6A239E] shadow-[0_8px_20px_rgba(6,0,20,0.25)]" />
+                        <div className="relative h-full w-full rounded-full border border-white/60 bg-white flex items-center justify-center text-[#372847] font-semibold text-[13px] sm:text-base">
                           {getInitials(guest.Name)}
                         </div>
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-3">
-                          <div className="flex-1 pr-16 sm:pr-0">
-                            <h4
-                              className={`${playfair.className} text-lg sm:text-xl text-[#2E041A] group-hover:text-[#2E041A]/80 transition-colors`}
-                            >
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5 sm:gap-3">
+                          <div className="flex-1 pr-12 sm:pr-0">
+                            <h4 className={`${playfair.className} text-[15px] sm:text-xl text-[#372847] group-hover:text-[#6A239E] transition-colors`}>
                               {guest.Name}
                             </h4>
                             {guest.Email && guest.Email !== "Pending" && (
-                              <div className="mt-1 inline-flex items-center gap-2 text-[11px] sm:text-xs text-[#2E041A]/60">
-                                <Mail className="h-3.5 w-3.5 text-[#2E041A]/50" />
+                              <div className="mt-1 inline-flex items-center gap-1.5 text-[10px] sm:text-xs text-[#372847]/70 leading-tight">
+                                <Mail className="h-3 w-3 text-[#6A239E]/70" />
                                 <span className={`${inter.className} break-all`}>{guest.Email}</span>
                               </div>
                             )}
                           </div>
 
-                          <div className="absolute right-4 top-4 sm:static sm:right-auto sm:top-auto inline-flex items-center gap-2">
-                            <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#2E041A]/10 border-2 border-[#2E041A]/20">
-                              <User className="h-4 w-4 text-[#2E041A]" />
+                          <div className="absolute right-3 top-3 sm:static sm:right-auto sm:top-auto inline-flex items-center gap-1.5 sm:gap-2">
+                            <div className="inline-flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white border border-[#372847]/20">
+                              <User className="h-4 w-4 text-[#6A239E]" />
                             </div>
                             <span
-                              className={`${inter.className} inline-flex items-center justify-center rounded-full border-2 border-[#2E041A]/20 bg-[#2E041A]/10 px-3.5 py-1.5 text-xs sm:text-sm text-[#2E041A]`}
+                              className={`${inter.className} inline-flex items-center justify-center rounded-full border border-[#372847]/20 bg-white/60 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-sm text-[#372847]`}
                             >
                               {guest.Guest ? parseInt(String(guest.Guest)) || 1 : 1}{" "}
                               {(parseInt(String(guest.Guest || "1")) || 1) === 1 ? "guest" : "guests"}
@@ -269,10 +267,10 @@ export function BookOfGuests() {
                         </div>
 
                         {guest.Message && (
-                          <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#2E041A]/20">
-                            <div className="flex items-start gap-2 sm:gap-3">
-                              <MessageSquare className="mt-0.5 h-4 w-4 text-[#2E041A]" />
-                              <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/80 italic leading-relaxed flex-1`}>
+                          <div className="mt-2 sm:mt-4 pt-2 sm:pt-4 border-t border-[#372847]/15">
+                            <div className="flex items-start gap-1.5 sm:gap-2">
+                              <MessageSquare className="mt-0.5 h-3 w-3 text-[#6A239E]" />
+                              <p className={`${inter.className} text-[13px] sm:text-base text-[#372847]/80 italic leading-relaxed flex-1`}>
                                 "{guest.Message}"
                               </p>
                             </div>

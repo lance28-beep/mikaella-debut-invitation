@@ -2,6 +2,7 @@ import fs from "fs/promises"
 import path from "path"
 import Link from "next/link"
 import MasonryGallery from "@/components/masonry-gallery"
+import { siteConfig } from "@/content/site"
 
 // Generate on each request so newly added images in public/ appear without a rebuild
 export const dynamic = "force-dynamic"
@@ -28,6 +29,15 @@ export default async function GalleryPage() {
   const images = [
     ...desktop.map((src) => ({ src, category: "desktop" as const })),
     ...mobile.map((src) => ({ src, category: "mobile" as const })),
+  ]
+  const debutanteNickname =
+    siteConfig.couple.brideNickname || siteConfig.couple.bride || "Mehai"
+  const sanitizedTagName = debutanteNickname.replace(/\s+/g, "")
+  const hashtags = [
+    `#${sanitizedTagName}At18`,
+    `#${sanitizedTagName}Debut2026`,
+    "#ElegantCelebration",
+    `#Debutante${sanitizedTagName}`,
   ]
 
   return (
@@ -66,18 +76,14 @@ export default async function GalleryPage() {
               Share your celebration photos with us
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8">
-              <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #KaithAt18
-              </span>
-              <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #KaithDebut2026
-              </span>
-              <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #ElegantCelebration
-              </span>
-              <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default">
-                #DebutanteKaith
-              </span>
+              {hashtags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#FCE1B6]/15 border border-[#FCE1B6]/30 rounded-full text-[#FCE1B6] font-sans font-medium text-xs sm:text-sm hover:bg-[#FCE1B6]/25 hover:border-[#FCE1B6]/50 transition-all duration-200 cursor-default"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <Link

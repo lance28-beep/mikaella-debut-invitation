@@ -51,7 +51,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
 
     try {
       await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdeaSXxwssn8uZRU47iUbyQJgwesU-cUx0KUmKB3-WaG9-YOQ/formResponse",
+        "https://docs.google.com/forms/d/e/1FAIpQLScpNJ-KbBt9iQ43Is8j07aS62kdZAYHJC5xUx7LlQEfbCR4OQ/formResponse",
         {
           method: "POST",
           mode: "no-cors",
@@ -88,13 +88,13 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
   }
 
   return (
-    <div className="relative w-full max-w-xl mx-auto">
+    <div className="relative w-full max-w-lg mx-auto">
       <Card
-        className={`relative w-full border border-[#FCE1B6]/45 bg-white/85 backdrop-blur-2xl transition-all duration-500 group overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(23,2,14,0.45)] ${
+        className={`relative w-full border border-[#DC96FD]/35 bg-white/85 backdrop-blur-xl transition-all duration-500 group overflow-hidden rounded-[28px] shadow-[0_24px_55px_rgba(23,2,14,0.38)] ${
           isFocused ? "border-[#F5CFA1]" : "hover:border-[#FADDBB]"
         } ${isSubmitted ? "animate-[pulse_1.2s_ease-in-out]" : ""}`}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FFECD3]/60 via-transparent to-[#FDF6EC]/80 opacity-95 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFECD3]/50 via-transparent to-[#FDF6EC]/70 opacity-95 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(253,244,230,0.8),transparent_60%)] pointer-events-none" />
 
         {isSubmitted && (
@@ -106,37 +106,37 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
           </div>
         )}
 
-        <CardContent className="relative p-6 sm:p-8 lg:p-10">
-          <div className="text-center mb-6 sm:mb-8 space-y-3">
-            <p className="text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#2E041A]/70">
+        <CardContent className="relative p-5 sm:p-6 lg:p-8">
+          <div className="text-center mb-5 sm:mb-7 space-y-2.5">
+            <p className="text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#372847]/70">
               Message For The Debutante
             </p>
-            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-[#2E041A]`}>
+            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-[#372847]`}>
               Leave a Gilded Wish
             </h3>
-            <p className={`${inter.className} text-xs sm:text-sm text-[#2E041A]/70 tracking-[0.22em] uppercase`}>
+            <p className={`${inter.className} text-[11px] sm:text-xs text-[#372847]/70 tracking-[0.22em] uppercase`}>
               Every note becomes part of her story
             </p>
-            <div className="flex justify-center gap-2 text-[10px] uppercase tracking-[0.35em] text-[#2E041A]/55">
+            <div className="flex justify-center gap-2 text-[10px] uppercase tracking-[0.35em] text-[#372847]/55">
               <span>Share</span>
-              <span className="text-[#FCE1B6]/40">•</span>
+              <span className="text-[#DC96FD]/40">•</span>
               <span>Bless</span>
-              <span className="text-[#FCE1B6]/40">•</span>
+              <span className="text-[#DC96FD]/40">•</span>
               <span>Send</span>
             </div>
           </div>
 
-          <form 
-            ref={formRef} 
-            onSubmit={handleSubmit} 
-            className="space-y-5 sm:space-y-6"
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="space-y-4 sm:space-y-5"
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           >
-            <div className="space-y-2 sm:space-y-3">
-              <label className={`${inter.className} block text-[11px] sm:text-sm tracking-[0.4em] uppercase text-[#2E041A]/70 flex items-center gap-2`}>
-                <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#2E041A]/30 transition-transform ${focusedField === "name" ? "scale-110 bg-[#2E041A]/10" : ""}`}>
-                  <PenLine className="h-3 w-3 text-[#2E041A]/70" />
+            <div className="space-y-1.5 sm:space-y-2.5">
+              <label className={`${inter.className} block text-[11px] sm:text-sm tracking-[0.4em] uppercase text-[#372847]/70 flex items-center gap-2`}>
+                <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#372847]/30 transition-transform ${focusedField === "name" ? "scale-110 bg-[#372847]/10" : ""}`}>
+                  <PenLine className="h-3 w-3 text-[#372847]/70" />
                 </span>
                 From
               </label>
@@ -149,10 +149,10 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
                   placeholder="Your name or nickname"
-                  className={`w-full border border-[#E1B489]/60 rounded-2xl py-3 sm:py-4 px-4 sm:px-6 text-sm sm:text-base ${inter.className} text-[#2E041A] placeholder:text-[#5F2B3A]/55 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-[0_10px_24px_rgba(46,4,26,0.1)] hover:shadow-[0_14px_30px_rgba(46,4,26,0.18)] focus:shadow-[0_18px_36px_rgba(46,4,26,0.24)] ${
+                  className={`w-full border border-[#E1B489]/60 rounded-2xl py-2.5 sm:py-3.5 px-4 sm:px-5 text-sm ${inter.className} text-[#372847] placeholder:text-[#5F2B3A]/55 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-[0_8px_20px_rgba(46,4,26,0.12)] hover:shadow-[0_12px_26px_rgba(46,4,26,0.18)] focus:shadow-[0_16px_32px_rgba(46,4,26,0.22)] ${
                     focusedField === "name"
-                      ? "border-[#2E041A]/60 focus:border-[#2E041A]/70 focus:ring-4 focus:ring-[#2E041A]/15"
-                      : "border-[#E1B489]/60 hover:border-[#2E041A]/45"
+                      ? "border-[#372847]/60 focus:border-[#372847]/70 focus:ring-4 focus:ring-[#372847]/15"
+                      : "border-[#E1B489]/60 hover:border-[#372847]/45"
                   }`}
                 />
                 {nameValue && (
@@ -163,18 +163,18 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
               </div>
             </div>
 
-            <div className="space-y-2 sm:space-y-3">
+            <div className="space-y-1.5 sm:space-y-2.5">
               <div className="flex items-center justify-between">
-                <label className={`${inter.className} block text-[11px] sm:text-sm tracking-[0.4em] uppercase text-[#2E041A]/70 flex items-center gap-2`}>
-                  <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#2E041A]/30 transition-transform ${focusedField === "message" ? "scale-110 bg-[#2E041A]/10" : ""}`}>
-                    <Heart className="h-3 w-3 text-[#2E041A]/65" />
+                <label className={`${inter.className} block text-[11px] sm:text-sm tracking-[0.4em] uppercase text-[#372847]/70 flex items-center gap-2`}>
+                  <span className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#372847]/30 transition-transform ${focusedField === "message" ? "scale-110 bg-[#372847]/10" : ""}`}>
+                    <Heart className="h-3 w-3 text-[#372847]/65" />
                   </span>
-                  Message For Kaith
+                  Message For Melai
                 </label>
                 {messageValue && (
                   <span
                     className={`${inter.className} text-[10px] sm:text-xs tracking-[0.3em] uppercase transition-colors ${
-                      messageValue.length > 500 ? "text-rose-300" : "text-[#FCE1B6]/50"
+                      messageValue.length > 500 ? "text-rose-300" : "text-[#DC96FD]/50"
                     }`}
                   >
                     {messageValue.length}/500
@@ -193,11 +193,11 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   }}
                   onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Tell Kaith what you wish for her eighteenth chapter..."
-                  className={`w-full border border-[#E1B489]/60 rounded-3xl min-h-[120px] sm:min-h-[150px] text-sm sm:text-base ${inter.className} text-[#2E041A] placeholder:text-[#5F2B3A]/55 transition-all duration-300 resize-none bg-white/90 backdrop-blur-sm shadow-[0_12px_30px_rgba(46,4,26,0.12)] hover:shadow-[0_18px_38px_rgba(46,4,26,0.2)] focus:shadow-[0_22px_46px_rgba(46,4,26,0.26)] py-3.5 sm:py-4.5 px-4 sm:px-6 ${
+                  placeholder="Tell Melai what you wish for her eighteenth chapter..."
+                  className={`w-full border border-[#E1B489]/60 rounded-[26px] min-h-[100px] sm:min-h-[130px] text-sm ${inter.className} text-[#372847] placeholder:text-[#5F2B3A]/55 transition-all duration-300 resize-none bg-white/90 backdrop-blur-sm shadow-[0_10px_26px_rgba(46,4,26,0.12)] hover:shadow-[0_16px_34px_rgba(46,4,26,0.2)] focus:shadow-[0_20px_42px_rgba(46,4,26,0.26)] py-3 sm:py-4 px-4 sm:px-5 ${
                     focusedField === "message"
-                      ? "border-[#2E041A]/60 focus:border-[#2E041A]/70 focus:ring-4 focus:ring-[#2E041A]/15"
-                      : "border-[#E1B489]/60 hover:border-[#2E041A]/45"
+                      ? "border-[#372847]/60 focus:border-[#372847]/70 focus:ring-4 focus:ring-[#372847]/15"
+                      : "border-[#E1B489]/60 hover:border-[#372847]/45"
                   }`}
                 />
                 {messageValue && (
@@ -209,11 +209,11 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             </div>
 
             {/* Submit Button */}
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               <Button
                 type="submit"
                 disabled={isSubmitting || !nameValue.trim() || !messageValue.trim()}
-                className="w-full border border-[#2E041A]/40 bg-[#2E041A] text-[#FCE1B6] py-3 sm:py-4 px-6 sm:px-8 rounded-2xl text-sm sm:text-base font-lora font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-[#3f0823] hover:border-[#2E041A]/60 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full border border-[#372847]/40 bg-[#372847] text-[#DC96FD] py-2.5 sm:py-3.5 px-5 sm:px-7 rounded-2xl text-sm font-lora font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-[#3f0823] hover:border-[#372847]/60 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
               >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2 relative z-10">
@@ -230,8 +230,8 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                 </span>
               )}
             </Button>
-              <div className="rounded-2xl border border-[#2E041A]/30 bg-[#2E041A]/20 backdrop-blur-sm px-4 py-3">
-                <p className={`${inter.className} text-[11px] sm:text-xs text-[#2E041A] leading-relaxed text-center font-medium`}>
+              <div className="rounded-2xl border border-[#372847]/30 bg-[#372847]/15 backdrop-blur-sm px-3.5 py-2.5">
+                <p className={`${inter.className} text-[10px] sm:text-xs text-[#372847] leading-relaxed text-center font-medium`}>
                   <span className="font-semibold">Tip:</span> speak from the heart—share a favorite memory, a prayer, or a promise to cheer her on.
                 </p>
               </div>
@@ -247,20 +247,16 @@ export function Messages() {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
   const portraitImages = [
-    "/desktop-background/image (1).jpg",
-    "/desktop-background/image (2).jpg",
-    "/desktop-background/image (3).jpg",
-    "/desktop-background/image (4).jpg",
-    "/desktop-background/image (5).jpg",
-    "/desktop-background/image (6).jpg",
-    "/desktop-background/image (7).jpg",
+    "/Debutant/debutant.png",
+    "/Debutant/debutant2.png",
+    "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg",
   ]
   const [portraitIndex, setPortraitIndex] = useState(0)
 
   const fetchMessages = useCallback(() => {
     setLoading(true)
     fetch(
-      "https://script.google.com/macros/s/AKfycbz7X5ONYZIFajSs361vlV6v6eS3ZJTvAtPyO-2QtzrhS_7ZJetucSOkwAMoj58MiYhS/exec"
+      "https://script.google.com/macros/s/AKfycbzGVNgDnjMh3XSl0E2JOAtzgFfsRbzb6rnVNswgVgrsAdzi9iGG8l3sJFidPPADT5L6Iw/exec"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -301,26 +297,26 @@ export function Messages() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-14 lg:mb-18 px-2">
-          <p className={`${inter.className} text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#FCE1B6]/75 mb-3`}>
+          <p className={`${inter.className} text-[10px] sm:text-xs tracking-[0.55em] uppercase text-white/80 mb-3`}>
             Words She’ll Keep Forever
           </p>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] mb-4`}
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4`}
           >
-            Letters for Kaith
+            Letters for Melai
           </h2>
-          <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-[#FCE1B6]/90 mb-3`}>
+          <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-white/90 mb-3`}>
             Write a wish for her eighteenth chapter
           </h3>
-          <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-[#FCE1B6]/75 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
-            Send a note woven in wine red and gold—a keepsake Kaith will treasure long after the candles fade.
+          <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-white/80 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
+            Send a note woven in wine red and gold—a keepsake Melai will treasure long after the candles fade.
           </p>
         </div>
 
         {/* Form Section */}
         <div className="mb-12 sm:mb-16 lg:mb-20 px-1 sm:px-0">
           <div className="relative mx-auto w-full max-w-5xl">
-            <div className="relative overflow-hidden rounded-[36px] border border-[#FCE1B6]/30 bg-transparent shadow-[0_28px_65px_rgba(23,2,14,0.3)]">
+            <div className="relative overflow-hidden rounded-[36px] border border-[#DC96FD]/30 bg-transparent shadow-[0_28px_65px_rgba(23,2,14,0.3)]">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-stretch">
                 <div className="relative hidden lg:block">
                   <div className="absolute inset-0 bg-transparent" />
@@ -328,15 +324,15 @@ export function Messages() {
                     <Image
                       key={portraitImages[portraitIndex]}
                       src={portraitImages[portraitIndex]}
-                      alt="Portrait of Kaith"
+                      alt="Portrait of Melai"
                       fill
                       className="object-cover transition-opacity duration-700"
                       priority={false}
                     />
                   </div>
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-[#FCE1B6]/90">
-                    <p className={`${greatVibes.className} text-3xl tracking-wide`}>Kaith</p>
-                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase`}>Eighteen in Crimson & Gold</p>
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-[#1F1F1F]">
+                    <p className={`${greatVibes.className} text-3xl tracking-wide text-[#1F1F1F]`}>Melai</p>
+                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase text-[#1F1F1F]/85`}>Eighteen in Crimson & Gold</p>
                   </div>
                 </div>
                 <div className="relative py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8">
@@ -351,15 +347,15 @@ export function Messages() {
         <div className="relative max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="relative inline-block mb-4 sm:mb-6">
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#2E041A] to-[#640c35] rounded-full flex items-center justify-center mx-auto shadow-[0_18px_35px_rgba(23,2,14,0.65)]">
-                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-[#FCE1B6]" />
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#372847] to-[#640c35] rounded-full flex items-center justify-center mx-auto shadow-[0_18px_35px_rgba(23,2,14,0.65)]">
+                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-[#DC96FD]" />
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-[#FCE1B6] mb-2 sm:mb-3">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-white mb-2 sm:mb-3">
               Keepsakes From Her Constellation
             </h3>
-            <p className="text-sm sm:text-base lg:text-lg text-[#FCE1B6]/80 font-lora max-w-2xl mx-auto leading-relaxed">
-              Scroll through the sparkling words that loved ones have tucked into Kaith's debut album of memories.
+            <p className="text-sm sm:text-base lg:text-lg text-white/80 font-lora max-w-2xl mx-auto leading-relaxed">
+              Scroll through the sparkling words that loved ones have tucked into Melai's debut album of memories.
             </p>
           </div>
           
