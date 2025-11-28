@@ -4,31 +4,70 @@ import { Great_Vibes, Inter, Imperial_Script } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Navbar } from "@/components/navbar"
+import { siteConfig } from "@/content/site"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://Xyza-Jenine-debut-invitation.vercel.app"
+const canonicalUrl = siteUrl.replace(/\/$/, "")
+const eventImagePath = "/desktop-background/debut 2.jpg"
+const eventImageUrl = `${canonicalUrl}${eventImagePath}`
+const eventTitle = `${siteConfig.couple.bride} | Debut 2026`
+const eventDescription = `Celebrate the 18th birthday of ${siteConfig.couple.bride} on ${siteConfig.wedding.date} at ${siteConfig.wedding.venue} in Las Piñas. ${siteConfig.wedding.theme} with heartfelt stories, schedules, and RSVP details.`
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: eventTitle,
+  startDate: "2026-01-17T17:00:00+08:00",
+  endDate: "2026-01-17T22:00:00+08:00",
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  location: [
+    {
+      "@type": "Place",
+      name: siteConfig.ceremony.location,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.wedding.address,
+        addressLocality: "Las Piñas",
+        addressRegion: "Metro Manila",
+        addressCountry: "PH",
+      },
+    },
+  ],
+  image: [eventImageUrl],
+  description: eventDescription,
+  organizer: {
+    "@type": "Person",
+    name: siteConfig.couple.bride,
+  },
+  offers: {
+    "@type": "Offer",
+    url: canonicalUrl,
+    availability: "https://schema.org/InStock",
+    price: "0",
+    priceCurrency: "PHP",
+  },
+}
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
 const imperialScript = Imperial_Script({ subsets: ["latin"], weight: "400", variable: "--font-imperial-script" })
 
 export const metadata: Metadata = {
-  title: "Mehai Jeffverly Servanda Debut Celebration | April 19, 2026 | Villa Anaya, Mangatarem",
-  description:
-    "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
+  title: eventTitle,
+  description: eventDescription,
   keywords:
-    "Mehai Jeffverly Servanda debut celebration, Filipino debut celebration, RSVP, debut celebration gallery, debut celebration message wall, debut celebration invitation, 2026 debut celebrations, debut celebration venues Villa Anaya, Mangatarem, Pangasinan, #MehaiJeffverlyServandaDebutCelebration",
-  authors: [
-    { name: "Mehai Jeffverly Servanda" },
-    { name: "Mehai Jeffverly Servanda" },
-  ],
-  creator: "Mehai Jeffverly Servanda",
-  publisher: "Mehai Jeffverly Servanda",
+    "Xyza Jenine debut, 18th birthday celebration, January 17 2026, Excelsior Hotel, Las Piñas debut, lavender theme debut, debut invitation website",
+  authors: [{ name: siteConfig.couple.bride }],
+  creator: siteConfig.couple.bride,
+  publisher: siteConfig.couple.bride,
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://mehai-debut-celebration-invitation.vercel.app/"),
+  metadataBase: new URL(canonicalUrl),
   alternates: {
-    canonical: "https://mehai-debut-celebration-invitation.vercel.app/",
+    canonical: canonicalUrl,
   },
   icons: {
     icon: [
@@ -50,29 +89,26 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Mehai Jeffverly Servanda Debut Celebration | April 19, 2026",
-    description:
-      "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
-    url: "https://mehai-debut-celebration-invitation.vercel.app/",
-    siteName: "Mehai Jeffverly Servanda Debut Celebration",
+    title: eventTitle,
+    description: eventDescription,
+    url: canonicalUrl,
+    siteName: "Xyza Jenine Debut 2026",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1",
+        url: eventImageUrl,
         width: 1200,
         height: 630,
-        alt: "Mehai Jeffverly Servanda Debut Celebration Invitation - April 19, 2026",
+        alt: "Invitation cover for Xyza Jenine Bautista Medina's lavender debut",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mehai Jeffverly Servanda Debut Celebration | April 19, 2026",
-    description:
-      "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
-    images: ["https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1"],
-    creator: "@mehaijeffverly",
+    title: eventTitle,
+    description: eventDescription,
+    images: [eventImageUrl],
   },
   robots: {
     index: true,
@@ -89,43 +125,8 @@ export const metadata: Metadata = {
     google: "your-google-site-verification",
   },
   other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Event",
-      name: "Mehai Jeffverly Servanda Debut Celebration",
-      startDate: "2026-04-19T17:30:00+08:00",
-      endDate: "2026-04-19T22:00:00+08:00",
-      eventStatus: "https://schema.org/EventScheduled",
-      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-      location: [
-        {
-          "@type": "Place",
-          name: "Villa Anaya",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Daan Kalikasan Road, Brgy. Parian",
-            addressLocality: "Mangatarem, Pangasinan",
-            addressCountry: "PH",
-          },
-        },
-      ],
-      image: ["https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1"],
-      description:
-        "Join us in celebrating the debut of Mehai Jeffverly Servanda on April 19, 2026 at Villa Anaya, Mangatarem, Pangasinan. A joyful milestone celebration of turning 18.",
-      organizer: {
-        "@type": "Person",
-        name: "Mehai Jeffverly Servanda",
-      },
-      offers: {
-        "@type": "Offer",
-        url: "https://mehai-debut-celebration-invitation.vercel.app/",
-        availability: "https://schema.org/InStock",
-        price: "0",
-        priceCurrency: "PHP",
-      },
-      eventHashtag: "#MehaiJeffverlyServandaDebutCelebration",
-    }),
-    "image": "https://mehai-debut-celebration-invitation.vercel.app/Debutant/placeholder.png?v=1",
+    "application/ld+json": JSON.stringify(jsonLd),
+    image: eventImageUrl,
   },
 }
 
@@ -137,7 +138,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#6A239E" />
+        <meta name="theme-color" content="#8EA58B" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

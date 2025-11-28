@@ -886,7 +886,7 @@ export default function DashboardPage() {
                 Enter password to access
               </p>
               <div className="text-sm font-medium text-[#372847] font-sans">
-                Ms. Mehai Jeffverly Servanda
+                Ms. Xyza Jenine Bautista Medina
               </div>
             </div>
 

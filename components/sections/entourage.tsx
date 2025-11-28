@@ -4,6 +4,7 @@ import React from "react"
 import { useState, useEffect, useMemo } from "react"
 import { Loader2, Users } from "lucide-react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -215,20 +216,30 @@ export function Entourage() {
       id="entourage"
       className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-transparent"
     >
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-8 sm:-top-12 left-0 sm:left-8 opacity-70"
+        style={{ width: "160px", height: "160px", transform: "rotate(-10deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-6 sm:bottom-10 right-2 sm:right-10 opacity-60"
+        style={{ width: "190px", height: "190px", transform: "rotate(8deg)" }}
+        ariaHidden={true}
+      />
 
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
-          The Entourage
+          Xyza Jenine&apos;s Circle
         </div>
         <h2
           className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(10,0,25,0.75)] mt-4`}
         >
-          Honored Guests & Special Roles
+          Her Lavender Entourage
         </h2>
         <p
           className={`${inter.className} text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
         >
-          Every name is a lavender thread in Mehai’s story—family, friends, and mentors who steady her steps, celebrate her glow, and make this milestone unforgettable.
+          Every role blooms around Xyza Jenine—parents, sponsors, and friends who hold her steady, cheer her on, and illuminate the evening with their love.
         </p>
       </div>
 

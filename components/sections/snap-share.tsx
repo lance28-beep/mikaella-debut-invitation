@@ -7,7 +7,6 @@ import { Instagram, Facebook, Twitter, Share2, Copy, Check, Download } from "luc
 import { Section } from "@/components/section"
 import { QRCodeCanvas } from "qrcode.react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
-import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -19,9 +18,8 @@ export function SnapShare() {
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
   const driveLink = "https://drive.google.com/drive/folders/16wsIFVQJWeUlMVO63xBAm7Pcmzdqsql2?usp=sharing"
-  const debutanteFullName = siteConfig.couple.bride || "Mehai Jeffverly Servanda"
-  const debutanteNickname =
-    siteConfig.couple.brideNickname || debutanteFullName.split(" ")[0] || "Mehai"
+  const debutanteFullName = "Xyza Jenine"
+  const debutanteNickname = debutanteFullName.split(" ")[0]
   const sanitizedTagName = debutanteNickname.replace(/\s+/g, "")
 
   const hashtags = [
@@ -98,50 +96,50 @@ export function SnapShare() {
       id="snap-share"
       className="relative overflow-hidden py-14 sm:py-20 md:py-24 lg:py-28 bg-transparent"
     >
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 md:px-8">
         <motion.div
-          className="text-center mb-8 sm:mb-12"
+          className="text-center mb-7 sm:mb-12"
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3.5 py-1.5 text-[8px] sm:text-xs tracking-[0.42em] uppercase text-white">
             Share Your Memories
           </div>
           <h2
-            className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,25,0.8)] mt-4`}
+            className={`${greatVibes.className} text-2xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,25,0.8)] mt-3 sm:mt-4`}
           >
             Capture & Share the Celebration
           </h2>
-          <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-3`}>
+          <p className={`${inter.className} text-[10px] sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
             Capture the lavender shimmer of {debutanteNickname}'s debut. Share your favorite moments so her keepsake gallery glows with every
             smile, twirl, and toast from the evening.
           </p>
           <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-7 lg:gap-10" variants={staggerChildren} initial="initial" animate="animate">
+        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-7 lg:gap-10" variants={staggerChildren} initial="initial" animate="animate">
           <motion.div
             className="p-[1.5px] rounded-[22px] bg-gradient-to-br from-[#6A239E]/50 via-[#DC96FD]/30 to-[#6A239E]/50 h-full"
             variants={fadeInUp}
             whileHover={{ y: -2 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-8 shadow-xl border border-white/60 h-full flex flex-col">
-              <div className="text-center mb-5 sm:mb-6">
-                <h3 className={`${playfair.className} text-base sm:text-xl md:text-2xl font-semibold text-[#372847] mb-3`}>
+            <div className="bg-white rounded-[20px] p-3 sm:p-6 md:p-8 shadow-xl border border-white/60 h-full flex flex-col">
+              <div className="text-center mb-4 sm:mb-6">
+                <h3 className={`${playfair.className} text-[15px] sm:text-xl md:text-2xl font-semibold text-[#372847] mb-3`}>
                   Share Your Moments
                 </h3>
-                <p className={`${inter.className} text-[#372847]/80 text-[12px] sm:text-sm mb-5 leading-relaxed px-1`}>
+                <p className={`${inter.className} text-[#372847]/80 text-[11px] sm:text-sm mb-4 sm:mb-5 leading-relaxed px-1`}>
                   Every snapshot keeps {debutanteNickname}'s story glowing. Use these hashtags to weave your memories into her lavender keepsake.
                 </p>
-                <div className="space-y-2.5 mb-4">
+                <div className="space-y-2 mb-4">
                   {hashtags.map((hashtag) => (
                     <div
                       key={hashtag}
-                      className="inline-flex items-center justify-center gap-3 bg-[#F8F5FF] px-4 py-2.5 rounded-xl shadow-md border border-[#6A239E]/25 w-full sm:w-auto mx-auto hover:shadow-lg hover:border-[#6A239E]/40 transition-all"
+                      className="inline-flex items-center justify-center gap-2.5 bg-[#F8F5FF] px-3 py-2 rounded-xl shadow-md border border-[#6A239E]/25 w-full sm:w-auto mx-auto hover:shadow-lg hover:border-[#6A239E]/40 transition-all"
                     >
-                      <span className={`${inter.className} text-[12px] sm:text-sm md:text-base font-semibold text-[#372847] tracking-[0.14em] uppercase break-all sm:break-normal`}>
+                      <span className={`${inter.className} text-[11px] sm:text-sm md:text-base font-semibold text-[#372847] tracking-[0.14em] uppercase break-all sm:break-normal`}>
                         {hashtag}
                       </span>
                       <button
@@ -154,39 +152,39 @@ export function SnapShare() {
                     </div>
                   ))}
                 </div>
-                <p className={`${inter.className} text-[#372847]/70 text-[11px] sm:text-xs italic`}>
+                <p className={`${inter.className} text-[#372847]/70 text-[10px] sm:text-xs italic`}>
                   Click to copy and paste into your posts, stories, and reels.
                 </p>
               </div>
 
               <div className="mt-auto">
-                <h4 className={`${playfair.className} text-sm sm:text-lg md:text-xl font-semibold text-[#372847] mb-3 text-center`}>
+                <h4 className={`${playfair.className} text-[13px] sm:text-lg md:text-xl font-semibold text-[#372847] mb-3 text-center`}>
                   A Glimpse of Her Celebration
                 </h4>
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-3 md:gap-4">
                   <motion.div
                     className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#372847]/20 hover:border-[#372847]/40 transition-all"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/Debutant/debutant.png" alt="Debut moment 1" fill className="object-cover" />
+                    <Image src="/desktop-background/debut 1.jpg" alt="Debut moment 1" fill className="object-cover" />
                   </motion.div>
                   <motion.div
                     className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#372847]/20 hover:border-[#372847]/40 transition-all"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/Debutant/debutant2.png" alt="Debut moment 2" fill className="object-cover" />
+                    <Image src="/desktop-background/debut 3.jpg" alt="Debut moment 2" fill className="object-cover" />
                   </motion.div>
                   <motion.div
                     className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md border-2 border-[#372847]/20 hover:border-[#372847]/40 transition-all"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg" alt="Debut moment 3" fill className="object-cover" />
+                    <Image src="/desktop-background/debut 2.jpg" alt="Debut moment 3" fill className="object-cover" />
                   </motion.div>
                 </div>
-                <p className={`${inter.className} text-[#372847]/70 text-[11px] sm:text-xs text-center mt-4 px-2`}>
+                <p className={`${inter.className} text-[#372847]/70 text-[10px] sm:text-xs text-center mt-4 px-1.5`}>
                   Tag your snapshots with our hashtags to be featured in {debutanteNickname}'s keepsake gallery.
                 </p>
               </div>
@@ -195,16 +193,16 @@ export function SnapShare() {
 
           <motion.div className="space-y-4 lg:space-y-6 h-full flex flex-col" variants={fadeInUp}>
             <div className="p-[1.5px] rounded-[22px] bg-gradient-to-br from-[#6A239E]/50 via-[#DC96FD]/30 to-[#6A239E]/50 flex-1">
-              <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-8 shadow-xl border border-white/60 text-center h-full flex flex-col">
-                <h4 className={`${playfair.className} text-base sm:text-xl md:text-2xl font-semibold text-[#372847] mb-3`}>
+              <div className="bg-white rounded-[20px] p-3 sm:p-6 md:p-8 shadow-xl border border-white/60 text-center h-full flex flex-col">
+                <h4 className={`${playfair.className} text-[15px] sm:text-xl md:text-2xl font-semibold text-[#372847] mb-3`}>
                   Share Her Debut Website
                 </h4>
-                <p className={`${inter.className} text-[#372847]/80 text-[12px] sm:text-sm mb-5 leading-relaxed`}>
+                <p className={`${inter.className} text-[#372847]/80 text-[11px] sm:text-sm mb-4 sm:mb-5 leading-relaxed px-1`}>
                   Spread the word about {debutanteNickname}'s elegant debut celebration. Share this QR code with friends and family so they can join the celebration.
                 </p>
-                <div className="mx-auto inline-flex flex-col items-center bg-[#F8F5FF] p-4 sm:p-6 md:p-7 rounded-2xl shadow-md border border-[#6A239E]/20 mb-4 flex-1 justify-center">
-                  <div className="mb-3 p-2.5 sm:p-4 rounded-xl bg-white border border-[#6A239E]/15">
-                    <div className="bg-white p-2.5 sm:p-4 rounded-lg shadow-sm border border-[#6A239E]/15">
+                <div className="mx-auto inline-flex flex-col items-center bg-[#F8F5FF] p-3 sm:p-6 md:p-7 rounded-2xl shadow-md border border-[#6A239E]/20 mb-4 flex-1 justify-center">
+                  <div className="mb-3 p-2 sm:p-4 rounded-xl bg-white border border-[#6A239E]/15">
+                    <div className="bg-white p-2 sm:p-4 rounded-lg shadow-sm border border-[#6A239E]/15">
                       <QRCodeCanvas 
                         id="snapshare-qr" 
                         value={websiteUrl} 
@@ -222,20 +220,20 @@ export function SnapShare() {
                     <span className={`${inter.className} tracking-[0.18em] uppercase font-medium`}>Download QR</span>
                   </button>
                 </div>
-                <p className={`${inter.className} text-[#372847]/70 text-[11px] sm:text-xs mt-auto`}>
+                <p className={`${inter.className} text-[#372847]/70 text-[10px] sm:text-xs mt-auto`}>
                   Scan with any camera app to open the full invitation and schedule.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-7 shadow-xl border border-white/60">
-              <h5 className={`${playfair.className} text-base sm:text-xl font-semibold text-[#372847] mb-3 text-center`}>
+            <div className="bg-white rounded-[20px] p-3 sm:p-6 md:p-7 shadow-xl border border-white/60">
+              <h5 className={`${playfair.className} text-[15px] sm:text-xl font-semibold text-[#372847] mb-3 text-center`}>
                 Share on Social Media
               </h5>
-              <p className={`${inter.className} text-[#372847]/75 text-[11px] sm:text-xs text-center mb-4`}>
+              <p className={`${inter.className} text-[#372847]/75 text-[10px] sm:text-xs text-center mb-4`}>
                 Help spread the word about {debutanteNickname}'s debut celebration. Share the event across your favorite platforms.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                 <button
                   onClick={() => shareOnSocial("instagram")}
                   className="group flex items-center justify-center gap-2 bg-[#6A239E] text-white px-4 py-3 rounded-lg hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg border border-[#6A239E]/70"
@@ -268,20 +266,20 @@ export function SnapShare() {
             </div>
 
             <div className="p-[1.5px] rounded-[22px] bg-gradient-to-br from-[#6A239E]/50 via-[#DC96FD]/30 to-[#6A239E]/50">
-              <div className="bg-white rounded-[20px] p-4 sm:p-6 md:p-7 shadow-xl border border-white/60 text-center">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#6A239E]/25 bg-[#F8F5FF] px-3 py-1 text-[10px] uppercase tracking-[0.32em] text-[#6A239E] mb-3">
+              <div className="bg-white rounded-[20px] p-3 sm:p-6 md:p-7 shadow-xl border border-white/60 text-center">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#6A239E]/25 bg-[#F8F5FF] px-2.5 py-1 text-[9px] uppercase tracking-[0.32em] text-[#6A239E] mb-3">
                   Upload Your Photos & Videos
                 </div>
-                <p className={`${inter.className} text-[#372847]/80 text-[12px] sm:text-sm leading-relaxed mb-5`}>
+                <p className={`${inter.className} text-[#372847]/80 text-[11px] sm:text-sm leading-relaxed mb-4 sm:mb-5 px-1`}>
                   Help us capture our special day! Scan the QR or use the actions below to drop your clips into our shared Drive.
                 </p>
-                <div className="mx-auto inline-flex flex-col items-center bg-[#F8F5FF] p-4 sm:p-6 rounded-2xl shadow-md border border-[#6A239E]/20 mb-4">
-                  <div className="mb-3 p-2.5 sm:p-4 rounded-xl bg-white border border-[#6A239E]/15">
-                    <div className="bg-white p-2.5 sm:p-4 rounded-lg shadow-sm border border-[#6A239E]/15">
+                <div className="mx-auto inline-flex flex-col items-center bg-[#F8F5FF] p-3 sm:p-6 rounded-2xl shadow-md border border-[#6A239E]/20 mb-4">
+                  <div className="mb-3 p-2 sm:p-4 rounded-xl bg-white border border-[#6A239E]/15">
+                    <div className="bg-white p-2 sm:p-4 rounded-lg shadow-sm border border-[#6A239E]/15">
                       <QRCodeCanvas id="drive-qr" value={driveLink} size={isMobile ? 150 : 200} includeMargin className="bg-white" />
                     </div>
                   </div>
-                  <p className={`${inter.className} text-[#372847]/80 text-[11px] sm:text-xs`}>📱 Scan with your camera app</p>
+                  <p className={`${inter.className} text-[#372847]/80 text-[10px] sm:text-xs`}>📱 Scan with your camera app</p>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
                   <button
@@ -307,9 +305,9 @@ export function SnapShare() {
           </motion.div>
         </motion.div>
 
-        <motion.div className="text-center mt-8 sm:mt-12" variants={fadeInUp}>
-          <div className="bg-white/10 rounded-[22px] p-5 sm:p-7 shadow-[0_25px_80px_rgba(0,0,0,0.35)] border border-white/20 max-w-3xl mx-auto backdrop-blur-xl">
-            <p className={`${inter.className} text-white text-sm sm:text-base md:text-lg leading-relaxed mb-4 px-2`}>
+        <motion.div className="text-center mt-7 sm:mt-12" variants={fadeInUp}>
+          <div className="bg-white/10 rounded-[22px] p-4 sm:p-7 shadow-[0_25px_80px_rgba(0,0,0,0.35)] border border-white/20 max-w-3xl mx-auto backdrop-blur-xl">
+            <p className={`${inter.className} text-white text-[13px] sm:text-base md:text-lg leading-relaxed mb-4 px-2`}>
               Thank you for helping make {debutanteNickname}'s debut celebration memorable. Your photos and messages create beautiful memories
               that will last a lifetime—keep sharing the joy throughout the evening.
             </p>

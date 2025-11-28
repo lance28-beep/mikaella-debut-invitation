@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
+import Image from "next/image"
 import { Instagram, Twitter, Facebook, MapPin, Calendar, Clock, Sparkles, Music2 } from "lucide-react"
-import { Playfair_Display, Inter, WindSong } from "next/font/google"
+import { Playfair_Display, Inter, WindSong, Great_Vibes } from "next/font/google"
 import { siteConfig } from "@/content/site"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
 const windSong = WindSong({ subsets: ["latin"], weight: ["400", "500"] })
+const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -81,6 +84,35 @@ export function Footer() {
     <footer 
       className="relative z-20 mt-16 text-white overflow-hidden bg-gradient-to-b from-[#372847] via-[#4a2f5e] to-[#372847]"
     >
+      <ButterflyCluster
+        className="pointer-events-none absolute top-6 sm:top-10 right-4 sm:right-8 opacity-70"
+        style={{ width: "180px", height: "180px", transform: "rotate(10deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-6 sm:bottom-10 left-2 sm:left-6 opacity-60"
+        style={{ width: "200px", height: "200px", transform: "rotate(-12deg)" }}
+        ariaHidden={true}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-16 sm:-top-20 -left-8 sm:-left-4 w-52 sm:w-64 opacity-75"
+        style={{ transform: "scaleX(-1) rotate(-4deg)" }}
+        priority={false}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -bottom-16 sm:-bottom-20 -right-10 sm:-right-4 w-60 sm:w-72 opacity-80"
+        priority={false}
+      />
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
         {/* Base pattern - diagonal lines forming diamonds */}
@@ -217,10 +249,10 @@ export function Footer() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <h3
-                  className="imperial-script-regular text-4xl md:text-5xl text-white drop-shadow-[0_6px_18px_rgba(55,40,71,0.65)]"
+                  className={`${greatVibes.className} text-4xl md:text-5xl text-white drop-shadow-[0_6px_18px_rgba(55,40,71,0.65)]`}
                   style={{ letterSpacing: "0.08em" }}
                 >
-                  Mehai
+                  Xyza Jenine 18
                 </h3>
               </div>
               <div className="space-y-4">
@@ -344,7 +376,7 @@ export function Footer() {
         <motion.div className="border-t border-white/20 pt-8" variants={fadeInUp}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className={`text-white/85 ${inter.className} text-sm`}>© {year} Mehai Jeffverly Servanda. Crafted with love for her debut story.</p>
+              <p className={`text-white/85 ${inter.className} text-sm`}>© {year} Xyza Jenine Bautista Medina. Crafted with love for her debut story.</p>
               <p className={`text-white/90 ${inter.className} text-sm mt-1`}>
                 Made with love for her special celebration
               </p>

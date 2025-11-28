@@ -5,6 +5,7 @@ import { Section } from "@/components/section"
 import Counter from "@/components/counter"
 import { WindSong, Playfair_Display, Great_Vibes } from "next/font/google"
 import { siteConfig } from "@/content/site"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 interface TimeLeft {
   days: number
@@ -27,6 +28,9 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 })
+
+const celebrantName = "Xyza Jenine"
+
 export function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -144,7 +148,7 @@ export function Countdown() {
   return (
     <Section
       id="countdown"
-      className="relative bg-gradient-to-b from-[#372847] via-[#4a2f5e] to-[#372847] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#372847] via-[#6A239E] to-[#372847] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
@@ -193,16 +197,16 @@ export function Countdown() {
 
       {/* Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-white/70 mb-3">
-          Lavender Dreams Await
+        <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#FBF7F8]/80 mb-3">
+          A Lavender Countdown for {celebrantName}
         </p>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-white mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(55,40,71,0.65)]`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-[#FBF7F8] mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(55,40,71,0.65)]`}
         >
-          Countdown to the Debut Celebration
+          Countdown to {celebrantName}'s Debut
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-white font-light max-w-2xl mx-auto leading-relaxed">
-          Each heartbeat draws us nearer to a night blooming in shades of lavender skies—Mehai's luminous coming of age.
+        <p className="text-sm sm:text-base md:text-lg text-[#FBF7F8]/90 font-light max-w-2xl mx-auto leading-relaxed">
+          Every heartbeat brings us closer to {celebrantName}'s luminous entrance into eighteen—an evening awash in lavender skies.
         </p>
       </div>
 
@@ -217,17 +221,29 @@ export function Countdown() {
 
         {/* Debut date presentation - Keepsake Card Style */}
         <div className="flex justify-center px-4">
-          <div className="max-w-2xl w-full">
+          <div className="max-w-2xl w-full relative">
+            {/* Butterfly positioned to the left of Save The Date - Background element */}
+            <ButterflyCluster
+              className="absolute z-0 pointer-events-none opacity-50 sm:opacity-60 md:opacity-70"
+              style={{
+                left: "-20px",
+                top: "2%",
+                transform: "scale(0.4) translate(0, 0)",
+                width: "134px",
+                height: "141px",
+              }}
+              ariaHidden={true}
+            />
             {/* Save The Date Header */}
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 relative z-10">
               <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
                 <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
                 <div className="w-1 h-1 bg-[#DC96FD]/60 rounded-full" />
                 <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
               </div>
 
-              <p className="text-xs sm:text-sm md:text-base font-medium text-white uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4">
-                Save The Debut Night
+              <p className="text-xs sm:text-sm md:text-base font-medium text-[#FBF7F8] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4">
+                Save {celebrantName}'s Debut Night
               </p>
 
               <div className="flex items-center justify-center gap-2">
@@ -252,7 +268,7 @@ export function Countdown() {
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 {/* Day - Large and bold focal point */}
                 <p
-                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-semibold text-white leading-none drop-shadow-[0_18px_35px_rgba(55,40,71,0.45)]"
+                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-semibold text-[#FBF7F8] leading-none drop-shadow-[0_18px_35px_rgba(55,40,71,0.45)]"
                 >
                   {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { day: 'numeric' })}
                 </p>
@@ -261,7 +277,7 @@ export function Countdown() {
                 <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#DC96FD]/60 to-transparent" />
                 
                 {/* Year - Elegant and refined */}
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white leading-none tracking-[0.2em] uppercase">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#FBF7F8] leading-none tracking-[0.2em] uppercase">
                   {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { year: 'numeric' })}
                 </p>
               </div>
@@ -277,7 +293,7 @@ export function Countdown() {
               </div>
               
               {/* Time */}
-              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-white tracking-[0.4em] uppercase mb-3 sm:mb-4">
+              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-[#FBF7F8] tracking-[0.4em] uppercase mb-3 sm:mb-4">
                 <span className="block sm:inline">{siteConfig.wedding.time} • {siteConfig.ceremony.venue}</span>
                 <span className="block sm:inline sm:before:content-['•'] sm:before:mx-2">
                   {siteConfig.ceremony.location.includes(',') 

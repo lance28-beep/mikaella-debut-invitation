@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Heart, MessageCircle, Sparkles } from "lucide-react"
 import { useState, useEffect } from "react"
-import { siteConfig } from "@/content/site"
 
 interface Message {
   timestamp: string
@@ -17,10 +16,8 @@ interface MessageWallDisplayProps {
   loading: boolean
 }
 
-const debutanteNickname =
-  siteConfig.couple.brideNickname ||
-  siteConfig.couple.bride ||
-  "Mehai"
+const debutanteName = "Xyza Jenine"
+const debutanteNickname = debutanteName.split(" ")[0]
 
 export default function MessageWallDisplay({ messages, loading }: MessageWallDisplayProps) {
   const [visibleMessages, setVisibleMessages] = useState<Message[]>([])

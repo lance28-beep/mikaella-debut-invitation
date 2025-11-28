@@ -4,7 +4,8 @@ import React from "react"
 import { useEffect, useMemo, useState } from "react"
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
-import { siteConfig } from "@/content/site"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
+import Image from "next/image"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -15,7 +16,7 @@ interface PrincipalSponsor {
   FemalePrincipalSponsor: string
 }
 
-const debutanteName = siteConfig.couple.brideNickname || siteConfig.couple.bride || "Mehai"
+const debutanteName = "Xyza Jenine"
 
 export function PrincipalSponsors() {
   const SectionTitle = ({
@@ -130,17 +131,50 @@ export function PrincipalSponsors() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#372847]/80 via-transparent to-[#372847]/80" />
       </div>
 
+      {/* Butterfly accents */}
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-6 sm:-top-10 left-0 sm:left-10 opacity-70"
+        style={{ width: "170px", height: "170px", transform: "rotate(-12deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-4 sm:bottom-8 right-2 sm:right-10 opacity-60"
+        style={{ width: "190px", height: "190px", transform: "rotate(10deg)" }}
+        ariaHidden={true}
+      />
+
+      {/* Lavender corner florals */}
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-8 sm:-top-10 -left-10 sm:-left-2 w-44 sm:w-56 opacity-70"
+        style={{ transform: "scaleX(-1) rotate(-8deg)" }}
+        priority={false}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -bottom-10 sm:-bottom-12 -right-6 sm:-right-2 w-52 sm:w-64 opacity-80"
+        priority={false}
+      />
+
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
-          Principal Sponsors
+          For Xyza Jenine
         </div>
         <h2
           className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(46,4,26,0.65)] mt-4`}
         >
-          Guardians of Grace
+          Circle of Principal Sponsors
         </h2>
         <p className={`${inter.className} text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-4 leading-relaxed`}>
-          Honoring the distinguished mentors and godparents who have guided {debutanteName}'s journey. Their wisdom, love, and blessings illuminate her path as she steps into womanhood on this momentous eighteenth year.
+          Honoring the mentors and godparents who steady {debutanteName}&apos;s heart—each blessing, toast, and prayer surrounding her eighteenth celebration with grace.
         </p>
       </div>
 

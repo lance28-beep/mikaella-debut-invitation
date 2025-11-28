@@ -1,166 +1,269 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Sparkles } from "lucide-react"
-import { WindSong, Great_Vibes } from "next/font/google"
+import { useEffect, useMemo, useState } from "react"
+import { Great_Vibes, Cormorant_Garamond, WindSong } from "next/font/google"
 import { siteConfig } from "@/content/site"
-import LiquidEther from "@/components/LiquidEther"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
+
+const desktopImages = [
+  "/desktop-background/debut 1.jpg",
+  "/desktop-background/debut 2.jpg",
+  "/desktop-background/debut 3.jpg",
+]
+
+const mobileImages = [
+  "/mobile-background/debut 1.jpg",
+  "/mobile-background/debut 2.jpg",
+  "/mobile-background/debut 3.jpg",
+]
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
 })
 
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+})
+
 const windSong = WindSong({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "400",
 })
 
 export function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imagesLoaded, setImagesLoaded] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    setIsVisible(true)
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkScreenSize()
+    window.addEventListener("resize", checkScreenSize)
+    return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
+
+  const backgroundImages = useMemo(() => {
+    return isMobile ? mobileImages : desktopImages
+  }, [isMobile])
+
+  useEffect(() => {
+    setImagesLoaded(false)
+    setCurrentImageIndex(0)
+
+    const firstImg = new Image()
+    firstImg.src = backgroundImages[0]
+    firstImg.onload = () => {
+      setImagesLoaded(true)
+    }
+
+    const preloadTimeout = setTimeout(() => {
+      if (typeof navigator !== "undefined" && (navigator as any).connection?.saveData) return
+      backgroundImages.slice(1, 3).forEach((src) => {
+        const img = new Image()
+        img.decoding = "async"
+        img.loading = "lazy" as any
+        img.src = src
+      })
+    }, 200)
+
+    return () => clearTimeout(preloadTimeout)
+  }, [backgroundImages])
+
+  useEffect(() => {
+    if (!imagesLoaded) return
+
+    const imageTimer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length)
+    }, 5000)
+
+    return () => clearInterval(imageTimer)
+  }, [imagesLoaded, backgroundImages])
+
+  useEffect(() => {
+    if (imagesLoaded) {
+      setIsVisible(true)
+    }
+  }, [imagesLoaded])
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#372847]">
       <div className="absolute inset-0 w-full h-full">
-        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-          <LiquidEther
-            colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-            mouseForce={20}
-            cursorSize={100}
-            isViscous={false}
-            viscous={30}
-            iterationsViscous={32}
-            iterationsPoisson={32}
-            resolution={0.5}
-            isBounce={false}
-            autoDemo={true}
-            autoSpeed={0.5}
-            autoIntensity={2.2}
-            takeoverDuration={0.25}
-            autoResumeDelay={3000}
-            autoRampDuration={0.6}
-          />
-        </div>
+        {imagesLoaded &&
+          backgroundImages.map((image, index) => (
+            <div
+              key={image}
+              className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                backgroundImage: `url('${image}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                willChange: "opacity",
+              }}
+            />
+          ))}
         <div className="absolute inset-0 bg-gradient-to-t from-[#372847]/95 via-[#6A239E]/70 to-transparent z-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#372847]/70 z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(106,35,158,0.18),transparent_55%)] mix-blend-screen" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(220,150,253,0.12),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite]" />
       </div>
+      <ButterflyCluster />
 
-      <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col items-center justify-end min-h-screen pb-12 sm:pb-20 md:pb-28 lg:pb-40 xl:pb-48">
+      <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col items-center justify-center min-h-screen pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-12 md:pb-16">
         <div
-          className={`w-full max-w-4xl text-center space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 transition-all duration-1000 ease-out ${
+          className={`w-full max-w-3xl text-center space-y-3 sm:space-y-4 md:space-y-5 transition-all duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="space-y-2 sm:space-y-3 mb-2 sm:mb-4">
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.35em] text-white drop-shadow-lg">
-              Please Join Us in Celebrating
-            </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white drop-shadow-lg italic">
-              The 18th Birthday of
-            </p>
-            <div className="flex items-center justify-center gap-3 sm:gap-4 py-1">
-              <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#6A239E]/60 to-[#DC96FD]" />
-              <Sparkles size={12} className="sm:w-3 sm:h-3 md:w-4 md:h-4 text-white drop-shadow-md" />
-              <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-l from-transparent via-[#6A239E]/60 to-[#DC96FD]" />
-            </div>
-          </div>
-
+          {/* Main Invitation Text - Smaller */}
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            <h1
-              className="imperial-script-regular text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8.5rem] text-white drop-shadow-[0_14px_38px_rgba(55,40,71,0.72)] leading-tight tracking-[0.06em]"
+            <p 
+              className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base uppercase tracking-[0.24em] sm:tracking-[0.28em] text-[#FBF7F8]/95 font-normal leading-relaxed px-4`}
               style={{
-                letterSpacing: "0.08em",
+                textShadow: "0 2px 14px rgba(55, 40, 71, 0.7)",
               }}
             >
-              Mehai Jeffverly
+              Please join us in celebrating the<br className="sm:hidden" /> 18th birthday of
+            </p>
+
+            {/* Name - Hero */}
+            <h1
+              className={`${greatVibes.className} text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] text-white leading-tight`}
+              style={{
+                letterSpacing: "0.08em",
+                textShadow: "0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.7), 0 0 60px rgba(220, 150, 253, 0.8), 0 0 80px rgba(220, 150, 253, 0.6), 0 0 100px rgba(220, 150, 253, 0.4), 0 4px 20px rgba(0, 0, 0, 0.5)",
+                filter: "drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 50px rgba(220, 150, 253, 0.6))",
+              }}
+            >
+              Xyza Jenine
             </h1>
+
+            {/* Turning Eighteen Text */}
             <p
-              className={`${windSong.className} text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] text-white drop-shadow-[0_12px_28px_rgba(106,35,158,0.6)]`}
+              className={`${windSong.className} text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] text-[#FCE1B6] drop-shadow-[0_12px_28px_rgba(90,31,58,0.6)]`}
               style={{
                 marginTop: "-0.25rem",
               }}
             >
-              {siteConfig.wedding.tagline}
+              is turning eighteen!
             </p>
-            <div className="h-0.5 sm:h-1 w-28 sm:w-32 md:w-40 lg:w-52 mx-auto bg-gradient-to-r from-transparent via-[#DC96FD] to-transparent shadow-[0_0_20px_rgba(220,150,253,0.65)]" />
+            
+            {/* Decorative Line */}
+            <div className="flex items-center justify-center gap-3 sm:gap-4 pt-1">
+              <div className="h-px w-16 sm:w-24 md:w-32 bg-gradient-to-r from-transparent via-[#DC96FD]/80 to-[#DC96FD]/40" />
+              <div className="w-1 h-1 rounded-full bg-[#DC96FD]/80 shadow-[0_0_8px_rgba(220,150,253,0.6)]" />
+              <div className="h-px w-16 sm:w-24 md:w-32 bg-gradient-to-l from-transparent via-[#DC96FD]/80 to-[#DC96FD]/40" />
+            </div>
           </div>
 
-          <div className="w-full max-w-4xl mt-2 sm:mt-3 md:mt-5 lg:mt-6 text-white" style={{ textShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>
-            <div className="flex flex-col items-center gap-1.5 sm:gap-3 md:gap-4 lg:gap-5 uppercase">
-              <span className="text-[9px] sm:text-sm md:text-base tracking-[0.45em] sm:tracking-[0.75em]">
-                April
+          {/* Date & Time Section - Refined */}
+          <div className="w-full max-w-2xl mx-auto">
+            <div 
+              className={`${cormorant.className} flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 text-[#FBF7F8]/95`}
+              style={{ textShadow: "0 4px 16px rgba(0,0,0,0.6)" }}
+            >
+              {/* Month */}
+              <span className="text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] font-light">
+                January
               </span>
-              <div className="flex w-full items-center gap-2 sm:gap-4 md:gap-6">
-                <div className="flex flex-1 items-center gap-2 sm:gap-4">
-                  <span className="h-[1px] flex-1 bg-white/70" />
-                  <span className="text-[8px] sm:text-xs md:text-sm tracking-[0.32em] sm:tracking-[0.6em]">
-                    Sun
+              
+              {/* Date Line */}
+              <div className="flex w-full items-center gap-2 sm:gap-4 md:gap-5">
+                {/* Day */}
+                <div className="flex flex-1 items-center justify-end gap-1.5 sm:gap-2.5">
+                  <span className="h-[0.5px] flex-1 bg-[#FBF7F8]/50" />
+                  <span className="text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light">
+                    Sat
                   </span>
-                  <span className="h-[1px] w-8 sm:w-10 md:w-12 bg-white/70" />
+                  <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#FBF7F8]/50" />
                 </div>
-                <div className="relative flex items-center justify-center px-2 sm:px-4 md:px-8 lg:px-10">
+
+                {/* Date Number - Elegant */}
+                <div className="relative flex items-center justify-center px-3 sm:px-4 md:px-5">
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 mx-auto h-[80%] max-h-[220px] w-[120px] sm:w-[180px] md:w-[220px] rounded-full bg-gradient-to-b from-[#DC96FD] via-[#B47FE8] to-[#6A239E] blur-[32px] opacity-80"
+                    className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-[#DC96FD]/30 via-[#6A239E]/30 to-transparent blur-[28px] opacity-70"
                   />
                   <span
-                    className="relative font-tiktok text-[2rem] sm:text-[4.25rem] md:text-[5.5rem] lg:text-[6.5rem] leading-none tracking-[0.05em] text-white"
+                    className={`${cormorant.className} relative text-[2.5rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] font-light leading-none tracking-wider text-white`}
                     style={{
                       textShadow:
-                        "0 0 30px rgba(220, 150, 253, 0.85), 0 0 70px rgba(180, 127, 232, 0.7), 0 0 120px rgba(106, 35, 158, 0.55), 0 18px 45px rgba(0,0,0,0.65)",
-                      filter: "drop-shadow(0 0 15px rgba(220, 150, 253, 0.6))",
+                        "0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.7), 0 0 60px rgba(220, 150, 253, 0.8), 0 0 80px rgba(220, 150, 253, 0.6), 0 0 100px rgba(220, 150, 253, 0.4), 0 4px 20px rgba(0, 0, 0, 0.5)",
+                      filter: "drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 50px rgba(220, 150, 253, 0.6))",
                     }}
                   >
-                    19
+                    17
                   </span>
                 </div>
-                <div className="flex flex-1 items-center gap-2 sm:gap-4 justify-end">
-                  <span className="h-[1px] w-8 sm:w-10 md:w-12 bg-white/70" />
-                  <span className="text-[8px] sm:text-xs md:text-sm tracking-[0.27em] sm:tracking-[0.45em]">
-                    5:30 PM
+
+                {/* Time */}
+                <div className="flex flex-1 items-center gap-1.5 sm:gap-2.5">
+                  <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#FBF7F8]/50" />
+                  <span className="text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light">
+                    5:00 PM
                   </span>
-                  <span className="h-[1px] flex-1 bg-white/70" />
+                  <span className="h-[0.5px] flex-1 bg-[#FBF7F8]/50" />
                 </div>
               </div>
-              <span className="text-[10px] sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.7em]">
+
+              {/* Year */}
+              <span className="text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] font-light">
                 2026
               </span>
             </div>
           </div>
 
-          <div className="space-y-2 sm:space-y-2.5 md:space-y-3 pt-4 sm:pt-6">
+          {/* Venue */}
+          <div className="space-y-1 sm:space-y-1.5 pt-1 sm:pt-2">
             <p
-              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium text-white drop-shadow-lg tracking-[0.12em] sm:tracking-[0.16em] md:tracking-[0.2em] lg:tracking-[0.24em]"
+              className={`${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.22em] sm:tracking-[0.26em] md:tracking-[0.3em] text-[#DC96FD] font-medium`}
               style={{
-                textShadow: "0 2px 16px rgba(106, 35, 158, 0.8)",
+                textShadow: "0 2px 18px rgba(106, 35, 158, 0.8)",
               }}
             >
               {siteConfig.wedding.venue}
             </p>
+            <p
+              className={`${cormorant.className} text-[0.6rem] sm:text-[0.7rem] md:text-xs lg:text-sm tracking-[0.15em] sm:tracking-[0.18em] text-[#FBF7F8]/90 font-light px-4 sm:px-8 md:px-12`}
+              style={{
+                textShadow: "0 2px 12px rgba(55, 40, 71, 0.6)",
+              }}
+            >
+              1345 Alabang–Zapote Rd, Almanza Uno, Las Piñas, 1750 Metro Manila, Philippines
+            </p>
           </div>
 
-          <div className="pt-6 sm:pt-8 md:pt-10 lg:pt-12 flex flex-row flex-wrap gap-3 sm:gap-4 md:gap-5 justify-center items-stretch max-w-3xl mx-auto w-full px-2">
+          {/* Call to Action Buttons - Elegant */}
+          <div className="pt-3 sm:pt-4 md:pt-5 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch max-w-2xl mx-auto w-full px-4">
              <a
                href="#narrative"
-               className="group relative flex-1 w-full sm:max-w-none sm:min-w-[200px] md:min-w-[240px] rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC96FD]/40"
+               className={`${cormorant.className} group relative flex-1 sm:min-w-[200px] md:min-w-[220px] rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(220,150,253,0.3)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC96FD]/50`}
              >
-               <span className="absolute inset-0 rounded-2xl bg-[#DC96FD] transition-colors duration-300" aria-hidden />
-               <span className="relative z-10 inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] w-full items-center justify-center px-7 sm:px-9 md:px-11 text-[9px] sm:text-[10px] md:text-xs tracking-[0.42em] text-[#372847] uppercase font-semibold transition-colors duration-300">
+               <span 
+                 className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#DC96FD] to-[#B47FE8] transition-all duration-500 group-hover:from-[#B47FE8] group-hover:to-[#DC96FD]" 
+                 aria-hidden 
+               />
+               <span className="relative z-10 inline-flex h-full min-h-[3rem] sm:min-h-[3.25rem] w-full items-center justify-center px-6 sm:px-8 text-[0.65rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.32em] sm:tracking-[0.36em] text-[#372847] font-semibold transition-all duration-300">
                  Journey to Eighteen
                </span>
              </a>
              <a
                href="#guest-list"
-               className="group relative flex-1 w-full sm:max-w-none sm:min-w-[200px] md:min-w-[240px] rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC96FD]/40"
+               className={`${cormorant.className} group relative flex-1 sm:min-w-[200px] md:min-w-[220px] rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(220,150,253,0.25)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC96FD]/50`}
              >
-               <span className="absolute inset-0 rounded-2xl bg-[#372847] border border-[#DC96FD] transition-colors duration-300" aria-hidden />
-               <span className="relative z-10 inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] w-full items-center justify-center px-7 sm:px-9 md:px-11 text-[9px] sm:text-[10px] md:text-xs tracking-[0.42em] text-[#DC96FD] uppercase font-semibold transition-colors duration-300">
+               <span 
+                 className="absolute inset-0 rounded-lg bg-transparent border-2 border-[#DC96FD] transition-all duration-500 group-hover:bg-[#DC96FD]/10" 
+                 aria-hidden 
+               />
+               <span className="relative z-10 inline-flex h-full min-h-[3rem] sm:min-h-[3.25rem] w-full items-center justify-center px-6 sm:px-8 text-[0.65rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.32em] sm:tracking-[0.36em] text-[#DC96FD] font-semibold transition-all duration-300">
                  RSVP & Guestbook
                </span>
              </a>

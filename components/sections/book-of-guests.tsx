@@ -5,6 +5,8 @@ import { Loader2, Mail, MessageSquare, Heart, Sparkles, User } from "lucide-reac
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { siteConfig } from "@/content/site"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
+import Image from "next/image"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -23,8 +25,8 @@ export function BookOfGuests() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [totalGuests, setTotalGuests] = useState(0)
-  const debutanteName = siteConfig.couple.brideNickname || siteConfig.couple.bride
-  const debutanteFirstName = debutanteName?.split(" ")[0] || "Mehai"
+  const debutanteName = "Xyza Jenine"
+  const debutanteFirstName = debutanteName.split(" ")[0]
 
   const getInitials = (name: string) => {
     if (!name) return "?"
@@ -92,6 +94,35 @@ export function BookOfGuests() {
       id="guests"
       className="relative z-[40] overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#372847]"
     >
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-8 sm:-top-12 left-0 sm:left-8 opacity-70"
+        style={{ width: "170px", height: "170px", transform: "rotate(-12deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-6 sm:bottom-10 right-2 sm:right-8 opacity-60"
+        style={{ width: "200px", height: "200px", transform: "rotate(10deg)" }}
+        ariaHidden={true}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-10 sm:-top-12 -left-6 sm:-left-2 w-48 sm:w-60 opacity-70"
+        style={{ transform: "scaleX(-1) rotate(-6deg)" }}
+        priority={false}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -bottom-12 sm:-bottom-14 -right-6 sm:-right-2 w-56 sm:w-72 opacity-80"
+        priority={false}
+      />
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
         {/* Base pattern - diagonal lines forming diamonds */}
@@ -138,7 +169,7 @@ export function BookOfGuests() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-6 lg:px-10">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-14 space-y-2.5 sm:space-y-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-14 space-y-2 sm:space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
             Guestbook for {debutanteFirstName}
           </div>
@@ -148,46 +179,46 @@ export function BookOfGuests() {
             Lavender Signatures of Love
           </h2>
           <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed`}>
-            Every RSVP is a shimmer on {debutanteName || "Mehai"}’s runway to eighteen—thank you for adding your light to
+            Every RSVP is a shimmer on {debutanteName}'s runway to eighteen—thank you for adding your light to
             this dreamy, lavender-sky celebration.
           </p>
         </div>
 
-        <div className="relative mb-7 sm:mb-12 lg:mb-14">
+        <div className="relative mb-6 sm:mb-12 lg:mb-14">
           <div className="absolute inset-0 -z-10 blur-[70px] bg-white/20 opacity-70" />
-          <div className="relative overflow-hidden rounded-[20px] sm:rounded-[30px] border border-white/25 bg-white px-3 sm:px-8 md:px-10 py-5 sm:py-9 shadow-[0_25px_75px_rgba(5,0,20,0.45)] text-[#372847]">
-            <div className="relative z-10 flex flex-col gap-4 sm:gap-7">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
-                <div className="inline-flex items-center gap-2.5 rounded-2xl border border-[#372847]/15 bg-[#372847]/5 px-3.5 py-3 sm:px-5 sm:py-4">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#6A239E] to-[#DC96FD] text-white shadow-[0_10px_25px_rgba(106,35,158,0.35)]">
-                    <Heart className="h-4 w-4" />
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-[30px] border border-white/25 bg-white px-3 sm:px-6 md:px-8 py-4 sm:py-8 shadow-[0_25px_75px_rgba(5,0,20,0.45)] text-[#372847]">
+            <div className="relative z-10 flex flex-col gap-3 sm:gap-7">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 sm:gap-6">
+                <div className="inline-flex items-center gap-2 rounded-xl sm:rounded-2xl border border-[#372847]/15 bg-[#372847]/5 px-3 py-2.5 sm:px-5 sm:py-4">
+                  <div className="inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#6A239E] to-[#DC96FD] text-white shadow-[0_10px_25px_rgba(106,35,158,0.35)]">
+                    <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </div>
                   <div>
-                    <p className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-[0.38em] text-[#372847]/70`}>
+                    <p className={`${inter.className} text-[8px] sm:text-[10px] uppercase tracking-[0.38em] text-[#372847]/70`}>
                       Confirmed Guests
                     </p>
-                    <h3 className={`${playfair.className} text-xl sm:text-3xl md:text-4xl leading-tight`}>
+                    <h3 className={`${playfair.className} text-lg sm:text-3xl md:text-4xl leading-tight`}>
                       {totalGuests} {totalGuests === 1 ? "Radiant Guest" : "Radiant Guests"}
                     </h3>
                   </div>
                 </div>
 
-                <div className="grid gap-2.5 text-left sm:text-right">
+                <div className="grid gap-2 text-left sm:text-right">
                   <div>
-                    <p className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-[0.32em] text-[#372847]/70`}>
+                    <p className={`${inter.className} text-[8px] sm:text-[10px] uppercase tracking-[0.32em] text-[#372847]/70`}>
                       RSVP Signatures
                     </p>
-                    <p className={`${playfair.className} text-lg sm:text-2xl`}>
+                    <p className={`${playfair.className} text-base sm:text-2xl`}>
                       {guests.length} {guests.length === 1 ? "Loved One" : "Loved Ones"}
                     </p>
                   </div>
-                  <div className="inline-flex items-center justify-start sm:justify-end gap-1.5 text-[9px] sm:text-xs tracking-[0.32em] uppercase text-[#372847]/75">
-                    <Sparkles className="h-4 w-4 text-[#6A239E]" />
+                  <div className="inline-flex items-center justify-start sm:justify-end gap-1 text-[8px] sm:text-xs tracking-[0.32em] uppercase text-[#372847]/75">
+                    <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#6A239E]" />
                     <span>Lavender lights await you</span>
                   </div>
                 </div>
               </div>
-              <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#372847]/85 leading-relaxed max-w-3xl`}>
+              <p className={`${inter.className} text-[10px] sm:text-sm md:text-base text-[#372847]/85 leading-relaxed max-w-3xl`}>
                 Kindly keep your RSVP up to date so we can seat you with grace and welcome you into {siteConfig.wedding.theme?.toLowerCase() || "this lavender-sky soirée"} the moment you arrive.
               </p>
             </div>

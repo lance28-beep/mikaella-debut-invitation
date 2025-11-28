@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Section } from "@/components/section"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 
 const greatVibes = Great_Vibes({
@@ -21,10 +22,10 @@ const inter = Inter({
 })
 
 const galleryItems = [
-  { image: "/Debutant/debutant.png", text: "Lavender Dreams" },
-  { image: "/Debutant/debutant2.png", text: "Purple Radiance" },
-  { image: "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg", text: "Soft Elegance" },
-  { image: "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg", text: "Soft Elegance" },
+  { image: "/desktop-background/debut 1.jpg", text: "Jenine • Lavender Dreams" },
+  { image: "/desktop-background/debut 3.jpg", text: "Jenine • Purple Radiance" },
+  { image: "/desktop-background/debut 2.jpg", text: "Jenine • Soft Elegance" },
+  { image: "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg", text: "Jenine • Soft Elegance" },
 ]
 
 const tileLayouts = [
@@ -114,6 +115,17 @@ export function Gallery() {
       id="gallery"
       className="relative bg-gradient-to-b from-[#241135] via-[#372847] to-[#241135] py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
+      <ButterflyCluster
+        className="pointer-events-none absolute z-0 opacity-60"
+        style={{
+          left: "-60px",
+          bottom: "12%",
+          transform: "scale(1.2)",
+          width: "200px",
+          height: "210px",
+        }}
+        ariaHidden={true}
+      />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(220,150,253,0.18),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_25%,rgba(106,35,158,0.38),transparent_45%)] mix-blend-screen" />
@@ -122,14 +134,14 @@ export function Gallery() {
 
       <div className="relative z-10 text-center px-4">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#DC96FD]/75 mb-3">Lavender keepsakes</p>
+          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#DC96FD]/75 mb-3">Xyza Jenine’s lavender keepsakes</p>
           <h2
             className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl text-[#DC96FD]`}
           >
-            Gallery of Midnight Petals
+            Xyza Jenine’s Midnight Gallery
           </h2>
           <p className={`${inter.className} text-sm sm:text-base md:text-lg text-[#FBF7F8]/90 mt-4 leading-relaxed`}>
-            Moments brushed in lilac light, champagne shimmer, and violet dusk—Mehai’s debut dreams, carefully framed for you to relive.
+            Moments brushed in lilac light, champagne shimmer, and violet dusk—every frame tells how Xyza Jenine glowed through her debut story.
           </p>
         </div>
       </div>
@@ -332,7 +344,7 @@ export function Gallery() {
 
       <div className="relative z-10 mt-12 sm:mt-14 md:mt-16 flex flex-col items-center gap-3 px-4 text-center">
         <p className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-[#FBF7F8]/70">
-          Continue the story
+          Continue Xyza Jenine’s story
         </p>
         <button
           type="button"
@@ -344,11 +356,11 @@ export function Gallery() {
           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-[#DC96FD]/35 to-transparent" />
           <span className="absolute inset-0 translate-x-full group-hover:-translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-l from-transparent via-[#DC96FD]/20 to-transparent" />
           <span className="relative z-10 inline-flex items-center justify-center">
-            View Full Gallery
+            View Xyza Jenine’s Gallery
           </span>
         </button>
         <p className={`${inter.className} text-xs text-[#FBF7F8]/75 max-w-md`}>
-          Step inside the complete photo journal to feel every laugh, twirl, and lavender shimmer from Mehai’s celebration.
+          Step inside the complete photo journal to feel every laugh, twirl, and lavender shimmer from Xyza Jenine’s celebration.
         </p>
       </div>
 
@@ -356,12 +368,12 @@ export function Gallery() {
         <div className="fixed inset-0 z-[9999] bg-[#11091d]/90 backdrop-blur-sm flex items-center justify-center px-4 py-6" role="dialog" aria-modal="true">
           <div className="relative max-w-md w-full rounded-3xl border border-[#DC96FD]/30 bg-gradient-to-br from-[#241135]/95 via-[#372847]/95 to-[#241135]/95 shadow-[0_35px_70px_rgba(10,3,18,0.75)] p-6 sm:p-8 text-center">
             <p className="text-[11px] sm:text-xs tracking-[0.5em] uppercase text-[#DC96FD]/80 mb-3">Coming soon</p>
-            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-[#DC96FD] mb-3`}>Pictorial Upload in Progress</h3>
+            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-[#DC96FD] mb-3`}>Xyza Jenine’s Pictorial in Progress</h3>
             <p className={`${inter.className} text-sm sm:text-base text-[#FBF7F8]/90 leading-relaxed`}>
-              We’re lovingly arranging the full lavender pictorial set for you. Please check back soon—something dreamy is being prepared just for you.
+              We’re lovingly arranging the full lavender pictorial set starring Xyza Jenine. Please check back soon—something dreamy is being prepared just for you.
             </p>
             <p className={`${playfair.className} text-xs sm:text-sm tracking-[0.35em] uppercase text-[#FBF7F8]/70 mt-4`}>
-              Mehai’s keepsakes take flight shortly
+              Xyza Jenine’s keepsakes take flight shortly
             </p>
             <button
               type="button"

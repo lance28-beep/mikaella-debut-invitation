@@ -188,3 +188,121 @@ html {
   font-weight: 400;
   font-style: normal;
 }
+
+/* Butterfly Animation Styles */
+@keyframes butterfly-wing-left {
+  to {
+    transform: rotateY(-60deg);
+  }
+}
+
+@keyframes butterfly-wing-right {
+  to {
+    transform: rotateY(-60deg);
+  }
+}
+
+.butterfly-canvas {
+  width: 134px;
+  height: 141px;
+  position: absolute;
+  left: 85%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bf {
+  width: 34px;
+  height: auto;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bf .wing-left,
+.bf .wing-right {
+  width: 50%;
+}
+
+.bf .wing-left svg,
+.bf .wing-right svg {
+  width: 100%;
+  height: auto;
+}
+
+.bf .wing-left {
+  animation: butterfly-wing-left 0.5s linear infinite alternate;
+  transform-origin: right;
+}
+
+.bf .wing-right {
+  animation: butterfly-wing-right 0.5s linear infinite alternate;
+  transform-origin: left;
+}
+
+.bf .wing-right svg {
+  transform: scaleX(-1);
+}
+
+/* Individual butterfly positioning and styling */
+.bf.bf-1 {
+  top: 25%;
+  transform: rotate(-8deg);
+}
+
+.bf.bf-2 {
+  top: 30%;
+  width: 16px;
+  left: 50%;
+  transform: rotate(-10deg);
+}
+
+.bf.bf-2 .wing-left,
+.bf.bf-2 .wing-right {
+  animation-delay: 250ms;
+  animation-duration: 300ms;
+}
+
+.bf.bf-3 {
+  width: 11px;
+  left: auto;
+  right: 5px;
+  transform: rotate(10deg);
+}
+
+.bf.bf-3 .wing-left,
+.bf.bf-3 .wing-right {
+  animation-delay: 200ms;
+  animation-duration: 250ms;
+}
+
+.bf.bf-4 {
+  top: 50%;
+  width: 20px;
+  left: auto;
+  right: 0;
+  transform: rotate(1deg);
+}
+
+.bf.bf-4 .wing-left,
+.bf.bf-4 .wing-right {
+  animation-delay: 300ms;
+  animation-duration: 350ms;
+}
+
+.bf.bf-5 {
+  top: auto;
+  bottom: 0;
+  width: 28px;
+  left: 40%;
+  transform: rotate(45deg);
+}
+
+.bf.bf-5 .wing-left,
+.bf.bf-5 .wing-right {
+  animation-delay: 250ms;
+  animation-duration: 400ms;
+}

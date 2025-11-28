@@ -20,6 +20,8 @@ import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
+const debutanteName = "Xyza Jenine"
+const debutanteFirstName = debutanteName.split(" ")[0]
 
 interface Guest {
   Name: string
@@ -138,7 +140,7 @@ export function GuestList() {
     if (!selectedGuest) return
 
     if (!formData.RSVP) {
-      setError("Please let us know if you can join Mehai's debut.")
+      setError(`Please let us know if you can join ${debutanteName}'s debut.`)
       setTimeout(() => setError(null), 5000)
       return
     }
@@ -257,7 +259,6 @@ export function GuestList() {
       id="guest-list"
       className="relative z-[60] overflow-visible py-16 sm:py-20 md:py-24 lg:py-28 bg-transparent"
     >
-
       <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-2 sm:space-y-4">
         <div
@@ -271,25 +272,25 @@ export function GuestList() {
             Join Us in This Elegant Celebration
           </h2>
           <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-white/85 max-w-xl sm:max-w-2xl mx-auto leading-relaxed`}>
-            Search your name to confirm your presence at Mehai's debut. Your RSVP helps us create an evening of grace,
+            Search your name to confirm your presence at {debutanteName}&apos;s debut. Your RSVP helps us create an evening of grace,
             warmth, and cherished memories as we honor this milestone together.
           </p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16 px-1.5 sm:px-4 md:px-6">
+        <div className="relative max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16 px-2 sm:px-4 md:px-6">
           <div className="absolute inset-0 -z-10 blur-[72px] bg-[#140823]/60 opacity-70" />
-          <div className="relative overflow-visible rounded-[22px] sm:rounded-[30px] border border-white/20 bg-gradient-to-b from-[#1c0f2d] via-[#281238] to-[#3a1651] shadow-[0_25px_70px_rgba(6,0,20,0.55)]">
-            <div className="relative p-4 sm:p-7 md:p-8 lg:p-10 space-y-5 sm:space-y-8" ref={searchRef}>
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl border border-white/25 bg-white/10 shadow-[0_12px_24px_rgba(6,0,20,0.55)]">
-                  <Search className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+          <div className="relative overflow-visible rounded-2xl sm:rounded-[30px] border border-white/20 bg-gradient-to-b from-[#1c0f2d] via-[#281238] to-[#3a1651] shadow-[0_25px_70px_rgba(6,0,20,0.55)]">
+            <div className="relative p-3 sm:p-7 md:p-8 lg:p-10 space-y-3 sm:space-y-8" ref={searchRef}>
+              <div className="flex items-center gap-2 sm:gap-4">
+                <div className="inline-flex h-8 w-8 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl border border-white/25 bg-white/10 shadow-[0_12px_24px_rgba(6,0,20,0.55)]">
+                  <Search className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-white" />
                 </div>
                 <div>
-                  <p className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.3em] text-white/70`}>
+                  <p className={`${inter.className} text-[8px] sm:text-xs uppercase tracking-[0.3em] text-white/70`}>
                     Step 1
                   </p>
-                  <h3 className={`${playfair.className} text-base sm:text-xl text-white`}>Find Your Name</h3>
-                  <p className={`${inter.className} text-[11px] sm:text-sm text-white/80`}>
+                  <h3 className={`${playfair.className} text-sm sm:text-xl text-white`}>Find Your Name</h3>
+                  <p className={`${inter.className} hidden sm:block text-[11px] sm:text-sm text-white/80`}>
                     Begin typing to see your RSVP details appear.
                   </p>
                 </div>
@@ -297,51 +298,51 @@ export function GuestList() {
 
               <div className="relative">
                 <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-white/50 pointer-events-none" />
+                  <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 h-3.5 w-3.5 sm:h-5 sm:w-5 text-white/50 pointer-events-none" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Type your name to find your invitation..."
-                    className={`${inter.className} w-full rounded-2xl border border-white/30 bg-white/5 px-11 py-3 text-sm sm:text-base text-white placeholder:text-white/50 shadow-[0_8px_20px_rgba(6,0,20,0.4)] focus:border-white focus:outline-none focus:ring-4 focus:ring-white/20 transition-all duration-300`}
+                    placeholder="Type your name..."
+                    className={`${inter.className} w-full rounded-xl sm:rounded-2xl border border-white/30 bg-white/5 px-9 sm:px-11 py-2 sm:py-3 text-xs sm:text-base text-white placeholder:text-white/50 shadow-[0_8px_20px_rgba(6,0,20,0.4)] focus:border-white focus:outline-none focus:ring-2 sm:ring-4 focus:ring-white/20 transition-all duration-300`}
                   />
                 </div>
 
                 {isSearching && filteredGuests.length > 0 && (
-                  <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_24px_60px_rgba(6,0,20,0.55)]">
+                  <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-xl sm:rounded-2xl border border-[#6A239E]/40 bg-gradient-to-br from-[#372847] to-[#6A239E] shadow-[0_20px_50px_rgba(6,0,20,0.7)]">
                     {filteredGuests.map((guest, index) => (
                       <button
                         key={`${guest.Name}-${index}`}
                         onClick={() => handleSearchSelect(guest)}
-                        className="group flex w-full items-center gap-3 px-4 py-4 text-left transition-all duration-300 hover:bg-white/5 border-b border-white/10 last:border-b-0"
+                        className="group flex w-full items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-4 text-left transition-all duration-300 hover:bg-[#DC96FD]/20 border-b border-white/10 last:border-b-0"
                       >
-                        <div className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 shadow-[0_8px_20px_rgba(6,0,20,0.5)]">
-                          <User className="h-4 w-4 text-white" />
+                        <div className="inline-flex h-7 w-7 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[#DC96FD]/30 bg-gradient-to-br from-[#6A239E] to-[#DC96FD] shadow-[0_8px_20px_rgba(220,150,253,0.3)]">
+                          <User className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className={`${playfair.className} text-sm sm:text-base text-white truncate group-hover:text-white/80`}>
+                          <p className={`${playfair.className} text-xs sm:text-base text-white truncate group-hover:text-[#DC96FD]`}>
                             {guest.Name}
                           </p>
                           {guest.Email && guest.Email !== "Pending" && (
-                            <p className={`${inter.className} text-[11px] text-white/70 truncate`}>{guest.Email}</p>
+                            <p className={`${inter.className} text-[9px] sm:text-[11px] text-white/70 truncate`}>{guest.Email}</p>
                           )}
                         </div>
-                        <Sparkles className="h-4 w-4 text-white/60 group-hover:text-white transition-colors" />
+                        <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-[#DC96FD] group-hover:text-white transition-colors" />
                       </button>
                     ))}
                   </div>
                 )}
 
                 {searchQuery && filteredGuests.length === 0 && (
-                  <div className="absolute z-50 mt-3 w-full overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_24px_60px_rgba(6,0,20,0.55)]">
-                    <div className="space-y-4 px-5 py-6">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/25 bg-white/10 shadow-[0_12px_30px_rgba(6,0,20,0.55)]">
-                        <UserPlus className="h-5 w-5 text-white" />
+                  <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-xl sm:rounded-2xl border border-[#6A239E]/40 bg-gradient-to-br from-[#372847] to-[#6A239E] shadow-[0_20px_50px_rgba(6,0,20,0.7)]">
+                    <div className="space-y-3 sm:space-y-4 px-3 sm:px-5 py-4 sm:py-6">
+                      <div className="inline-flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl border border-[#DC96FD]/30 bg-gradient-to-br from-[#6A239E] to-[#DC96FD] shadow-[0_12px_30px_rgba(220,150,253,0.4)]">
+                        <UserPlus className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                       </div>
-                      <div className="space-y-2">
-                        <h4 className={`${playfair.className} text-lg text-white`}>Not seeing your name?</h4>
-                        <p className={`${inter.className} text-sm text-white/80 leading-relaxed`}>
-                          We'd be honored to have you join us. Send a request and we'll make sure you're part of Mehai's elegant debut celebration.
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <h4 className={`${playfair.className} text-base sm:text-lg text-white`}>Not seeing your name?</h4>
+                        <p className={`${inter.className} text-xs sm:text-sm text-white/85 leading-relaxed`}>
+                          We&apos;d be honored to have you join us. Send a request and we&apos;ll make sure you&apos;re part of {debutanteName}&apos;s elegant debut celebration.
                         </p>
                       </div>
                       <Button
@@ -349,7 +350,7 @@ export function GuestList() {
                           setRequestFormData({ ...requestFormData, Name: searchQuery })
                           setShowRequestModal(true)
                         }}
-                        className="w-full rounded-2xl bg-white/10 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-[0_12px_30px_rgba(6,0,20,0.6)]"
+                        className="w-full rounded-xl sm:rounded-2xl bg-[#DC96FD] px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-[#372847] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_12px_30px_rgba(220,150,253,0.6)]"
                       >
                         Request to Join the Celebration
                       </Button>
@@ -375,7 +376,7 @@ export function GuestList() {
                         Welcome, {selectedGuest?.Name?.split(" ")[0]}
                       </h3>
                       <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-white/85 leading-relaxed`}>
-                        We're delighted to have you join us for Mehai's elegant debut celebration. Please confirm your attendance for this special evening.
+                        We&apos;re delighted to have you join us for {debutanteName}&apos;s elegant debut celebration. Please confirm your attendance for this special evening.
                       </p>
                     </div>
                     <button
@@ -414,7 +415,7 @@ export function GuestList() {
                       {selectedGuest?.Message && selectedGuest.Message.trim() !== "" && (
                         <div className="mx-auto max-w-lg rounded-lg sm:rounded-2xl border border-white/25 bg-white/5 px-4 py-3 sm:px-6 sm:py-4 text-left">
                           <p className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/70`}>
-                            Your Note for Mehai
+                            Your Note for {debutanteFirstName}
                           </p>
                           <p className={`${inter.className} mt-1.5 sm:mt-2 text-xs sm:text-sm text-white italic`}>
                             "{selectedGuest.Message}"
@@ -505,7 +506,7 @@ export function GuestList() {
 
                       <div className="space-y-1.5 sm:space-y-2">
                         <label className={`${inter.className} text-[9px] sm:text-xs uppercase tracking-[0.32em] text-white/75`}>
-                          Message for Mehai <span className="text-white/60">(optional)</span>
+                          Message for {debutanteFirstName} <span className="text-white/60">(optional)</span>
                         </label>
                         <textarea
                           name="Message"
@@ -513,7 +514,7 @@ export function GuestList() {
                           onChange={handleFormChange}
                           rows={3}
                           className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 resize-none`}
-                          placeholder="Share a heartfelt message or wish for Mehai on her special day..."
+                          placeholder={`Share a heartfelt message or wish for ${debutanteName} on her special day...`}
                         />
                       </div>
 
@@ -562,7 +563,7 @@ export function GuestList() {
                       </div>
                       <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>RSVP Successfully Submitted</h4>
                       <p className={`${inter.className} text-xs sm:text-sm text-white/80`}>
-                        Thank you for being part of Mehai's elegant debut celebration. This window will close automatically.
+                        Thank you for being part of {debutanteName}&apos;s elegant debut celebration. This window will close automatically.
                       </p>
                     </div>
                   </div>
@@ -597,7 +598,7 @@ export function GuestList() {
                         Join Our Celebration
                       </h3>
                       <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-white/85 leading-relaxed`}>
-                        We'd be honored to have you join us for Mehai's debut. Share your details and we'll reach out to confirm your place at this elegant celebration.
+                        We&apos;d be honored to have you join us for {debutanteName}&apos;s debut. Share your details and we&apos;ll reach out to confirm your place at this elegant celebration.
                       </p>
                     </div>
                     <button
@@ -687,7 +688,7 @@ export function GuestList() {
                         onChange={(e) => setRequestFormData({ ...requestFormData, Message: e.target.value })}
                         rows={3}
                         className={`${inter.className} w-full rounded-lg sm:rounded-2xl border border-white/30 bg-white/5 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 resize-none`}
-                        placeholder="Share how you know Mehai or what you're most looking forward to at her debut..."
+                        placeholder={`Share how you know ${debutanteFirstName} or what you're most looking forward to at her debut...`}
                       />
                     </div>
 

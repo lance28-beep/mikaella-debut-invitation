@@ -6,28 +6,44 @@ const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
+    const audioEl = audioRef.current
+    if (!audioEl) return
+
+    const removeInteractionListeners = () => {
+      document.removeEventListener("click", handleUserInteraction)
+      document.removeEventListener("touchstart", handleUserInteraction)
+    }
+
     const handleUserInteraction = () => {
-      const audioEl = audioRef.current
-      if (!audioEl) return
       audioEl
         .play()
-        .then(() => {
-          document.removeEventListener("click", handleUserInteraction)
-          document.removeEventListener("touchstart", handleUserInteraction)
-        })
+        .then(removeInteractionListeners)
         .catch((error) => {
           console.log("Playback blocked:", error)
         })
     }
 
-    document.addEventListener("click", handleUserInteraction)
-    document.addEventListener("touchstart", handleUserInteraction)
+    const setupUserInteraction = () => {
+      document.addEventListener("click", handleUserInteraction)
+      document.addEventListener("touchstart", handleUserInteraction)
+    }
+
+    const tryAutoplay = () => {
+      audioEl.play().catch((error) => {
+        console.log(
+          "Autoplay blocked, waiting for user interaction:",
+          error,
+        )
+        setupUserInteraction()
+      })
+    }
+
+    tryAutoplay()
 
     return () => {
       audioRef.current?.pause()
       audioRef.current = null
-      document.removeEventListener("click", handleUserInteraction)
-      document.removeEventListener("touchstart", handleUserInteraction)
+      removeInteractionListeners()
     }
   }, [])
 

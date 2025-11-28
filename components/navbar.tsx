@@ -1,9 +1,15 @@
 "use client"
 
 import { useState, useEffect, useMemo, useRef } from "react"
+import { Great_Vibes } from "next/font/google"
 import Link from "next/link"
 import { Sparkles } from "lucide-react"
 import StaggeredMenu from "./StaggeredMenu"
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400"
+})
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -108,11 +114,11 @@ export function Navbar() {
               {/* Main text with elegant debut styling */}
               <div className="relative">
                 <div
-                  className="imperial-script-regular text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] group-hover:text-[#DC96FD] group-active:text-[#DC96FD] transition-all duration-500 drop-shadow-[0_4px_12px_rgba(55,40,71,0.6)] text-[#FFFFFF] group-hover:drop-shadow-[0_5px_16px_rgba(252,225,182,0.5)]"
+                  className={`${greatVibes.className} text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] group-hover:text-[#DC96FD] group-active:text-[#DC96FD] transition-all duration-500 drop-shadow-[0_4px_12px_rgba(55,40,71,0.6)] text-[#FFFFFF] group-hover:drop-shadow-[0_5px_16px_rgba(252,225,182,0.5)]`}
                   style={{ letterSpacing: "0.08em" }}
                 >
                   <span className="relative inline-block">
-                    Mehai is turning 18
+                    Xyza Jenine 18
                     {/* Sparkle effects around the text - debut theme */}
                     <Sparkles 
                       size={8} 

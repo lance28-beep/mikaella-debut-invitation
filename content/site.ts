@@ -1,58 +1,59 @@
 export const siteConfig = {
   couple: {
-    bride: "Mehai Jeffverly Servanda",
-    brideNickname: "Mehai",
+    bride: "Xyza Jenine Bautista Medina",
+    brideNickname: "Jenine",
     groom: "",
     groomNickname: "",
   },
   wedding: {
-    date: "April 19, 2026",
-    time: "5:30 PM",
-    venue: "Villa Anaya, Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan, Philippines",
-    tagline: "is turning eighteen!",
+    date: "January 17, 2026",
+    time: "5:00 PM",
+    venue: "Excelsior Hotel",
+    address: "1345 Alabang-Zapote Rd, Almanza Uno, Las Pinas, 1750 Metro Manila, Philippines",
+    tagline: "PLEASE JOIN US IN CELEBRATING THE 18th BIRTHDAY OF",
     theme: "Blooming in shades of lavender skies",
     motif: "Plans gathered between purple daydreams and gloss-kissed mirrors.",
   },
   details: {
     rsvp: {
-      deadline: "April 12, 2026",
+      deadline: "January 10, 2026",
     },
   },
   ceremony: {
-    location: "Villa Anaya, Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan, Philippines",
-    venue: "Villa Anaya",
-    date: "April 19, 2026",
-    day: "Sunday",
-    time: "5:30 PM",
-    entourageTime: "5:00 PM",
-    guestsTime: "5:30 PM",
+    location: "Excelsior Hotel",
+    venue: "Excelsior Hotel",
+    date: "January 17, 2026",
+    day: "Saturday",
+    time: "5:00 PM",
+    entourageTime: "4:30 PM",
+    guestsTime: "5:00 PM",
   },
   reception: {
-    location: "Villa Anaya, Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan, Philippines",
-    venue: "Villa Anaya",
-    date: "April 19, 2026",
-    time: "7:00 PM",
+    location: "Excelsior Hotel",
+    venue: "Excelsior Hotel",
+    date: "January 17, 2026",
+    time: "6:30 PM",
   },
   dressCode: {
     theme: "Blooming in shades of lavender skies",
-    colors: ["#C0C0C0", "#808080", "#FFB6C1"],
+    colors: ["#372847", "#6A239E", "#DC96FD"],
     sponsors: {
-      ladies: "Powder pink or silver long gown",
-      gentlemen: "Silver or gray suit",
+      ladies: "Lavender or purple long gown",
+      gentlemen: "Deep purple or charcoal suit",
     },
     guests: {
-      ladies: "Powder pink, silver, or gray tones",
-      gentlemen: "Silver, gray, or neutral suits",
+      ladies: "Lavender, purple, or soft pink tones",
+      gentlemen: "Purple, charcoal, or dark suits",
     },
-    note: "Kindly wear shades of powder pink, silver, or gray tones to match the elegant color palette.",
+    note: "Kindly wear shades of lavender, purple, or soft pink tones to match the elegant color palette.",
   },
   narrative: `Blooming in shades of lavender skies
 
-Mehai envisions a future carried by silver wings—where the world unfurls beneath her like a map of endless possibilities. Since her very first breath, her heart has pulsed with wanderlust, whispering one steadfast dream: to become a flight attendant and greet every horizon with grace.
+Jenine envisions a future painted in lavender dreams—where every moment unfolds like petals beneath a purple sky. Her world glows in rich purples and soft shimmers, a universe reflected in gloss-kissed mirrors and held together by plans gathered between daydreams.
 
-Her universe glows in rich purples and soft shimmers, expressed not through journal pages but through the art of makeup—each brushstroke a quiet celebration of confidence and becoming.
+Her journey has been one of grace and determination, each step a quiet celebration of confidence and becoming. Like lavender blooming under the evening sky, she embraces the beauty of transformation.
 
-Beyond her ambitions, she delights in discovering new things and savoring every vibrant moment of her teenage years with friends, family, and those who hold her closest. Her dreams shine warmly, rooted in love and the promise to rise high enough to make her parents proud.`,
+Beyond her aspirations, she delights in discovering new horizons and savoring every vibrant moment with friends, family, and those who hold her closest. Her dreams shine warmly, rooted in love and the promise to bloom brightly for those who believe in her.`,
   colors: {
     primary: "#6A239E",
     secondary: "#DC96FD",

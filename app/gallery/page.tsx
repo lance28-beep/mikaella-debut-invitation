@@ -2,7 +2,6 @@ import fs from "fs/promises"
 import path from "path"
 import Link from "next/link"
 import MasonryGallery from "@/components/masonry-gallery"
-import { siteConfig } from "@/content/site"
 
 // Generate on each request so newly added images in public/ appear without a rebuild
 export const dynamic = "force-dynamic"
@@ -30,8 +29,7 @@ export default async function GalleryPage() {
     ...desktop.map((src) => ({ src, category: "desktop" as const })),
     ...mobile.map((src) => ({ src, category: "mobile" as const })),
   ]
-  const debutanteNickname =
-    siteConfig.couple.brideNickname || siteConfig.couple.bride || "Mehai"
+  const debutanteNickname = "Xyza"
   const sanitizedTagName = debutanteNickname.replace(/\s+/g, "")
   const hashtags = [
     `#${sanitizedTagName}At18`,

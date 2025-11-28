@@ -1,11 +1,13 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Section } from "@/components/section"
 import Stack from "@/components/stack"
 import { motion } from "motion/react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { siteConfig } from "@/content/site"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
@@ -34,35 +36,46 @@ const TAB_CONTENT: Record<
   }
 > = {
   about: {
-    headline: "The Girl Behind the Lilac Glow",
-    blurb: "Rooted in Kindness, Bravery, and Grace",
+    headline: "The Heart of Xyza Jenine",
+    blurb: "Grounded in grace, lifted by love",
     paragraphs: [
-      "Mehai is a gentle flame—kind to the world, brave in the face of every challenge, and humble no matter how bright she becomes. She carries kindness like a soft violet ribbon, offering warmth to those around her. Her courage blooms quietly but powerfully, the kind that stands firm without raising its voice. And through every achievement, she remains grounded, grateful, and gracefully aware of where she came from.",
-      "Her debut is more than a celebration—it is her love letter to her parents, a tribute to the sacrifices that shaped her, the values they planted in her, and the roots she grows from. It is a moment to honor every small victory, every difficulty overcome, and every lesson learned.",
-      "Tonight's palette of Silver, Soft Pink, and Neutral mirrors the heart she carries—resilient, warm, tender, and steady. As she steps into adulthood, she continues to learn, to rise, and to honor the home that raised her.",
+      "Xyza Jenine is the kind of light that fills a room quietly—soft, steady, and deeply sincere. She leads with compassion, listens with curiosity, and shares joy like it is second nature. Every laugh, hug, and gentle word she offers feels intentional, as if she’s stitching kindness into the people she loves.",
+      "Her debut is her way of honoring the family who raised her, the friends who cheer her on, and the mentors who taught her how to stay humble while chasing the extraordinary. It is the celebration of a daughter who never forgets to say thank you, a sister who shows up, and a friend who makes every moment feel safe.",
+      "Wrapped in the lavender palette she adores, she steps into adulthood with a quiet confidence—ready to keep growing, keep giving, and keep carrying the values that shaped her.",
     ],
-    highlights: ["Kind, brave, and humble at heart", "Debut dedicated to her parents' love & sacrifices", "Growing, learning, and honoring her roots"],
+    highlights: [
+      "Gentle, generous, and faith-filled",
+      "Celebrates family stories and traditions",
+      "Always choosing kindness first",
+    ],
   },
   dreams: {
-    headline: "Blooming in shades of lavender skies",
-    blurb: "Plans gathered between purple daydreams and gloss-kissed mirrors.",
+    headline: "Dreaming Beyond Lavender Horizons",
+    blurb: "A heart set on adventure, service, and purpose",
     paragraphs: [
-      "Mehai envisions a future carried by silver wings—where the world unfurls beneath her like a map of endless possibilities. Since her very first breath, her heart has pulsed with wanderlust, whispering one steadfast dream: to become a flight attendant and greet every horizon with grace.",
-      "Her universe glows in rich purples and soft shimmers, expressed not through journal pages but through the art of makeup—each brushstroke a quiet celebration of confidence and becoming.",
-      "Beyond her ambitions, she delights in discovering new things and savoring every vibrant moment of her teenage years with friends, family, and those who hold her closest. Her dreams shine warmly, rooted in love and the promise to rise high enough to make her parents proud.",
+      "Xyza dreams in widescreen color. She sees herself exploring new cities, learning from different cultures, and representing her family with pride wherever she lands. Travel is more than a bucket-list wish—it is how she imagines growing wiser, braver, and more compassionate.",
+      "She is drawn to careers that let her care for people and keep them inspired, whether through hospitality, aviation, or creative storytelling. Whatever path she takes, she wants it to reflect excellence, elegance, and empathy.",
+      "Above everything, she dreams of becoming the kind of woman who lifts others up—an achiever whose success is shared with the people who believed in her from the beginning.",
     ],
-    highlights: ["Become a flight attendant", "Travel the world", "Make her parents proud"],
+    highlights: [
+      "Pursue a career that blends travel and service",
+      "See the world with her parents’ blessing and pride",
+      "Inspire younger siblings and cousins to dream boldly",
+    ],
   },
   bio: {
-    headline: "Chapters Softly Written in Lilac and Bravery",
-    blurb: "A story of growth, service, and quiet courage.",
+    headline: "A Lavender Story in Motion",
+    blurb: "From shy girl to confident debutante",
     paragraphs: [
-      "Raised in the quiet town of Mangatarem, Mehai grew up as an only child—content, curious, and gently learning the rhythm of her small world. But life had brighter plans. A few years later, siblings arrived like unexpected bursts of color, turning her once–quiet days into a tapestry of laughter, chaos, and joy. They became the hues that made her world fuller, louder, and infinitely more fun.",
-      "At fourteen, Mehai first stepped into the world of student leadership. Her journey began with Barkada Kontra Droga, unsure if she belonged, unsure if she would win—but certain she would give her honest, fearless best. From that brave beginning, she rose to the final five representatives, a moment that whispered, You can.",
-      "With newfound confidence, she continued her path through school organizations until she reached the highest student body of all—the Supreme Secondary Learner Government. Now on her third year of service, she proudly stands as Vice President, carrying responsibilities she once doubted she could hold.",
-      "Tonight, on her debut, Mehai stands at the edge of a new chapter—confident, steady, and glowing with quiet courage. She steps forward ready to embrace challenges, shaped by the lessons of her past and open to the wisdom of every tomorrow.",
+      "Xyza Jenine grew up surrounded by family who taught her that gentleness can still be powerful. She learned to serve others before herself, to study diligently, and to carry her faith with quiet courage. Those early lessons turned into leadership roles at school, volunteer work in her community, and friendships built on trust.",
+      "She discovered her love for hosting and organizing events while helping with campus activities and family celebrations. Whether she’s planning surprises, styling looks, or writing heartfelt notes, she approaches every task with creativity and a meticulous eye.",
+      "As she turns 18, she carries stories of victories and setbacks, of prayers answered at the last minute, and of mentors who believed in her even when she doubted herself. Her bio is still being written, but every chapter so far points to a young woman ready to serve, to soar, and to shine for the people she loves.",
     ],
-    highlights: ["Born April 19, 2008 — Aries", "3 years in the SSLG — now Vice President", "Raised in Mangatarem"],
+    highlights: [
+      "Proud daughter, sister, and friend",
+      "Active campus leader and community volunteer",
+      "Believes in purpose before perfection",
+    ],
   },
 }
 
@@ -70,7 +83,39 @@ export function Narrative() {
   const [activeTab, setActiveTab] = useState<TabId>("about")
 
   return (
-    <Section id="narrative" className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-[#372847] via-[#4a2f5e] to-[#372847]">
+    <Section id="narrative" className="relative overflow-hidden py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-[#372847] via-[#4a2f5e] to-[#372847]">
+      <ButterflyCluster
+        className="pointer-events-none absolute z-0 opacity-50 sm:opacity-60 md:opacity-70"
+        style={{
+          right: "-80px",
+          top: "10%",
+          transform: "scale(1.1)",
+          width: "180px",
+          height: "190px",
+        }}
+        ariaHidden={true}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute bottom-0 right-[-40px] w-48 sm:w-64 md:w-72 opacity-80"
+        sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, 18rem"
+        priority={false}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute bottom-0 left-[-40px] w-40 sm:w-56 md:w-64 opacity-70"
+        style={{ transform: "scaleX(-1)" }}
+        sizes="(max-width: 640px) 10rem, (max-width: 768px) 14rem, 16rem"
+        priority={false}
+      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <motion.div
@@ -80,11 +125,11 @@ export function Narrative() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#DC96FD]/80 mb-2 sm:mb-3 md:mb-4">
+          <p className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-white/80 mb-2 sm:mb-3 md:mb-4">
             Lavender dreams of the debutante
           </p>
           <h2
-            className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#DC96FD] leading-tight`}
+            className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white leading-tight`}
           >
             My Journey to 18
           </h2>
@@ -115,11 +160,10 @@ export function Narrative() {
                   sendToBackOnClick={false}
                   cardDimensions={{ width: 240, height: 300 }}
                   cardsData={[
-                    { id: 1, img: "/Debutant/debutant.png" },
-                    { id: 2, img: "/Debutant/debutant2.png" },
-                    { id: 3, img: "/Debutant/flux-pro-2.0_Create_a_“Coming_Soon”_announcement_image_with_an_elegant_debutante_theme._I-0.jpg" },
-                    { id: 4, img: "/Debutant/debutant2.png" },
-                    { id: 5, img: "/Debutant/debutant.png" },
+                    { id: 1, img: "/desktop-background/debut 3.jpg" },
+                    { id: 2, img: "/desktop-background/debut 2.jpg" },
+                    { id: 3, img: "/desktop-background/debut 1.jpg" },
+
 
                   ]}
                   animationConfig={{ stiffness: 260, damping: 22 }}
@@ -127,7 +171,7 @@ export function Narrative() {
               </div>
 
               <motion.p
-                className="text-center text-[10px] sm:text-xs md:text-sm text-[#DC96FD]/80 mt-3 sm:mt-4 md:mt-6 tracking-[0.25em] sm:tracking-[0.3em] uppercase"
+                className="text-center text-[10px] sm:text-xs md:text-sm text-white/80 mt-3 sm:mt-4 md:mt-6 tracking-[0.25em] sm:tracking-[0.3em] uppercase"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -138,8 +182,8 @@ export function Narrative() {
             </motion.div>
           </div>
 
-          <div className="w-full max-w-3xl space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8 px-1 sm:px-0">
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start">
+          <div className="w-full max-w-3xl space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8 px-1 sm:px-0 relative">
+            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start relative z-10">
               {(["about", "dreams", "bio"] as TabId[]).map((tab) => (
                 <button
                   key={tab}
@@ -147,8 +191,8 @@ export function Narrative() {
                   onClick={() => setActiveTab(tab)}
                   className={`group relative overflow-hidden rounded-full border border-[#DC96FD]/25 px-3.5 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 text-[10px] sm:text-xs md:text-sm tracking-[0.25em] sm:tracking-[0.32em] uppercase transition-all duration-400 ${
                     activeTab === tab
-                      ? "bg-gradient-to-r from-[#DC96FD] via-[#c880f0] to-[#DC96FD] text-[#372847] shadow-[0_12px_24px_rgba(220,150,253,0.35)]"
-                      : "bg-[#372847]/40 text-[#DC96FD]/75 hover:bg-[#372847]/60"
+                      ? "bg-gradient-to-r from-[#DC96FD] via-[#c880f0] to-[#DC96FD] text-white shadow-[0_12px_24px_rgba(220,150,253,0.35)]"
+                      : "bg-[#372847]/40 text-white/75 hover:bg-[#372847]/60"
                   }`}
                 >
                   <span className="relative z-10">
@@ -165,7 +209,7 @@ export function Narrative() {
 
             <motion.div
               key={activeTab}
-              className="relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl border border-[#DC96FD]/25 bg-[#372847] mx-1 sm:mx-0 px-3.5 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 lg:py-10 transition-all duration-500"
+              className="relative z-10 overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl border border-[#DC96FD]/25 bg-[#372847] mx-1 sm:mx-0 px-3.5 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 lg:py-10 transition-all duration-500"
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}

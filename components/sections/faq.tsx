@@ -2,9 +2,11 @@
 
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
+import Image from "next/image"
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { siteConfig } from "@/content/site"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -15,9 +17,8 @@ interface FAQItem {
   answer: string
 }
 
-const debutanteFullName = siteConfig.couple.bride || "Mehai Jeffverly Servanda"
-const debutanteNickname =
-  siteConfig.couple.brideNickname || debutanteFullName.split(" ")[0] || "Mehai"
+const debutanteFullName = "Xyza Jenine"
+const debutanteNickname = debutanteFullName.split(" ")[0]
 
 const faqItems: FAQItem[] = [
   {
@@ -119,6 +120,35 @@ export function FAQ() {
       id="faq"
       className="relative z-[30] overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-[#372847]"
     >
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-6 sm:-top-10 left-2 sm:left-6 opacity-70"
+        style={{ width: "150px", height: "150px", transform: "rotate(-8deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-4 sm:bottom-8 right-0 sm:right-6 opacity-60"
+        style={{ width: "180px", height: "180px", transform: "rotate(12deg)" }}
+        ariaHidden={true}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-12 sm:-top-14 -right-6 sm:-right-2 w-40 sm:w-56 opacity-80"
+        priority={false}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -bottom-14 sm:-bottom-16 -left-8 sm:-left-4 w-48 sm:w-64 opacity-70"
+        style={{ transform: "scaleX(-1)" }}
+        priority={false}
+      />
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
         {/* Base pattern - diagonal lines forming diamonds */}
@@ -174,7 +204,7 @@ export function FAQ() {
           Frequently Asked Questions
         </h2>
         <p className={`${inter.className} text-[11px] sm:text-xs md:text-sm lg:text-base text-white/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
-          Everything you need to know about {siteConfig.couple.brideNickname || siteConfig.couple.bride}'s elegant debut celebration
+          Everything you need to know about {debutanteFullName}&apos;s elegant debut celebration
         </p>
       </div>
 

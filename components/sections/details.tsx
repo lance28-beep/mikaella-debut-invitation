@@ -4,6 +4,7 @@ import { Clock, PartyPopper, MapPin, Navigation, Copy, Check, Palette, Car, Spar
 import { useState } from "react"
 import Image from "next/image"
 import { Great_Vibes, Inter } from "next/font/google"
+import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
@@ -29,9 +30,10 @@ export function Details() {
 
   const { ceremony, reception } = siteConfig
   const venue = ceremony.location
+  const venueAddress = "1345 Alabang–Zapote Rd, Almanza Uno, Las Piñas, 1750 Metro Manila, Philippines"
   const entourageCall = ceremony.entourageTime
   const guestsCall = ceremony.guestsTime
-  const mapsLink = `https://maps.google.com/?q=${encodeURIComponent(venue)}`
+  const mapsLink = `https://maps.google.com/?q=${encodeURIComponent(venueAddress)}`
 
   const openInMaps = () => {
     window.open(mapsLink, "_blank", "noopener,noreferrer")
@@ -91,20 +93,58 @@ export function Details() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#372847]/80 via-transparent to-[#372847]/80" />
       </div>
 
+      {/* Butterfly accents */}
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-10 sm:-top-16 -left-6 sm:left-2 opacity-70"
+        style={{ width: "150px", height: "150px", transform: "rotate(-8deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute top-1/2 sm:top-[45%] right-4 sm:right-10 opacity-50"
+        style={{ width: "130px", height: "130px", transform: "rotate(6deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-4 sm:bottom-10 right-0 sm:right-6 opacity-65"
+        style={{ width: "190px", height: "190px", transform: "rotate(12deg)" }}
+        ariaHidden={true}
+      />
+
+      {/* Lavender corner flourishes */}
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-8 sm:-top-10 -left-10 sm:-left-2 w-40 sm:w-52 opacity-70"
+        style={{ transform: "scaleX(-1) rotate(-6deg)" }}
+        priority={false}
+      />
+      <Image
+        src="/lavander%20decoration/righ-bottom-corner.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -bottom-10 sm:-bottom-12 -right-6 sm:right-0 w-48 sm:w-64 opacity-80"
+        priority={false}
+      />
+
       <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#DC96FD]/85">
-            Event Details
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
+            For Xyza Jenine
           </div>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#DC96FD] drop-shadow-[0_18px_48px_rgba(55,40,71,0.65)] mt-4`}
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(55,40,71,0.65)] mt-4`}
           >
             Your Evening Guide
           </h2>
           <p
-            className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FBF7F8]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
+            className={`${inter.className} text-xs sm:text-sm md:text-base text-white max-w-2xl mx-auto mt-4 leading-relaxed`}
           >
-            Join us as we celebrate Mehai's journey into womanhood. Here's everything you need to know for this special evening—from call times and venue details to the elegant dress code that honors this milestone moment.
+            Step into the celebration of Xyza Jenine&apos;s eighteenth chapter. These notes share the call times, Excelsior Hotel details, and dress code so you arrive ready for her lavender-lit milestone.
           </p>
         </div>
 
@@ -114,7 +154,7 @@ export function Details() {
           <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/14 bg-white/8 backdrop-blur-2xl shadow-[0_26px_65px_rgba(8,16,34,0.42)]">
             <div className="relative h-[220px] sm:h-60 md:h-80 lg:h-[420px] xl:h-[460px] overflow-hidden">
               <Image
-                src="/Details/VillaAnaya.jpg"
+                src="/Details/ExcelsiorHotel.png"
                 alt={venue}
                 fill
                 priority
@@ -123,10 +163,10 @@ export function Details() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#372847]/95 via-[#372847]/35 to-transparent" />
               <div className="absolute inset-x-4 bottom-4 sm:bottom-6 text-white">
                 <h3 className="text-xl sm:text-3xl font-serif font-semibold tracking-wide drop-shadow-lg">
-                  Villa Anaya
+                  Excelsior Hotel
                 </h3>
                 <p className="text-[10px] sm:text-[12px] text-white/80 tracking-[0.24em] uppercase">
-                  Daan Kalikasan Road, Brgy. Parian, Mangatarem, Pangasinan
+                  {ceremony.location}
                 </p>
               </div>
             </div>
@@ -160,7 +200,10 @@ export function Details() {
 
               <div className="rounded-2xl border border-white/18 bg-white/10 px-4 py-3.5 flex items-start sm:items-center gap-2.5 sm:gap-3 shadow-[0_12px_30px_rgba(12,20,46,0.25)]">
                 <MapPin className="mt-[2px] sm:mt-0 h-4 w-4 sm:h-5 sm:w-5 text-[#DC96FD] flex-shrink-0" />
-                <div className="text-[11px] sm:text-sm text-white/75 leading-relaxed">{venue}</div>
+                <div className="text-[11px] sm:text-sm text-white/75 leading-relaxed">
+                  <p className="font-semibold text-white">{venue}</p>
+                  <p>{venueAddress}</p>
+                </div>
               </div>
 
               <div className="flex flex-row gap-2.5 sm:gap-3">
@@ -173,7 +216,7 @@ export function Details() {
                   Get Directions
                 </button>
                 <button
-                  onClick={() => copyToClipboard(venue, "venue")}
+                  onClick={() => copyToClipboard(venueAddress, "venue")}
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/8 px-4 py-3 text-xs sm:text-sm font-semibold text-white/85 shadow-[0_12px_30px_rgba(12,20,48,0.32)] transition-all duration-300 hover:-translate-y-1 hover:border-white/35 hover:text-white"
                   aria-label="Copy venue address"
                 >
@@ -220,7 +263,7 @@ export function Details() {
                 <Palette className="h-6 w-6 text-[#DC96FD]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Attire & Palette</p>
-                  <h3 className="text-white text-base sm:text-lg font-semibold">Dress in Silver & Powder Pink</h3>
+                  <h3 className="text-white text-base sm:text-lg font-semibold">Dress in Lavender & Purple Hues</h3>
                 </div>
               </div>
               <ul className="space-y-2 text-xs sm:text-sm text-white/75 leading-relaxed">
@@ -249,9 +292,9 @@ export function Details() {
                 </div>
               </div>
               <ul className="space-y-2.5 text-xs sm:text-sm text-white/75 leading-relaxed">
-                <li>Complimentary parking is available at the venue—just mention Mehai's debut at the gate.</li>
-                <li>Need a ride? The venue is accessible via private transport; kindly set drop-off to "Villa Anaya, Mangatarem".</li>
-                <li>For guests traveling from afar, nearby accommodations are available in Mangatarem town proper.</li>
+                <li>Complimentary parking is available at the venue—just mention Xyza Jenine&apos;s debut at the gate.</li>
+                <li>Need a ride? The venue is accessible via private transport; kindly set drop-off to "Excelsior Hotel".</li>
+                <li>For guests traveling from afar, nearby accommodations are available in the area.</li>
               </ul>
             </div>
           </div>
