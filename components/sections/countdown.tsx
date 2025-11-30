@@ -29,7 +29,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600"],
 })
 
-const celebrantName = "Xyza Jenine"
+const celebrantName = "Mikaella Arkean"
 
 export function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
@@ -101,9 +101,9 @@ export function Countdown() {
   }, [])
 
   const labelTaglines: Record<string, string> = {
-    Days: "Days of Dreaming",
-    Hours: "Hours of Sparkle",
-    Minutes: "Moments of Magic",
+    Days: "Days Until Her Debut",
+    Hours: "Hours of Anticipation",
+    Minutes: "Moments of Wonder",
     Seconds: "Heartbeats Away",
   }
 
@@ -112,7 +112,7 @@ export function Countdown() {
       {/* Simple, elegant card */}
       <div className="relative group">
         {/* Main card */}
-        <div className="relative bg-[#372847]/80 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 lg:px-8 lg:py-7 border border-[#DC96FD]/20 shadow-[0_12px_30px_rgba(55,40,71,0.35)] hover:shadow-[0_16px_38px_rgba(55,40,71,0.45)] transition-all duration-300 hover:border-[#DC96FD]/30 min-w-[65px] sm:min-w-[75px] md:min-w-[90px] lg:min-w-[100px]">
+        <div className="relative bg-[#172822]/80 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 lg:px-8 lg:py-7 border border-[#E6A379]/20 shadow-[0_12px_30px_rgba(23,40,34,0.35)] hover:shadow-[0_16px_38px_rgba(23,40,34,0.45)] transition-all duration-300 hover:border-[#E6A379]/30 min-w-[65px] sm:min-w-[75px] md:min-w-[90px] lg:min-w-[100px]">
           {/* Counter */}
           <div className="relative z-10 flex items-center justify-center">
             <Counter
@@ -126,7 +126,7 @@ export function Countdown() {
               borderRadius={8}
               horizontalPadding={4}
               gradientHeight={10}
-              gradientFrom="rgba(220,150,253,0.1)"
+              gradientFrom="rgba(230,163,121,0.1)"
               gradientTo="transparent"
             />
           </div>
@@ -148,7 +148,7 @@ export function Countdown() {
   return (
     <Section
       id="countdown"
-      className="relative bg-gradient-to-b from-[#372847] via-[#6A239E] to-[#372847] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#172822] via-[#3B553C] to-[#172822] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
@@ -157,10 +157,10 @@ export function Countdown() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(220,150,253,0.1) 70px, rgba(220,150,253,0.1) 71px),
-              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(220,150,253,0.1) 70px, rgba(220,150,253,0.1) 71px),
-              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(220,150,253,0.08) 35px, rgba(220,150,253,0.08) 36px),
-              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(220,150,253,0.08) 35px, rgba(220,150,253,0.08) 36px)
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(230,163,121,0.1) 70px, rgba(230,163,121,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(230,163,121,0.1) 70px, rgba(230,163,121,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(230,163,121,0.08) 35px, rgba(230,163,121,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(230,163,121,0.08) 35px, rgba(230,163,121,0.08) 36px)
             `,
             backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
           }}
@@ -171,7 +171,7 @@ export function Countdown() {
           <defs>
             <pattern id="scrollPattern" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
               {/* Scroll motifs at intersections */}
-              <g fill="none" stroke="#DC96FD" strokeWidth="0.5">
+              <g fill="none" stroke="#E6A379" strokeWidth="0.5">
                 {/* Top scroll */}
                 <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
                 {/* Bottom scroll */}
@@ -192,21 +192,61 @@ export function Countdown() {
         </svg>
 
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#372847]/80 via-transparent to-[#372847]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#172822]/80 via-transparent to-[#172822]/80" />
+      </div>
+
+      {/* Top-right corner decoration */}
+      <div className="absolute top-0 right-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Top-left corner decoration */}
+      <div className="absolute top-0 left-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-x-[-1]"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Bottom-right corner decoration */}
+      <div className="absolute bottom-0 right-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-y-[-1]"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Bottom-left corner decoration */}
+      <div className="absolute bottom-0 left-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-x-[-1] scale-y-[-1]"
+          aria-hidden="true"
+        />
       </div>
 
       {/* Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#FBF7F8]/80 mb-3">
-          A Lavender Countdown for {celebrantName}
+        <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#E9D3A4]/80 mb-3">
+          An Enchanted Countdown for {celebrantName}
         </p>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-[#FBF7F8] mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(55,40,71,0.65)]`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-white mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(23,40,34,0.65)]`}
         >
           Countdown to {celebrantName}'s Debut
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-[#FBF7F8]/90 font-light max-w-2xl mx-auto leading-relaxed">
-          Every heartbeat brings us closer to {celebrantName}'s luminous entrance into eighteen—an evening awash in lavender skies.
+        <p className="text-sm sm:text-base md:text-lg text-[#E9D3A4]/90 font-light max-w-2xl mx-auto leading-relaxed">
+          Every moment brings us closer to {celebrantName}'s magical entrance into eighteen—an enchanted evening filled with wonder and celebration.
         </p>
       </div>
 
@@ -228,28 +268,28 @@ export function Countdown() {
               style={{
                 left: "-20px",
                 top: "2%",
-                transform: "scale(0.4) translate(0, 0)",
-                width: "134px",
-                height: "141px",
+                transform: "scale(0.7) translate(0, 0)",
+                width: "268px",
+                height: "282px",
               }}
               ariaHidden={true}
             />
             {/* Save The Date Header */}
             <div className="text-center mb-8 sm:mb-10 md:mb-12 relative z-10">
               <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#DC96FD]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#E6A379]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
               </div>
 
-              <p className="text-xs sm:text-sm md:text-base font-medium text-[#FBF7F8] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4">
+              <p className="text-xs sm:text-sm md:text-base font-medium text-[#E9D3A4] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4">
                 Save {celebrantName}'s Debut Night
               </p>
 
               <div className="flex items-center justify-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#DC96FD]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#E6A379]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
               </div>
             </div>
 
@@ -258,7 +298,7 @@ export function Countdown() {
               {/* Month - Elegant script style */}
               <div className="mb-4 sm:mb-5 md:mb-6">
                 <p
-                  className={`${windSong.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-none drop-shadow-[0_10px_35px_rgba(55,40,71,0.65)]`}
+                  className={`${windSong.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-none drop-shadow-[0_10px_35px_rgba(23,40,34,0.65)]`}
                 >
                   {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { month: 'long' })}
                 </p>
@@ -268,16 +308,16 @@ export function Countdown() {
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 {/* Day - Large and bold focal point */}
                 <p
-                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-semibold text-[#FBF7F8] leading-none drop-shadow-[0_18px_35px_rgba(55,40,71,0.45)]"
+                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-semibold text-white leading-none drop-shadow-[0_18px_35px_rgba(23,40,34,0.45)]"
                 >
                   {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { day: 'numeric' })}
                 </p>
                 
                 {/* Vertical divider */}
-                <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#DC96FD]/60 to-transparent" />
+                <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#E6A379]/60 to-transparent" />
                 
                 {/* Year - Elegant and refined */}
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#FBF7F8] leading-none tracking-[0.2em] uppercase">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white leading-none tracking-[0.2em] uppercase">
                   {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { year: 'numeric' })}
                 </p>
               </div>
@@ -287,13 +327,13 @@ export function Countdown() {
             <div className="text-center">
               {/* Top decorative dots */}
               <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#DC96FD]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#E6A379]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
               </div>
               
               {/* Time */}
-              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-[#FBF7F8] tracking-[0.4em] uppercase mb-3 sm:mb-4">
+              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-[#E9D3A4] tracking-[0.4em] uppercase mb-3 sm:mb-4">
                 <span className="block sm:inline">{siteConfig.wedding.time} • {siteConfig.ceremony.venue}</span>
                 <span className="block sm:inline sm:before:content-['•'] sm:before:mx-2">
                   {siteConfig.ceremony.location.includes(',') 
@@ -304,9 +344,9 @@ export function Countdown() {
               
               {/* Bottom decorative dots */}
               <div className="flex items-center justify-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#DC96FD]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#DC96FD]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#E6A379]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#E6A379]/70 rounded-full" />
               </div>
             </div>
           </div>

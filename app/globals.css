@@ -11,25 +11,25 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  /* Primary: deep purple #372847 */
-  --primary: #372847;
+  /* Primary: deep forest green #172822 */
+  --primary: #172822;
   --primary-foreground: oklch(0.985 0 0);
-  /* Secondary: vibrant purple #6A239E */
-  --secondary: #6A239E;
+  /* Secondary: sage green #3B553C */
+  --secondary: #3B553C;
   --secondary-foreground: oklch(0.985 0 0);
-  /* Lavender accent #DC96FD */
-  --lavender: #DC96FD;
-  /* Muted/light surfaces: soft pink #FBF7F8 */
-  --muted: #FBF7F8;
-  --muted-foreground: #372847;
-  /* Accent: bright lavender #DC96FD */
-  --accent: #DC96FD;
-  --accent-foreground: #372847;
+  /* Accent: olive green #7E8A58 */
+  --lavender: #7E8A58;
+  /* Muted/light surfaces: cream #E9D3A4 */
+  --muted: #E9D3A4;
+  --muted-foreground: #172822;
+  /* Accent: warm peach #E6A379 */
+  --accent: #E6A379;
+  --accent-foreground: #172822;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: #6A239E;
+  --ring: #7E8A58;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -38,12 +38,12 @@
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #372847;
+  --sidebar-primary: #172822;
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: #6A239E;
+  --sidebar-accent: #3B553C;
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: #372847;
+  --sidebar-ring: #172822;
 }
 
 .dark {
@@ -53,21 +53,21 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #372847;
+  --primary: #172822;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #6A239E;
+  --secondary: #3B553C;
   --secondary-foreground: oklch(0.985 0 0);
-  /* Lavender for dark mode */
-  --lavender: #DC96FD;
-  --muted: #FBF7F8;
-  --muted-foreground: #372847;
-  --accent: #DC96FD;
-  --accent-foreground: #372847;
+  /* Enchanted forest accent for dark mode */
+  --lavender: #7E8A58;
+  --muted: #E9D3A4;
+  --muted-foreground: #172822;
+  --accent: #E6A379;
+  --accent-foreground: #172822;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: #6A239E;
+  --ring: #7E8A58;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -75,12 +75,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: #372847;
+  --sidebar-primary: #172822;
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: #6A239E;
+  --sidebar-accent: #3B553C;
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: #372847;
+  --sidebar-ring: #172822;
 }
 
 @theme inline {
@@ -151,14 +151,14 @@ html {
   background: #f1f1f1;
 }
 
-/* Updated scrollbar color to lavender theme */
+/* Updated scrollbar color to enchanted theme */
 ::-webkit-scrollbar-thumb {
-  background: #6A239E;
+  background: #7E8A58;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #DC96FD;
+  background: #E6A379;
 }
 
 /* Shimmer animation for countdown cards */
@@ -185,6 +185,13 @@ html {
 /* Imperial Script font class */
 .imperial-script-regular {
   font-family: "Imperial Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Fleur De Leah font class */
+.fleur-de-leah-regular {
+  font-family: "Fleur De Leah", cursive;
   font-weight: 400;
   font-style: normal;
 }

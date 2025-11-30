@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react"
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
-import Image from "next/image"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -16,7 +15,7 @@ interface PrincipalSponsor {
   FemalePrincipalSponsor: string
 }
 
-const debutanteName = "Xyza Jenine"
+const debutanteName = "Mikaella Arkean"
 
 export function PrincipalSponsors() {
   const SectionTitle = ({
@@ -32,7 +31,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-        className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-white mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
+        className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#172822] mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
       >
         {children}
       </h3>
@@ -46,7 +45,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 w-full`}>
-        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-white leading-snug break-words ${textAlign}`}>
+        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#172822] leading-snug break-words ${textAlign}`}>
           {name}
         </p>
       </div>
@@ -84,7 +83,7 @@ export function PrincipalSponsors() {
   return (
     <Section
       id="sponsors"
-      className="relative bg-[#372847] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#172822] via-[#3B553C] to-[#172822] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
       {/* Ornate pattern background - matching Countdown section */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
@@ -93,10 +92,10 @@ export function PrincipalSponsors() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
-              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
-              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
-              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(230,163,121,0.1) 70px, rgba(230,163,121,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(230,163,121,0.1) 70px, rgba(230,163,121,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(230,163,121,0.08) 35px, rgba(230,163,121,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(230,163,121,0.08) 35px, rgba(230,163,121,0.08) 36px)
             `,
             backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
           }}
@@ -107,7 +106,7 @@ export function PrincipalSponsors() {
           <defs>
             <pattern id="sponsorScrollPattern" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
               {/* Scroll motifs at intersections */}
-              <g fill="none" stroke="#DC96FD" strokeWidth="0.5">
+              <g fill="none" stroke="#E6A379" strokeWidth="0.5">
                 {/* Top scroll */}
                 <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
                 {/* Bottom scroll */}
@@ -128,7 +127,7 @@ export function PrincipalSponsors() {
         </svg>
 
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#372847]/80 via-transparent to-[#372847]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#172822]/80 via-transparent to-[#172822]/80" />
       </div>
 
       {/* Butterfly accents */}
@@ -143,51 +142,70 @@ export function PrincipalSponsors() {
         ariaHidden={true}
       />
 
-      {/* Lavender corner florals */}
-      <Image
-        src="/lavander%20decoration/righ-bottom-corner.png"
-        alt=""
-        width={420}
-        height={420}
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute -top-8 sm:-top-10 -left-10 sm:-left-2 w-44 sm:w-56 opacity-70"
-        style={{ transform: "scaleX(-1) rotate(-8deg)" }}
-        priority={false}
-      />
-      <Image
-        src="/lavander%20decoration/righ-bottom-corner.png"
-        alt=""
-        width={420}
-        height={420}
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute -bottom-10 sm:-bottom-12 -right-6 sm:-right-2 w-52 sm:w-64 opacity-80"
-        priority={false}
-      />
+      {/* Top-right corner decoration */}
+      <div className="absolute top-0 right-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Top-left corner decoration */}
+      <div className="absolute top-0 left-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-x-[-1]"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Bottom-right corner decoration */}
+      <div className="absolute bottom-0 right-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-y-[-1]"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Bottom-left corner decoration */}
+      <div className="absolute bottom-0 left-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-x-[-1] scale-y-[-1]"
+          aria-hidden="true"
+        />
+      </div>
 
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
-          For Xyza Jenine
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
+          For Mikaella Arkean
         </div>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(46,4,26,0.65)] mt-4`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-4`}
         >
           Circle of Principal Sponsors
         </h2>
-        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-4 leading-relaxed`}>
+        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-4 leading-relaxed`}>
           Honoring the mentors and godparents who steady {debutanteName}&apos;s heart—each blessing, toast, and prayer surrounding her eighteenth celebration with grace.
         </p>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="relative bg-[#372847]/80 backdrop-blur-2xl border border-white/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(46,4,26,0.45)] overflow-hidden">
-          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border border-white/15 rounded-lg sm:rounded-xl pointer-events-none" />
+        <div className="relative bg-white border-2 border-[#E6A379]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(23,40,34,0.45)] overflow-hidden">
+          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-[#E6A379]/20 rounded-lg sm:rounded-xl pointer-events-none" />
 
           <div className="relative p-5 sm:p-7 md:p-9 lg:p-12">
             {isLoading ? (
               <div className="flex items-center justify-center py-24">
                 <div className="flex flex-col items-center gap-4">
-                  <div className="w-12 h-12 border-4 border-[#DC96FD]/20 border-t-[#DC96FD]/70 rounded-full animate-spin" />
-                  <span className={`${inter.className} text-white/80 text-lg`}>
+                  <div className="w-12 h-12 border-4 border-[#E6A379]/20 border-t-[#E6A379]/70 rounded-full animate-spin" />
+                  <span className={`${inter.className} text-[#172822]/80 text-lg`}>
                     Gathering her sponsors…
                   </span>
                 </div>
@@ -195,10 +213,10 @@ export function PrincipalSponsors() {
             ) : error ? (
               <div className="flex items-center justify-center py-24">
                 <div className="text-center">
-                  <p className={`${inter.className} text-red-200 text-lg mb-2`}>{error}</p>
+                  <p className={`${inter.className} text-red-600 text-lg mb-2`}>{error}</p>
                   <button
                     onClick={fetchSponsors}
-                    className={`${playfair.className} text-white hover:text-white/70 transition-colors underline`}
+                    className={`${playfair.className} text-[#E6A379] hover:text-[#E6A379]/70 transition-colors underline`}
                   >
                     Try again
                   </button>
@@ -206,7 +224,7 @@ export function PrincipalSponsors() {
               </div>
             ) : sponsorPairs.length === 0 ? (
               <div className="text-center py-24">
-                <p className={`${inter.className} text-white/70 text-lg`}>
+                <p className={`${inter.className} text-[#172822]/70 text-lg`}>
                   Her sponsors will be announced soon.
                 </p>
               </div>

@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
-import Image from "next/image"
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { siteConfig } from "@/content/site"
@@ -17,44 +16,44 @@ interface FAQItem {
   answer: string
 }
 
-const debutanteFullName = "Xyza Jenine"
-const debutanteNickname = debutanteFullName.split(" ")[0]
+const debutanteFullName = "Mikaella Arkean"
+const debutanteNickname = "Mikaella"
 
 const faqItems: FAQItem[] = [
   {
-    question: `What is the dress code for ${debutanteNickname}'s debut?`,
+    question: `What is the dress code for ${debutanteNickname}'s enchanted debut?`,
     answer:
-      "Ladies: Pure black long gown.\n\nGentlemen: Tuxedo.\n\nKindly avoid bright, neon, or overly casual attire to keep the evening elegant and sophisticated.",
+      `Ladies: ${siteConfig.dressCode.guests.ladies}.\n\nGentlemen: ${siteConfig.dressCode.guests.gentlemen}.\n\n${siteConfig.dressCode.note}`,
   },
   {
-    question: "When and where is the debut celebration?",
+    question: "When and where is the enchanted celebration?",
     answer:
-      `${debutanteNickname}'s eighteenth debut is on ${siteConfig.ceremony.day}, ${siteConfig.wedding.date} at ${siteConfig.wedding.time} at ${siteConfig.wedding.venue}. The celebration will take place at ${siteConfig.ceremony.venue}.`,
+      `${debutanteNickname}'s eighteenth debut is on ${siteConfig.ceremony.day}, ${siteConfig.ceremony.date} at ${siteConfig.ceremony.time} at ${siteConfig.ceremony.venue}. The celebration will take place at ${siteConfig.ceremony.venue}.`,
   },
   {
     question: "What time should I arrive?",
     answer:
-      "Guest doors open at 3:30 PM. We recommend arriving 15-20 minutes early to sign the debut guest book, take portraits, and find your seat before the formal program begins.",
+      `Guest doors open at ${siteConfig.ceremony.guestsTime}. We recommend arriving 15-20 minutes early to sign the debut guest book, take portraits, and find your seat before the formal program begins.`,
   },
   {
     question: "When is the RSVP deadline?",
     answer:
-      `Kindly RSVP by June 1, 2026. Your response helps us prepare for ${debutanteNickname}'s special night. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]`,
+      `Kindly RSVP by ${siteConfig.details.rsvp.deadline}. Your response helps us prepare for ${debutanteNickname}'s special enchanted evening. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]`,
   },
   {
     question: "Do you have a gift registry?",
     answer:
-      `Your presence is the most precious gift for ${debutanteNickname}'s debut celebration. If you wish to share a token of love, we welcome monetary gifts that will help her pursue her dreams and aspirations. You can use the GCash QR code available in the Gift Registry section.`,
+      `Your presence is the most precious gift for ${debutanteNickname}'s enchanted debut celebration. If you wish to share a token of love, we welcome thoughtful gifts that will help celebrate her special day. Please see the Gift Registry section for suggestions.`,
   },
   {
     question: "Is there parking available at the venue?",
     answer:
-      `Yes! Complimentary parking is available at De Guzman's Events Place. Just mention ${debutanteNickname}'s debut at the gate. We recommend arriving early to secure a spot.`,
+      `Yes! Complimentary parking is available at ${siteConfig.ceremony.venue}. Just mention ${debutanteNickname}'s debut at the gate. We recommend arriving early to secure a spot.`,
   },
   {
     question: "Can I bring additional guests?",
     answer:
-      `We kindly ask that any additional guests be included in your RSVP so we can make proper arrangements. Please update your guest count when you submit your RSVP. Thank you for helping us create a perfect celebration for ${debutanteNickname}!`,
+      `We kindly ask that any additional guests be included in your RSVP so we can make proper arrangements. Please update your guest count when you submit your RSVP. Thank you for helping us create a perfect enchanted celebration for ${debutanteNickname}!`,
   },
   {
     question: "What if I have dietary restrictions or allergies?",
@@ -64,7 +63,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can I take photos during the debut?",
     answer:
-      `Yes! We have a professional photographer, but you're welcome to capture moments throughout the evening. We'll have a dedicated time for group photos with ${debutanteNickname} after the formal program.`,
+      `Yes! We have a professional photographer, but you're welcome to capture magical moments throughout the evening. We'll have a dedicated time for group photos with ${debutanteNickname} after the formal program.`,
   },
   {
     question: "What should I do if I need to cancel or update my RSVP?",
@@ -74,12 +73,12 @@ const faqItems: FAQItem[] = [
   {
     question: "What happens during the 18 Candles and 18 Treasures ceremony?",
     answer:
-      `After the formal program, ${debutanteNickname} will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood.`,
+      `After the formal program, ${debutanteNickname} will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this enchanted evening.`,
   },
   {
     question: "What time does the celebration end?",
     answer:
-      "The program wraps by 8:30 PM so you can rest and travel home safely. We want everyone to enjoy the evening while ensuring a safe journey home.",
+      "The program wraps by 9:00 PM so you can rest and travel home safely. We want everyone to enjoy the enchanted evening while ensuring a safe journey home.",
   },
   {
     question: "Will there be a program or schedule for the evening?",
@@ -94,7 +93,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What should I bring to the debut?",
     answer:
-      "Just bring yourself and your elegant presence! If you're participating in the 18 Treasures ceremony, please bring your prepared treasure or wish. Otherwise, your attendance is the greatest gift.",
+      "Just bring yourself and your enchanted presence! If you're participating in the 18 Treasures ceremony, please bring your prepared treasure or wish. Otherwise, your attendance is the greatest gift.",
   },
   {
     question: "Is there a specific entrance or registration area?",
@@ -118,37 +117,8 @@ export function FAQ() {
   return (
     <Section
       id="faq"
-      className="relative z-[30] overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-[#372847]"
+      className="relative z-[30] overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-b from-[#172822] via-[#3B553C] to-[#172822]"
     >
-      <ButterflyCluster
-        className="pointer-events-none absolute -top-6 sm:-top-10 left-2 sm:left-6 opacity-70"
-        style={{ width: "150px", height: "150px", transform: "rotate(-8deg)" }}
-        ariaHidden={true}
-      />
-      <ButterflyCluster
-        className="pointer-events-none absolute bottom-4 sm:bottom-8 right-0 sm:right-6 opacity-60"
-        style={{ width: "180px", height: "180px", transform: "rotate(12deg)" }}
-        ariaHidden={true}
-      />
-      <Image
-        src="/lavander%20decoration/righ-bottom-corner.png"
-        alt=""
-        width={420}
-        height={420}
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute -top-12 sm:-top-14 -right-6 sm:-right-2 w-40 sm:w-56 opacity-80"
-        priority={false}
-      />
-      <Image
-        src="/lavander%20decoration/righ-bottom-corner.png"
-        alt=""
-        width={420}
-        height={420}
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute -bottom-14 sm:-bottom-16 -left-8 sm:-left-4 w-48 sm:w-64 opacity-70"
-        style={{ transform: "scaleX(-1)" }}
-        priority={false}
-      />
       {/* Ornate pattern background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
         {/* Base pattern - diagonal lines forming diamonds */}
@@ -156,10 +126,10 @@ export function FAQ() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
-              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
-              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
-              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(230,163,121,0.1) 70px, rgba(230,163,121,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(230,163,121,0.1) 70px, rgba(230,163,121,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(230,163,121,0.08) 35px, rgba(230,163,121,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(230,163,121,0.08) 35px, rgba(230,163,121,0.08) 36px)
             `,
             backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
           }}
@@ -170,7 +140,7 @@ export function FAQ() {
           <defs>
             <pattern id="scrollPatternFAQ" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
               {/* Scroll motifs at intersections */}
-              <g fill="none" stroke="#DC96FD" strokeWidth="0.5">
+              <g fill="none" stroke="#E6A379" strokeWidth="0.5">
                 {/* Top scroll */}
                 <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
                 {/* Bottom scroll */}
@@ -191,25 +161,87 @@ export function FAQ() {
         </svg>
 
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#372847]/80 via-transparent to-[#372847]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#172822]/80 via-transparent to-[#172822]/80" />
+      </div>
+
+      {/* Butterfly accents */}
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-10 sm:-top-16 -left-6 sm:left-2 opacity-70"
+        style={{ width: "150px", height: "150px", transform: "rotate(-8deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute -top-8 sm:-top-12 -right-6 sm:-right-4 opacity-60"
+        style={{ width: "140px", height: "140px", transform: "rotate(10deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute top-1/2 sm:top-[45%] right-4 sm:right-10 opacity-50"
+        style={{ width: "130px", height: "130px", transform: "rotate(6deg)" }}
+        ariaHidden={true}
+      />
+      <ButterflyCluster
+        className="pointer-events-none absolute bottom-4 sm:bottom-10 right-0 sm:right-6 opacity-65"
+        style={{ width: "190px", height: "190px", transform: "rotate(12deg)" }}
+        ariaHidden={true}
+      />
+
+      {/* Top-right corner decoration */}
+      <div className="absolute top-0 right-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Top-left corner decoration */}
+      <div className="absolute top-0 left-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-x-[-1]"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Bottom-right corner decoration */}
+      <div className="absolute bottom-0 right-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-y-[-1]"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Bottom-left corner decoration */}
+      <div className="absolute bottom-0 left-0 z-0 pointer-events-none">
+        <img
+          src="/decoration/top-right-corner-decoration.png"
+          alt=""
+          className="w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96 opacity-60 scale-x-[-1] scale-y-[-1]"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-14 lg:mb-16 px-3 sm:px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
-          Your Questions Answered
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
+          For Mikaella Arkean
         </div>
         <h2
-          className={`${greatVibes.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,25,0.75)] mt-3 sm:mt-4`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-4`}
         >
           Frequently Asked Questions
         </h2>
-        <p className={`${inter.className} text-[11px] sm:text-xs md:text-sm lg:text-base text-white/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
-          Everything you need to know about {debutanteFullName}&apos;s elegant debut celebration
+        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-4 leading-relaxed px-2`}>
+          Everything you need to know about {debutanteFullName}&apos;s enchanted debut celebration
         </p>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-3 sm:px-4 md:px-6">
-        <div className="relative overflow-hidden rounded-[20px] sm:rounded-[28px] border border-white/25 bg-white shadow-[0_20px_55px_rgba(6,0,20,0.4)] sm:shadow-[0_26px_70px_rgba(6,0,20,0.45)]">
+        <div className="relative overflow-hidden rounded-[20px] sm:rounded-[28px] border border-white/25 bg-white shadow-[0_20px_55px_rgba(23,40,34,0.4)] sm:shadow-[0_26px_70px_rgba(23,40,34,0.45)]">
           <div className="relative px-3.5 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10">
             <div className="space-y-2 sm:space-y-3 md:space-y-4">
               {faqItems.map((item, index) => {
@@ -218,22 +250,22 @@ export function FAQ() {
                 return (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-2xl border border-[#372847]/15 bg-[#FBF7F8] transition-all duration-300 hover:border-[#6A239E]/35 hover:shadow-[0_10px_24px_rgba(6,0,20,0.18)]"
+                    className="group relative overflow-hidden rounded-2xl border border-[#172822]/15 bg-white transition-all duration-300 hover:border-[#E6A379]/35 hover:shadow-[0_10px_24px_rgba(23,40,34,0.18)]"
                   >
                     <button
                       onClick={() => toggleItem(index)}
-                      className="w-full px-3.5 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 flex items-start sm:items-center justify-between gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#6A239E]/30 transition-colors min-h-[3.25rem] sm:min-h-[4rem]"
+                      className="w-full px-3.5 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 flex items-start sm:items-center justify-between gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#E6A379]/30 transition-colors min-h-[3.25rem] sm:min-h-[4rem]"
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                     >
                       <span
-                        className={`${playfair.className} font-semibold text-[#372847] flex-1 text-[13px] sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed group-hover:text-[#6A239E] transition-colors duration-200`}
+                        className={`${playfair.className} font-semibold text-[#172822] flex-1 text-[13px] sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed group-hover:text-[#E6A379] transition-colors duration-200`}
                       >
                         {item.question}
                       </span>
                       <ChevronDown
                         size={18}
-                        className={`text-[#6A239E]/70 flex-shrink-0 transition-all duration-300 ${isOpen ? "rotate-180 text-[#6A239E]" : ""} w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-0 group-hover:text-[#6A239E]`}
+                        className={`text-[#E6A379]/70 flex-shrink-0 transition-all duration-300 ${isOpen ? "rotate-180 text-[#E6A379]" : ""} w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-0 group-hover:text-[#E6A379]`}
                         aria-hidden
                       />
                     </button>
@@ -246,13 +278,13 @@ export function FAQ() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-3.5 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 bg-white border-t border-[#372847]/10">
+                        <div className="px-3.5 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 bg-white border-t border-[#172822]/10">
                           {item.answer.includes("[RSVP_LINK]") ? (
-                            <p className={`${inter.className} text-[#372847]/80 leading-relaxed text-[12px] sm:text-sm md:text-base whitespace-pre-line`}>
+                            <p className={`${inter.className} text-[#172822]/80 leading-relaxed text-[12px] sm:text-sm md:text-base whitespace-pre-line`}>
                               {item.answer.split("[RSVP_LINK]")[0]}
                               <a
                                 href="#guest-list"
-                                className="text-[#6A239E] underline font-semibold hover:text-[#6A239E]/70 transition-colors break-words"
+                                className="text-[#E6A379] underline font-semibold hover:text-[#E6A379]/70 transition-colors break-words"
                                 onClick={(e) => {
                                   e.preventDefault()
                                   document.getElementById("guest-list")?.scrollIntoView({ behavior: "smooth" })
@@ -263,7 +295,7 @@ export function FAQ() {
                               {item.answer.split("[/RSVP_LINK]")[1]}
                             </p>
                           ) : (
-                            <p className={`${inter.className} text-[#372847]/80 leading-relaxed text-[12px] sm:text-sm md:text-base whitespace-pre-line`}>
+                            <p className={`${inter.className} text-[#172822]/80 leading-relaxed text-[12px] sm:text-sm md:text-base whitespace-pre-line`}>
                               {item.answer}
                             </p>
                           )}

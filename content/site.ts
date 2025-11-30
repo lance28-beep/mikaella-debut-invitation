@@ -1,18 +1,18 @@
 export const siteConfig = {
   couple: {
-    bride: "Xyza Jenine Bautista Medina",
-    brideNickname: "Jenine",
+    bride: "Mikaella Arkean B. De Castro",
+    brideNickname: "Mikaella",
     groom: "",
     groomNickname: "",
   },
   wedding: {
-    date: "January 17, 2026",
-    time: "5:00 PM",
-    venue: "Excelsior Hotel",
-    address: "1345 Alabang-Zapote Rd, Almanza Uno, Las Pinas, 1750 Metro Manila, Philippines",
-    tagline: "PLEASE JOIN US IN CELEBRATING THE 18th BIRTHDAY OF",
-    theme: "Blooming in shades of lavender skies",
-    motif: "Plans gathered between purple daydreams and gloss-kissed mirrors.",
+    date: "January 18, 2026",
+    time: "4:00 PM",
+    venue: "Casa Blanca Tanay",
+    address: "J.P. Rizal Street, Sitio Mayagay along Tanay-Sampaloc Road, Barangay Sampaloc, Tanay, Rizal",
+    tagline: "AN ENCHANTED EVENING AWAITS YOU!",
+    theme: "Enchanted / Floresta Encantada",
+    motif: "Join Us in Celebrating Mikaella Arkean's 18th Birthday Debut",
   },
   details: {
     rsvp: {
@@ -20,43 +20,39 @@ export const siteConfig = {
     },
   },
   ceremony: {
-    location: "Excelsior Hotel",
-    venue: "Excelsior Hotel",
-    date: "January 17, 2026",
-    day: "Saturday",
-    time: "5:00 PM",
-    entourageTime: "4:30 PM",
-    guestsTime: "5:00 PM",
+    location: "Casa Blanca Tanay",
+    venue: "Casa Blanca Tanay",
+    date: "January 18, 2026",
+    day: "Sunday",
+    time: "4:00 PM",
+    entourageTime: "3:30 PM",
+    guestsTime: "4:00 PM",
   },
   reception: {
-    location: "Excelsior Hotel",
-    venue: "Excelsior Hotel",
-    date: "January 17, 2026",
-    time: "6:30 PM",
+    location: "Casa Blanca Tanay",
+    venue: "Casa Blanca Tanay",
+    date: "January 18, 2026",
+    time: "4:00 PM",
   },
   dressCode: {
-    theme: "Blooming in shades of lavender skies",
-    colors: ["#372847", "#6A239E", "#DC96FD"],
+    theme: "Enchanted Elegance",
+    colors: ["#172822", "#3B553C", "#7E8A58", "#E6A379", "#E9D3A4"],
     sponsors: {
-      ladies: "Lavender or purple long gown",
-      gentlemen: "Deep purple or charcoal suit",
+      ladies: "Flowing gowns with a touch of magic",
+      gentlemen: "Charming suits with enchanted elegance",
     },
     guests: {
-      ladies: "Lavender, purple, or soft pink tones",
-      gentlemen: "Purple, charcoal, or dark suits",
+      ladies: "Flowing gowns, shimmering dresses",
+      gentlemen: "Charming suits",
     },
-    note: "Kindly wear shades of lavender, purple, or soft pink tones to match the elegant color palette.",
+    note: "Formal, with a touch of magic! Channel the magic of an enchanted forest or royal ballroom.",
   },
-  narrative: `Blooming in shades of lavender skies
+  narrative: `Like the turning of a page in a fairytale, the time has come for Mikaella to step into a new chapter of her life. You are cordially invited to an enchanted celebration as we mark her 18th birthday in the most magical way.
 
-Jenine envisions a future painted in lavender dreams—where every moment unfolds like petals beneath a purple sky. Her world glows in rich purples and soft shimmers, a universe reflected in gloss-kissed mirrors and held together by plans gathered between daydreams.
-
-Her journey has been one of grace and determination, each step a quiet celebration of confidence and becoming. Like lavender blooming under the evening sky, she embraces the beauty of transformation.
-
-Beyond her aspirations, she delights in discovering new horizons and savoring every vibrant moment with friends, family, and those who hold her closest. Her dreams shine warmly, rooted in love and the promise to bloom brightly for those who believe in her.`,
+In the spirit of magic and wonder, we invite you to witness Mikaella's transformation into the young woman she has always been destined to become. The evening will be filled with mystical moments, fairy-tale elegance, and the kind of charm that only an enchanted evening can bring. This debut marks the moment when Mikaella begins her journey into adulthood, and we would be honored to have you share in this extraordinary celebration.`,
   colors: {
-    primary: "#6A239E",
-    secondary: "#DC96FD",
+    primary: "#172822",
+    secondary: "#7E8A58",
   },
 }
 

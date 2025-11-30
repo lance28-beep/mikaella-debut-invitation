@@ -90,8 +90,8 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
   return (
     <div className="relative w-full max-w-lg mx-auto">
       <Card
-        className={`relative w-full border border-[#DC96FD]/35 bg-white/85 backdrop-blur-xl transition-all duration-500 group overflow-hidden rounded-[20px] sm:rounded-[28px] shadow-[0_20px_45px_rgba(23,2,14,0.35)] ${
-          isFocused ? "border-[#F5CFA1]" : "hover:border-[#FADDBB]"
+        className={`relative w-full border border-[#E6A379]/35 bg-white/85 backdrop-blur-xl transition-all duration-500 group overflow-hidden rounded-[20px] sm:rounded-[28px] shadow-[0_20px_45px_rgba(23,40,34,0.35)] ${
+          isFocused ? "border-[#E9D3A4]" : "hover:border-[#E9D3A4]"
         } ${isSubmitted ? "animate-[pulse_1.2s_ease-in-out]" : ""}`}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFECD3]/50 via-transparent to-[#FDF6EC]/70 opacity-95 pointer-events-none" />
@@ -108,20 +108,20 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
 
         <CardContent className="relative p-3.5 sm:p-6 lg:p-8">
           <div className="text-center mb-3.5 sm:mb-7 space-y-1.5 sm:space-y-2.5">
-            <p className="text-[9px] sm:text-xs tracking-[0.45em] sm:tracking-[0.55em] uppercase text-[#372847]/70">
-              Notes For Xyza Jenine
+            <p className="text-[9px] sm:text-xs tracking-[0.45em] sm:tracking-[0.55em] uppercase text-[#172822]/70">
+              Notes For Mikaella Arkean
             </p>
-            <h3 className={`${greatVibes.className} text-2xl sm:text-4xl text-[#372847]`}>
-              Whisper A Golden Wish
+            <h3 className={`${greatVibes.className} text-2xl sm:text-4xl text-[#172822]`}>
+              Whisper An Enchanted Wish
             </h3>
-            <p className={`${inter.className} text-[10px] sm:text-xs text-[#372847]/70 tracking-[0.18em] sm:tracking-[0.22em] uppercase leading-relaxed`}>
-              Every line becomes part of Xyza Jenine&apos;s story
+            <p className={`${inter.className} text-[10px] sm:text-xs text-[#172822]/70 tracking-[0.18em] sm:tracking-[0.22em] uppercase leading-relaxed`}>
+              Every line becomes part of Mikaella Arkean&apos;s story
             </p>
-            <div className="flex justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.35em] text-[#372847]/55">
+            <div className="flex justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.35em] text-[#172822]/55">
               <span>Share</span>
-              <span className="text-[#DC96FD]/40">•</span>
+              <span className="text-[#E6A379]/40">•</span>
               <span>Bless</span>
-              <span className="text-[#DC96FD]/40">•</span>
+              <span className="text-[#E6A379]/40">•</span>
               <span>Send</span>
             </div>
           </div>
@@ -134,9 +134,9 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             onBlur={() => setIsFocused(false)}
           >
             <div className="space-y-1 sm:space-y-2.5">
-              <label className={`${inter.className} block text-[10px] sm:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#372847]/70 flex items-center gap-1.5 sm:gap-2`}>
-                <span className={`flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full border border-[#372847]/30 transition-transform ${focusedField === "name" ? "scale-110 bg-[#372847]/10" : ""}`}>
-                  <PenLine className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#372847]/70" />
+              <label className={`${inter.className} block text-[10px] sm:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#172822]/70 flex items-center gap-1.5 sm:gap-2`}>
+                <span className={`flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full border border-[#172822]/30 transition-transform ${focusedField === "name" ? "scale-110 bg-[#172822]/10" : ""}`}>
+                  <PenLine className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#172822]/70" />
                 </span>
                 From
               </label>
@@ -149,10 +149,10 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
                   placeholder="Your name or nickname"
-                  className={`w-full border border-[#E1B489]/60 rounded-xl sm:rounded-2xl py-2 sm:py-3.5 px-3 sm:px-5 text-xs sm:text-sm ${inter.className} text-[#372847] placeholder:text-[#5F2B3A]/55 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-[0_6px_16px_rgba(46,4,26,0.1)] hover:shadow-[0_10px_22px_rgba(46,4,26,0.15)] focus:shadow-[0_12px_28px_rgba(46,4,26,0.2)] ${
+                  className={`w-full border border-[#E6A379]/60 rounded-xl sm:rounded-2xl py-2 sm:py-3.5 px-3 sm:px-5 text-xs sm:text-sm ${inter.className} text-[#172822] placeholder:text-[#172822]/55 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-[0_6px_16px_rgba(23,40,34,0.1)] hover:shadow-[0_10px_22px_rgba(23,40,34,0.15)] focus:shadow-[0_12px_28px_rgba(23,40,34,0.2)] ${
                     focusedField === "name"
-                      ? "border-[#372847]/60 focus:border-[#372847]/70 focus:ring-2 sm:focus:ring-4 focus:ring-[#372847]/15"
-                      : "border-[#E1B489]/60 hover:border-[#372847]/45"
+                      ? "border-[#E6A379]/60 focus:border-[#E6A379]/70 focus:ring-2 sm:focus:ring-4 focus:ring-[#E6A379]/15"
+                      : "border-[#E6A379]/60 hover:border-[#E6A379]/45"
                   }`}
                 />
                 {nameValue && (
@@ -165,17 +165,17 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
 
             <div className="space-y-1 sm:space-y-2.5">
               <div className="flex items-center justify-between">
-                <label className={`${inter.className} block text-[10px] sm:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#372847]/70 flex items-center gap-1.5 sm:gap-2`}>
-                  <span className={`flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full border border-[#372847]/30 transition-transform ${focusedField === "message" ? "scale-110 bg-[#372847]/10" : ""}`}>
-                    <Heart className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#372847]/65" />
+                <label className={`${inter.className} block text-[10px] sm:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#172822]/70 flex items-center gap-1.5 sm:gap-2`}>
+                  <span className={`flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full border border-[#172822]/30 transition-transform ${focusedField === "message" ? "scale-110 bg-[#172822]/10" : ""}`}>
+                    <Heart className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#172822]/65" />
                   </span>
-                  <span className="hidden sm:inline">Letter For Xyza Jenine</span>
+                  <span className="hidden sm:inline">Letter For Mikaella Arkean</span>
                   <span className="inline sm:hidden">Message</span>
                 </label>
                 {messageValue && (
                   <span
                     className={`${inter.className} text-[9px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase transition-colors ${
-                      messageValue.length > 500 ? "text-rose-300" : "text-[#DC96FD]/50"
+                      messageValue.length > 500 ? "text-rose-300" : "text-[#E6A379]/50"
                     }`}
                   >
                     {messageValue.length}/500
@@ -194,11 +194,11 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   }}
                   onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Tell Xyza Jenine what you wish for her eighteenth chapter..."
-                  className={`w-full border border-[#E1B489]/60 rounded-[18px] sm:rounded-[26px] min-h-[90px] sm:min-h-[130px] text-xs sm:text-sm ${inter.className} text-[#372847] placeholder:text-[#5F2B3A]/55 transition-all duration-300 resize-none bg-white/90 backdrop-blur-sm shadow-[0_8px_20px_rgba(46,4,26,0.1)] hover:shadow-[0_12px_28px_rgba(46,4,26,0.18)] focus:shadow-[0_16px_36px_rgba(46,4,26,0.24)] py-2.5 sm:py-4 px-3 sm:px-5 ${
+                  placeholder="Tell Mikaella Arkean what you wish for her eighteenth chapter..."
+                  className={`w-full border border-[#E6A379]/60 rounded-[18px] sm:rounded-[26px] min-h-[90px] sm:min-h-[130px] text-xs sm:text-sm ${inter.className} text-[#172822] placeholder:text-[#172822]/55 transition-all duration-300 resize-none bg-white/90 backdrop-blur-sm shadow-[0_8px_20px_rgba(23,40,34,0.1)] hover:shadow-[0_12px_28px_rgba(23,40,34,0.18)] focus:shadow-[0_16px_36px_rgba(23,40,34,0.24)] py-2.5 sm:py-4 px-3 sm:px-5 ${
                     focusedField === "message"
-                      ? "border-[#372847]/60 focus:border-[#372847]/70 focus:ring-2 sm:focus:ring-4 focus:ring-[#372847]/15"
-                      : "border-[#E1B489]/60 hover:border-[#372847]/45"
+                      ? "border-[#E6A379]/60 focus:border-[#E6A379]/70 focus:ring-2 sm:focus:ring-4 focus:ring-[#E6A379]/15"
+                      : "border-[#E6A379]/60 hover:border-[#E6A379]/45"
                   }`}
                 />
                 {messageValue && (
@@ -214,7 +214,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
               <Button
                 type="submit"
                 disabled={isSubmitting || !nameValue.trim() || !messageValue.trim()}
-                className="w-full border border-[#372847]/40 bg-[#372847] text-[#DC96FD] py-2 sm:py-3.5 px-4 sm:px-7 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-lora font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-[#3f0823] hover:border-[#372847]/60 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full border border-[#E6A379]/40 bg-[#172822] text-[#E6A379] py-2 sm:py-3.5 px-4 sm:px-7 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-lora font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-[#3B553C] hover:border-[#E6A379]/60 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
               >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-1.5 sm:gap-2 relative z-10">
@@ -231,8 +231,8 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                 </span>
               )}
             </Button>
-              <div className="rounded-xl sm:rounded-2xl border border-[#372847]/30 bg-[#372847]/15 backdrop-blur-sm px-2.5 sm:px-3.5 py-1.5 sm:py-2.5">
-                <p className={`${inter.className} text-[9px] sm:text-xs text-[#372847] leading-relaxed text-center font-medium`}>
+              <div className="rounded-xl sm:rounded-2xl border border-[#E6A379]/30 bg-[#E6A379]/15 backdrop-blur-sm px-2.5 sm:px-3.5 py-1.5 sm:py-2.5">
+                <p className={`${inter.className} text-[9px] sm:text-xs text-[#172822] leading-relaxed text-center font-medium`}>
                   <span className="font-semibold">Tip:</span> speak from the heart—share a favorite memory, a prayer, or a promise to cheer her on.
                 </p>
               </div>
@@ -298,26 +298,26 @@ export function Messages() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-14 lg:mb-18 px-2">
-          <p className={`${inter.className} text-[10px] sm:text-xs tracking-[0.55em] uppercase text-white/80 mb-3`}>
-            Words Xyza Jenine Will Keep Forever
+          <p className={`${inter.className} text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#E9D3A4]/80 mb-3`}>
+            Words Mikaella Arkean Will Keep Forever
           </p>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4`}
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-[0_8px_24px_rgba(23,40,34,0.6)]`}
           >
-            Letters for Xyza Jenine
+            Letters for Mikaella Arkean
           </h2>
-          <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-white/90 mb-3`}>
+          <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-[#E9D3A4]/90 mb-3`}>
             Pen a wish for her eighteenth chapter
           </h3>
-          <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-white/80 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
-            Send a note woven in lavender and purple—a keepsake Xyza Jenine will treasure long after the candles fade.
+          <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-[#E9D3A4]/80 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
+            Send a note woven in golden light and enchanted beauty—a keepsake Mikaella Arkean will treasure long after the celebration ends.
           </p>
         </div>
 
         {/* Form Section */}
         <div className="mb-12 sm:mb-16 lg:mb-20 px-2 sm:px-0">
           <div className="relative mx-auto w-full max-w-5xl">
-            <div className="relative overflow-hidden rounded-[24px] sm:rounded-[36px] border border-[#DC96FD]/30 bg-transparent shadow-[0_20px_50px_rgba(23,2,14,0.28)] sm:shadow-[0_28px_65px_rgba(23,2,14,0.3)]">
+            <div className="relative overflow-hidden rounded-[24px] sm:rounded-[36px] border border-[#E6A379]/30 bg-transparent shadow-[0_20px_50px_rgba(23,40,34,0.28)] sm:shadow-[0_28px_65px_rgba(23,40,34,0.3)]">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-stretch">
                 <div className="relative hidden lg:block">
                   <div className="absolute inset-0 bg-transparent" />
@@ -325,15 +325,15 @@ export function Messages() {
                     <Image
                       key={portraitImages[portraitIndex]}
                       src={portraitImages[portraitIndex]}
-                      alt="Portrait of Xyza Jenine"
+                      alt="Portrait of Mikaella Arkean"
                       fill
                       className="object-cover transition-opacity duration-700"
                       priority={false}
                     />
                   </div>
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-[#1F1F1F]">
-                    <p className={`${greatVibes.className} text-3xl tracking-wide text-[#1F1F1F]`}>Xyza Jenine</p>
-                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase text-[#1F1F1F]/85`}>Eighteen in Crimson & Gold</p>
+                    <p className={`${greatVibes.className} text-3xl tracking-wide text-[#1F1F1F]`}>Mikaella Arkean</p>
+                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase text-[#1F1F1F]/85`}>Eighteen in Enchanted Elegance</p>
                   </div>
                 </div>
                 <div className="relative py-4 sm:py-8 lg:py-10 px-2 sm:px-6 lg:px-8">
@@ -348,15 +348,15 @@ export function Messages() {
         <div className="relative max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="relative inline-block mb-4 sm:mb-6">
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#372847] to-[#640c35] rounded-full flex items-center justify-center mx-auto shadow-[0_18px_35px_rgba(23,2,14,0.65)]">
-                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-[#DC96FD]" />
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#172822] to-[#3B553C] rounded-full flex items-center justify-center mx-auto shadow-[0_18px_35px_rgba(23,40,34,0.65)]">
+                <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-[#E6A379]" />
               </div>
             </div>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-white mb-2 sm:mb-3">
               Keepsakes From Her Constellation
             </h3>
-            <p className="text-sm sm:text-base lg:text-lg text-white/80 font-lora max-w-2xl mx-auto leading-relaxed">
-              Scroll through the sparkling words that loved ones have tucked into Xyza Jenine&apos;s debut album of memories.
+            <p className="text-sm sm:text-base lg:text-lg text-[#E9D3A4]/80 font-lora max-w-2xl mx-auto leading-relaxed">
+              Scroll through the sparkling words that loved ones have tucked into Mikaella Arkean&apos;s debut album of memories.
             </p>
           </div>
           
