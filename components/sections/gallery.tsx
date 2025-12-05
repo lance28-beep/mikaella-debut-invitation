@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Section } from "@/components/section"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
@@ -23,9 +23,15 @@ const inter = Inter({
 
 const galleryItems = [
   { image: "/desktop-background/debut 1.jpg", text: "Mikaella • Enchanted Moments" },
-  { image: "/desktop-background/debut 3.jpg", text: "Mikaella • Magical Elegance" },
-  { image: "/desktop-background/debut 2.jpg", text: "Mikaella • Timeless Beauty" },
-  { image: "/desktop-background/debut 4.jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (112).jpg", text: "Mikaella • Magical Elegance" },
+  { image: "/desktop-background/debut (100).jpg", text: "Mikaella • Timeless Beauty" },
+  { image: "/desktop-background/debut (60).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (14).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (2).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (239).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (185).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (53).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/desktop-background/debut (223).jpg", text: "Mikaella • Enchanted Beauty" },
 ]
 
 const tileLayouts = [
@@ -40,75 +46,12 @@ const tileLayouts = [
 ]
 
 export function Gallery() {
-  const [selectedImage, setSelectedImage] = useState<(typeof galleryItems)[0] | null>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
-  const [touchStartX, setTouchStartX] = useState<number | null>(null)
-  const [touchDeltaX, setTouchDeltaX] = useState(0)
-  const [zoomScale, setZoomScale] = useState(1)
-  const [pan, setPan] = useState({ x: 0, y: 0 })
-  const [pinchStartDist, setPinchStartDist] = useState<number | null>(null)
-  const [pinchStartScale, setPinchStartScale] = useState(1)
-  const [lastTap, setLastTap] = useState(0)
-  const [panStart, setPanStart] = useState<{ x: number; y: number; panX: number; panY: number } | null>(null)
-  const [showComingSoon, setShowComingSoon] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 600)
     return () => clearTimeout(timer)
   }, [])
-
-  const navigateImage = useCallback((direction: "prev" | "next") => {
-    setCurrentIndex((prevIndex) => {
-      let newIndex = prevIndex
-      if (direction === "next") {
-        newIndex = (prevIndex + 1) % galleryItems.length
-      } else {
-        newIndex = (prevIndex - 1 + galleryItems.length) % galleryItems.length
-      }
-      setSelectedImage(galleryItems[newIndex])
-      return newIndex
-    })
-  }, [])
-
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (!selectedImage) return
-      if (e.key === "ArrowLeft") navigateImage("prev")
-      if (e.key === "ArrowRight") navigateImage("next")
-      if (e.key === "Escape") setSelectedImage(null)
-    }
-
-    window.addEventListener("keydown", handleKeyPress)
-    return () => window.removeEventListener("keydown", handleKeyPress)
-  }, [selectedImage, currentIndex, navigateImage])
-
-  useEffect(() => {
-    if (selectedImage) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-    return () => {
-      document.body.style.overflow = ""
-    }
-  }, [selectedImage])
-
-  useEffect(() => {
-    if (selectedImage) {
-      const next = new Image()
-      next.src = galleryItems[(currentIndex + 1) % galleryItems.length].image
-      const prev = new Image()
-      prev.src = galleryItems[(currentIndex - 1 + galleryItems.length) % galleryItems.length].image
-    }
-  }, [selectedImage, currentIndex])
-
-  const clamp = (val: number, min: number, max: number) => Math.min(max, Math.max(min, val))
-  const resetZoom = () => {
-    setZoomScale(1)
-    setPan({ x: 0, y: 0 })
-    setPanStart(null)
-  }
 
   return (
     <Section
@@ -196,15 +139,11 @@ export function Gallery() {
             <div className="mx-auto max-w-5xl w-full px-1">
               <div className="grid w-full min-h-[420px] sm:min-h-[460px] md:min-h-0 md:aspect-square grid-cols-2 sm:grid-cols-3 md:grid-cols-6 md:grid-rows-6 gap-2 sm:gap-3 md:gap-4">
                 {galleryItems.map((item, index) => (
-                  <button
+                  <Link
                     key={item.image + index}
-                    type="button"
+                    href="/gallery"
                     className={`group relative min-h-[190px] sm:min-h-0 overflow-hidden rounded-2xl sm:rounded-3xl border border-[#E6A379]/20 bg-[#172822]/70 backdrop-blur-sm shadow-[0_18px_35px_rgba(23,40,34,0.45)] transition-all duration-500 hover:shadow-[0_26px_50px_rgba(23,40,34,0.65)] hover:border-[#E6A379]/40 ${tileLayouts[index] ?? ""}`}
-                    onClick={() => {
-                      setSelectedImage(item)
-                      setCurrentIndex(index)
-                    }}
-                    aria-label={`Open image ${index + 1}`}
+                    aria-label={`View gallery image ${index + 1}`}
                   >
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <div className="absolute -inset-5 sm:-inset-6 bg-gradient-to-br from-[#E6A379]/25 via-transparent to-[#172822]/30 blur-2xl sm:blur-3xl" />
@@ -225,7 +164,7 @@ export function Gallery() {
                       <span className={`${playfair.className} text-[9px] sm:text-xs tracking-[0.25em] uppercase`}>{item.text}</span>
                       <span className="text-[8px] sm:text-[10px] tracking-[0.38em] uppercase text-white/70">{index + 1}/{galleryItems.length}</span>
                     </div>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -233,162 +172,12 @@ export function Gallery() {
         </div>
       </div>
 
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[9999] bg-[#172822]/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4"
-          onClick={() => {
-            setSelectedImage(null)
-            resetZoom()
-          }}
-        >
-          <div
-            className="relative max-w-6xl w-full h-full sm:h-auto flex flex-col items-center justify-center"
-            onTouchStart={(e) => {
-              if (e.touches.length === 1) {
-                const now = Date.now()
-                if (now - lastTap < 300) {
-                  setZoomScale((s) => (s > 1 ? 1 : 2))
-                  setPan({ x: 0, y: 0 })
-                }
-                setLastTap(now)
-                const t = e.touches[0]
-                setTouchStartX(t.clientX)
-                setTouchDeltaX(0)
-                if (zoomScale > 1) {
-                  setPanStart({ x: t.clientX, y: t.clientY, panX: pan.x, panY: pan.y })
-                }
-              }
-              if (e.touches.length === 2) {
-                const dx = e.touches[0].clientX - e.touches[1].clientX
-                const dy = e.touches[0].clientY - e.touches[1].clientY
-                const dist = Math.hypot(dx, dy)
-                setPinchStartDist(dist)
-                setPinchStartScale(zoomScale)
-              }
-            }}
-            onTouchMove={(e) => {
-              if (e.touches.length === 2 && pinchStartDist) {
-                const dx = e.touches[0].clientX - e.touches[1].clientX
-                const dy = e.touches[0].clientY - e.touches[1].clientY
-                const dist = Math.hypot(dx, dy)
-                const scale = clamp((dist / pinchStartDist) * pinchStartScale, 1, 3)
-                setZoomScale(scale)
-              } else if (e.touches.length === 1) {
-                const t = e.touches[0]
-                if (zoomScale > 1 && panStart) {
-                  const dx = t.clientX - panStart.x
-                  const dy = t.clientY - panStart.y
-                  setPan({ x: panStart.panX + dx, y: panStart.panY + dy })
-                } else if (touchStartX !== null) {
-                  setTouchDeltaX(t.clientX - touchStartX)
-                }
-              }
-            }}
-            onTouchEnd={() => {
-              setPinchStartDist(null)
-              setPanStart(null)
-              if (zoomScale === 1 && Math.abs(touchDeltaX) > 50) {
-                navigateImage(touchDeltaX > 0 ? "prev" : "next")
-              }
-              setTouchStartX(null)
-              setTouchDeltaX(0)
-            }}
-          >
-            <div className="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-3 sm:px-6 pt-3 sm:pt-6">
-              <div className="bg-[#172822]/80 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-[#E6A379]/30 shadow-[0_12px_24px_rgba(23,40,34,0.45)]">
-                <span className="text-xs sm:text-sm font-medium text-[#E6A379] tracking-[0.18em]">
-                  {currentIndex + 1} / {galleryItems.length}
-                </span>
-              </div>
-            </div>
-
-            {galleryItems.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    navigateImage("prev")
-                    resetZoom()
-                  }}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-[#172822]/70 hover:bg-[#172822]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#E6A379]/30 hover:border-[#E6A379]/60"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft size={24} className="sm:w-7 sm:h-7 text-[#E6A379]" />
-                </button>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    navigateImage("next")
-                    resetZoom()
-                  }}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-[#172822]/70 hover:bg-[#172822]/90 backdrop-blur-md rounded-full p-3 sm:p-4 transition-all duration-200 border border-[#E6A379]/30 hover:border-[#E6A379]/60"
-                  aria-label="Next image"
-                >
-                  <ChevronRight size={24} className="sm:w-7 sm:h-7 text-[#E6A379]" />
-                </button>
-              </>
-            )}
-
-            <div className="relative w-full h-full flex items-center justify-center pt-16 sm:pt-20 pb-4 sm:pb-6 overflow-hidden">
-              <div
-                className="relative inline-block max-w-full max-h-full"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    setSelectedImage(null)
-                    resetZoom()
-                  }}
-                  className="absolute top-3 right-3 z-40 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#E6A379]/35 bg-[#172822]/80 backdrop-blur-md shadow-[0_14px_28px_rgba(23,40,34,0.6)] transition-all duration-200 hover:scale-105"
-                  aria-label="Close lightbox"
-                >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-[#E6A379]/35 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <X size={18} className="sm:w-6 sm:h-6 text-[#E6A379] drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
-                </button>
-                <img
-                  src={selectedImage.image || "/placeholder.svg"}
-                  alt={selectedImage.text || "Gallery image"}
-                  style={{
-                    transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoomScale})`,
-                    transition: pinchStartDist ? "none" : "transform 200ms ease-out",
-                  }}
-                  className="max-w-full max-h-[75vh] sm:max-h-[85vh] object-contain rounded-2xl shadow-[0_35px_65px_rgba(23,2,14,0.75)]"
-                />
-
-                {zoomScale > 1 && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      resetZoom()
-                    }}
-                    className="absolute bottom-2 right-2 bg-[#172822]/70 hover:bg-[#172822]/90 backdrop-blur-md text-[#E6A379] rounded-full px-3 py-1.5 text-xs font-medium border border-[#E6A379]/25 transition-all duration-200"
-                  >
-                    Reset Zoom
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {galleryItems.length > 1 && (
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 sm:hidden z-20">
-                <p className="text-xs text-[#E6A379]/80 bg-[#172822]/70 backdrop-blur-sm rounded-full px-3 py-1.5 border border-[#E6A379]/20">
-                  Swipe to navigate
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
       <div className="relative z-10 mt-12 sm:mt-14 md:mt-16 flex flex-col items-center gap-3 px-4 text-center">
         <p className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-[#E9D3A4]/70">
           Continue Mikaella Arkean's story
         </p>
-        <button
-          type="button"
-          onClick={() => setShowComingSoon(true)}
+        <Link
+          href="/gallery"
           className="group relative inline-flex h-full min-h-[3.5rem] sm:min-h-[3.75rem] items-center justify-center overflow-hidden rounded-full border border-[#E6A379]/40 bg-[#172822] px-10 sm:px-12 md:px-14 text-[9px] sm:text-[10px] md:text-xs tracking-[0.48em] uppercase text-[#E6A379] shadow-[0_26px_58px_rgba(23,40,34,0.55)] transition-all duration-600 ease-out hover:-translate-y-2 hover:shadow-[0_36px_70px_rgba(23,40,34,0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E6A379]/50"
         >
           <span className="absolute inset-0 bg-gradient-to-r from-[#E6A379]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
@@ -398,33 +187,11 @@ export function Gallery() {
           <span className="relative z-10 inline-flex items-center justify-center">
             View Mikaella Arkean's Gallery
           </span>
-        </button>
+        </Link>
         <p className={`${inter.className} text-xs text-[#E9D3A4]/75 max-w-md`}>
           Step inside the complete photo journal to experience every magical moment, elegant twirl, and enchanted celebration from Mikaella Arkean's debut.
         </p>
       </div>
-
-      {showComingSoon && (
-        <div className="fixed inset-0 z-[9999] bg-[#172822]/90 backdrop-blur-sm flex items-center justify-center px-4 py-6" role="dialog" aria-modal="true">
-          <div className="relative max-w-md w-full rounded-3xl border border-[#E6A379]/30 bg-gradient-to-br from-[#172822]/95 via-[#3B553C]/95 to-[#172822]/95 shadow-[0_35px_70px_rgba(23,40,34,0.75)] p-6 sm:p-8 text-center">
-            <p className="text-[11px] sm:text-xs tracking-[0.5em] uppercase text-[#E6A379]/80 mb-3">Coming soon</p>
-            <h3 className={`${greatVibes.className} text-3xl sm:text-4xl text-white mb-3`}>Mikaella Arkean's Pictorial in Progress</h3>
-            <p className={`${inter.className} text-sm sm:text-base text-[#E9D3A4]/90 leading-relaxed`}>
-              We're lovingly arranging the full enchanted pictorial set starring Mikaella Arkean. Please check back soon—something magical is being prepared just for you.
-            </p>
-            <p className={`${playfair.className} text-xs sm:text-sm tracking-[0.35em] uppercase text-white/70 mt-4`}>
-              Mikaella Arkean's keepsakes take flight shortly
-            </p>
-            <button
-              type="button"
-              onClick={() => setShowComingSoon(false)}
-              className="mt-6 inline-flex items-center justify-center rounded-full border border-[#E6A379]/40 bg-[#172822] px-8 py-3 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-[#E6A379] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_35px_rgba(23,40,34,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E6A379]/50"
-            >
-              I'll wait
-            </button>
-          </div>
-        </div>
-      )}
     </Section>
   )
 }

@@ -127,6 +127,14 @@ export function Entourage() {
     )
   }
 
+  const capitalizeName = (name: string) => {
+    if (!name) return name
+    return name
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ")
+  }
+
   const NameItem = ({
     member,
     align = "center",
@@ -144,7 +152,7 @@ export function Entourage() {
       <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 leading-relaxed`}
       >
         <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#172822] ${textAlign}`}>
-          {member.Name}
+          {capitalizeName(member.Name)}
         </p>
         {showRole && member.RoleTitle && (
           <p className={`${inter.className} text-[10px] sm:text-[11px] md:text-xs font-normal text-[#172822]/70 mt-0.5 leading-snug ${textAlign}`}>

@@ -51,14 +51,14 @@ export default function MasonryGallery({ images }: { images: ImageItem[] }) {
     <div ref={topRef} className="relative">
       {/* Header (buttons removed per request) */}
       <div className="mb-6 flex justify-end">
-        <div className="text-[#FFFFFF]/90 text-sm font-sans">
+        <div className="text-[#E9D3A4]/90 text-sm font-sans">
           {filtered.length} photos
         </div>
       </div>
 
       {/* Masonry grid */}
       {filtered.length === 0 ? (
-        <div className="text-center text-[#FFFFFF]/80 font-sans">No images to display.</div>
+        <div className="text-center text-[#E9D3A4]/80 font-sans">No images to display.</div>
       ) : (
         <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-3 sm:gap-4">
           {filtered.map((img, idx) => (
@@ -69,9 +69,9 @@ export default function MasonryGallery({ images }: { images: ImageItem[] }) {
             onClick={() => setLightboxIdx(idx)}
             aria-label="Open image"
           >
-            <div className="relative w-full overflow-hidden rounded-xl border border-[#C3A161]/40 bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#C3A161]/60">
+            <div className="relative w-full overflow-hidden rounded-xl border border-[#E6A379]/40 bg-[#172822]/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#E6A379]/60">
               {!loaded[img.src] && (
-                <div className="aspect-[3/4] sm:aspect-[4/5] w-full animate-pulse bg-gradient-to-br from-[#0A3428]/30 via-[#106552]/25 to-[#0A3428]/30" />
+                <div className="aspect-[3/4] sm:aspect-[4/5] w-full animate-pulse bg-gradient-to-br from-[#172822]/30 via-[#3B553C]/25 to-[#172822]/30" />
               )}
               <img
                 ref={(el) => setImgRef(el, img.src)}
@@ -85,7 +85,7 @@ export default function MasonryGallery({ images }: { images: ImageItem[] }) {
                   loaded[img.src] ? "opacity-100" : "opacity-0 absolute top-0 left-0"
                 }`}
               />
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-[#0A3428]/40 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-[#172822]/40 via-transparent to-transparent" />
             </div>
           </button>
           ))}
@@ -95,12 +95,12 @@ export default function MasonryGallery({ images }: { images: ImageItem[] }) {
       {/* Lightbox */}
       {lightboxIdx != null && filtered[lightboxIdx] && (
         <div
-          className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[9999] bg-[#172822]/95 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setLightboxIdx(null)}
         >
           <div className="relative max-w-6xl w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <button
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-[#FFFFFF] bg-[#0A3428]/80 hover:bg-[#0A3428] border border-[#C3A161]/50 hover:border-[#C3A161] rounded-full px-4 py-2.5 transition-all duration-200 shadow-lg hover:scale-110"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white bg-[#172822]/80 hover:bg-[#172822] border border-[#E6A379]/50 hover:border-[#E6A379] rounded-full px-4 py-2.5 transition-all duration-200 shadow-lg hover:scale-110"
               onClick={() => setLightboxIdx((i) => (i == null ? null : (i - 1 + filtered.length) % filtered.length))}
             >
               ‹
@@ -108,16 +108,16 @@ export default function MasonryGallery({ images }: { images: ImageItem[] }) {
             <img
               src={filtered[lightboxIdx].src}
               alt=""
-              className="max-h-[80vh] w-auto rounded-xl shadow-2xl border border-[#C3A161]/30"
+              className="max-h-[80vh] w-auto rounded-xl shadow-2xl border border-[#E6A379]/30"
             />
             <button
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-[#FFFFFF] bg-[#0A3428]/80 hover:bg-[#0A3428] border border-[#C3A161]/50 hover:border-[#C3A161] rounded-full px-4 py-2.5 transition-all duration-200 shadow-lg hover:scale-110"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white bg-[#172822]/80 hover:bg-[#172822] border border-[#E6A379]/50 hover:border-[#E6A379] rounded-full px-4 py-2.5 transition-all duration-200 shadow-lg hover:scale-110"
               onClick={() => setLightboxIdx((i) => (i == null ? null : (i + 1) % filtered.length))}
             >
               ›
             </button>
             <button
-              className="absolute top-3 right-3 text-[#FFFFFF] bg-[#0A3428]/80 hover:bg-[#0A3428] border border-[#C3A161]/50 hover:border-[#C3A161] rounded-full px-4 py-2 transition-all duration-200 shadow-lg hover:scale-105 font-sans text-sm"
+              className="absolute top-3 right-3 text-white bg-[#172822]/80 hover:bg-[#172822] border border-[#E6A379]/50 hover:border-[#E6A379] rounded-full px-4 py-2 transition-all duration-200 shadow-lg hover:scale-105 font-sans text-sm"
               onClick={() => setLightboxIdx(null)}
             >
               Close
@@ -130,7 +130,7 @@ export default function MasonryGallery({ images }: { images: ImageItem[] }) {
       <div className="mt-8 flex justify-center">
         <button
           type="button"
-          className="px-6 py-3 rounded-full bg-gradient-to-r from-[#C3A161] to-[#C3A161]/90 text-[#0A3428] font-semibold border border-[#C3A161] hover:from-[#C3A161]/90 hover:to-[#C3A161] hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl font-sans"
+          className="px-6 py-3 rounded-full bg-gradient-to-r from-[#E6A379] to-[#E6A379]/90 text-white font-semibold border border-[#E6A379] hover:from-[#E6A379]/90 hover:to-[#E6A379] hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl font-sans"
           onClick={() => topRef.current?.scrollIntoView({ behavior: "smooth" })}
         >
           Back to top

@@ -12,6 +12,11 @@ const desktopImages = [
 ]
 
 const mobileImages = [
+  "/desktop-background/debut (69).jpg",
+  "/desktop-background/debut (90).jpg",
+  "/desktop-background/debut (111).jpg",
+  "/desktop-background/debut (180).jpg",
+  "/desktop-background/debut (202).jpg",
   "/mobile-background/debut 1.jpg",
   "/mobile-background/debut 2.jpg",
   "/mobile-background/debut 3.jpg",

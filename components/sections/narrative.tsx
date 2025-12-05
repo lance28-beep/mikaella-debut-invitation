@@ -257,6 +257,11 @@ export function Narrative() {
                     { id: 2, img: "/desktop-background/debut 2.jpg" },
                     { id: 3, img: "/desktop-background/debut 1.jpg" },
                     { id: 4, img: "/desktop-background/debut 4.jpg" },
+                    { id: 5, img: "/desktop-background/debut (52).jpg" },
+                    { id: 6, img: "/desktop-background/debut (199).jpg" },
+                    { id: 7, img: "/desktop-background/debut (202).jpg" },
+                    { id: 8, img: "/desktop-background/debut (185.jpg" },
+                    { id: 9, img: "/desktop-background/debut (223).jpg" },
 
 
                   ]}
