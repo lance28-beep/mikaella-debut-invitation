@@ -71,9 +71,9 @@ const faqItems: FAQItem[] = [
       "Please update your RSVP as soon as possible if your plans change. You can search for your name in the RSVP section and update your response. We appreciate your timely communication!",
   },
   {
-    question: "What is the 18 Candles and 18 Treasures ceremony ?",
+    question: "What is the 18 Enchanting Flowers and 18 Treasures ceremony?",
     answer:
-      `During the 18 Candles and 18 Treasures ceremony, ${debutanteNickname} will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this enchanted evening.`,
+      `During the 18 Enchanting Flowers and 18 Treasures ceremony, ${debutanteNickname} will receive 18 enchanting flowers and 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this enchanted evening.`,
   },
   {
     question: "What time does the celebration end?",
@@ -83,7 +83,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Will there be a program or schedule for the evening?",
     answer:
-      "Yes, there will be a formal program that includes the debutante's entrance, 18 candles ceremony, 18 treasures presentation, and special performances. The program will be provided at the venue, and we'll ensure all guests are informed of the schedule.",
+      "Yes, there will be a formal program that includes the debutante's entrance, 18 Enchanting Flowers ceremony, 18 treasures presentation, and special performances. The program will be provided at the venue, and we'll ensure all guests are informed of the schedule.",
   },
   {
     question: "Are children welcome at the debut?",

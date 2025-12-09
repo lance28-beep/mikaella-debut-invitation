@@ -280,7 +280,7 @@ export function Details() {
               <ul className="space-y-2.5 text-xs sm:text-sm text-white/75 leading-relaxed">
                 <li className="flex items-start gap-2">
                   <Sparkles className="mt-1 h-3.5 w-3.5 text-[#E6A379]" />
-                  18 Candles &amp; 18 Treasures will follow after the formal program—prepare a short wish or keepsake.
+                  18 Enchanting Flowers &amp; 18 Treasures will follow after the formal program—prepare a short wish or keepsake.
                 </li>
                 <li className="flex items-start gap-2">
                   <Sparkles className="mt-1 h-3.5 w-3.5 text-[#E6A379]" />
